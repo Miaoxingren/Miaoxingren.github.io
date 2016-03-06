@@ -57,22 +57,43 @@
 
 
 
-<meta name="description" content="DOM加载顺序1.解析HTML结构。2.加载外部脚本和样式表文件。3.解析并执行脚本代码。4.构造HTML DOM模型。5.加载图片等外部文件。6.页面加载完毕。
+<meta name="description" content="DOM加载顺序
+解析HTML结构。
+加载外部脚本和样式表文件。
+解析并执行脚本代码。
+构造HTML DOM模型。
+加载图片等外部文件。
+页面加载完毕。
+
 DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，样式表，脚本，图片，flash都已经加载完成了。
-当DOMContentLoaded事件触发时，仅当DOM加载完成，不包括样式表，图片，fla">
+当DOMContentLoaded事件触发时，仅当DOM加载完成，不包括样式表，图片，flash。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web前端笔记02">
 <meta property="og:url" content="http://yoursite.com/2016/03/05/note-front-end-02/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="DOM加载顺序1.解析HTML结构。2.加载外部脚本和样式表文件。3.解析并执行脚本代码。4.构造HTML DOM模型。5.加载图片等外部文件。6.页面加载完毕。
+<meta property="og:description" content="DOM加载顺序
+解析HTML结构。
+加载外部脚本和样式表文件。
+解析并执行脚本代码。
+构造HTML DOM模型。
+加载图片等外部文件。
+页面加载完毕。
+
 DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，样式表，脚本，图片，flash都已经加载完成了。
-当DOMContentLoaded事件触发时，仅当DOM加载完成，不包括样式表，图片，fla">
-<meta property="og:updated_time" content="2016-03-06T07:02:20.433Z">
+当DOMContentLoaded事件触发时，仅当DOM加载完成，不包括样式表，图片，flash。">
+<meta property="og:updated_time" content="2016-03-06T07:16:20.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端笔记02">
-<meta name="twitter:description" content="DOM加载顺序1.解析HTML结构。2.加载外部脚本和样式表文件。3.解析并执行脚本代码。4.构造HTML DOM模型。5.加载图片等外部文件。6.页面加载完毕。
+<meta name="twitter:description" content="DOM加载顺序
+解析HTML结构。
+加载外部脚本和样式表文件。
+解析并执行脚本代码。
+构造HTML DOM模型。
+加载图片等外部文件。
+页面加载完毕。
+
 DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，样式表，脚本，图片，flash都已经加载完成了。
-当DOMContentLoaded事件触发时，仅当DOM加载完成，不包括样式表，图片，fla">
+当DOMContentLoaded事件触发时，仅当DOM加载完成，不包括样式表，图片，flash。">
 
 
 
@@ -146,7 +167,7 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -156,7 +177,7 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -231,7 +252,7 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-05T10:41:59+08:00" content="2016-03-05">
               2016-03-05
             </time>
@@ -258,13 +279,31 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
       
 
       
-        <h2 id="DOM加载顺序"><a href="#DOM加载顺序" class="headerlink" title="DOM加载顺序"></a>DOM加载顺序</h2><p>1.解析HTML结构。<br>2.加载外部脚本和样式表文件。<br>3.解析并执行脚本代码。<br>4.构造HTML DOM模型。<br>5.加载图片等外部文件。<br>6.页面加载完毕。</p>
+        <h2 id="DOM加载顺序"><a href="#DOM加载顺序" class="headerlink" title="DOM加载顺序"></a>DOM加载顺序</h2><ol>
+<li>解析HTML结构。</li>
+<li>加载外部脚本和样式表文件。</li>
+<li>解析并执行脚本代码。</li>
+<li>构造HTML DOM模型。</li>
+<li>加载图片等外部文件。</li>
+<li>页面加载完毕。</li>
+</ol>
 <h2 id="DOMContentLoaded早于onload"><a href="#DOMContentLoaded早于onload" class="headerlink" title="DOMContentLoaded早于onload"></a><code>DOMContentLoaded</code>早于<code>onload</code></h2><p>当<code>onload</code>事件触发时，页面上所有的DOM，样式表，脚本，图片，flash都已经加载完成了。</p>
 <p>当<code>DOMContentLoaded</code>事件触发时，仅当DOM加载完成，不包括样式表，图片，flash。</p>
 <hr>
-<h2 id="false、0、空字符串、null和undefined"><a href="#false、0、空字符串、null和undefined" class="headerlink" title="false、0、空字符串、null和undefined"></a>false、0、空字符串、null和undefined</h2><h4 id="与false比较"><a href="#与false比较" class="headerlink" title="与false比较"></a>与false比较</h4><p>运行以下代码：<br>    alert(typeof(false) === ‘boolean’);         //true<br>    alert(typeof(0) === ‘number’);              //true<br>    alert(typeof(“”) === ‘string’);             //true<br>    alert(typeof(null) === ‘object’);           //true<br>    alert(typeof undefined === ‘undefined’);    //true</p>
-<p>运行以下代码：<br>    alert(false == undefined);              //false<br>    alert(false == null);                   //false<br>    alert(null || undefined || false);      //fasle<br>    alert(false == 0);                      //true<br>    alert(false == “”);                     //true<br>    alert(null == undefined);               //true</p>
-<p>“假值”：0、空字符串和false <strong>是一个对象</strong><br>“空值”：null和undefined    <strong>不是对象</strong></p>
+<h2 id="false、0、空字符串、null和undefined"><a href="#false、0、空字符串、null和undefined" class="headerlink" title="false、0、空字符串、null和undefined"></a>false、0、空字符串、null和undefined</h2><h4 id="与false比较"><a href="#与false比较" class="headerlink" title="与false比较"></a>与false比较</h4><p>运行以下代码：</p>
+<pre><code>alert(typeof(false) === &apos;boolean&apos;);         //true
+alert(typeof(0) === &apos;number&apos;);              //true
+alert(typeof(&quot;&quot;) === &apos;string&apos;);             //true
+alert(typeof(null) === &apos;object&apos;);           //true
+alert(typeof undefined === &apos;undefined&apos;);    //true
+</code></pre><p>运行以下代码：</p>
+<pre><code>alert(false == undefined);              //false
+alert(false == null);                   //false
+alert(null || undefined || false);      //fasle
+alert(false == 0);                      //true
+alert(false == &quot;&quot;);                     //true
+alert(null == undefined);               //true
+</code></pre><p>“假值”：0、空字符串和false<br>“空值”：null和undefined</p>
 <h4 id="null和undefined区别"><a href="#null和undefined区别" class="headerlink" title="null和undefined区别"></a>null和undefined区别</h4><p>undefined：无效对象，变量显式或者隐式（由Javascript引擎进行赋值）地被赋予了undefined，那么代表了此变量未被定义。<br>null：空对象，变量被赋予null值，则代表此变量被初始化为空值。</p>
 <hr>
 <h2 id="JQuery-ajax-方法"><a href="#JQuery-ajax-方法" class="headerlink" title="JQuery ajax() 方法"></a>JQuery ajax() 方法</h2><p>dataType 期服务器返回的数据类型</p>
@@ -272,7 +311,7 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
 <hr>
 <h2 id="typeof与instanceof"><a href="#typeof与instanceof" class="headerlink" title="typeof与instanceof"></a>typeof与instanceof</h2><h4 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h4><p>用以获取一个变量或者表达式的类型。<br>可能返回值：<br>number，boolean，string，function（函数），object（null，数组，对象），undefined。</p>
 <p>判断一个变量是否存在：<code>if(typeof a != &quot;undefined&quot;){}</code><br><strong>使用<code>if(a)</code>判断，如果a不存在（未声明）则会出错</strong></p>
-<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>用于判断一个变量是否某个对象的实例。</p>
+<h4 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h4><p>用于判断一个变量是否某个对象的实例。</p>
 <p>判断一个变量是否数组：<code>if(a instanceof Array){}</code><br><strong>使用typeof a对null，数组，对象都会返回object类型，无法用于判断数组</strong></p>
 <hr>
 <h2 id="元素alt和title属性"><a href="#元素alt和title属性" class="headerlink" title="元素alt和title属性"></a>元素alt和title属性</h2><p>alt和title同时设置时，alt作为图片的替代文字出现，title是图片的解释文字（鼠标悬浮是出现）。</p>
@@ -286,9 +325,14 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
 <li>CSS Sprites在开发的时候比较麻烦，要通过photoshop或其他工具测量计算每一个背景单元的精确位置；</li>
 <li>CSS Sprites在维护的时候比较麻烦，如果页面背景有少许改动，一般就要改这张合并的图片，无序改的地方最好不要动，这样避免改动更多的css，如果在原来的地方放不下，只能（最好）往下加图片，这样图片的字节就增加了，还要改css。</li>
 </ol>
-<h2 id="CSS清除浮动"><a href="#CSS清除浮动" class="headerlink" title="CSS清除浮动"></a>CSS清除浮动</h2><h4 id="CSS-Sprite-generator-在线生成工具"><a href="#CSS-Sprite-generator-在线生成工具" class="headerlink" title="CSS Sprite generator 在线生成工具"></a>CSS Sprite generator 在线生成工具</h4><p><a href="http://spritegen.website-performance.org/" target="_blank" rel="external">官方网址</a><br><a href="http://cn.spritegen.website-performance.org/" target="_blank" rel="external">中文版</a></p>
+<h4 id="CSS-Sprite-generator-在线生成工具"><a href="#CSS-Sprite-generator-在线生成工具" class="headerlink" title="CSS Sprite generator 在线生成工具"></a>CSS Sprite generator 在线生成工具</h4><p><a href="http://spritegen.website-performance.org/" target="_blank" rel="external">官方网址</a><br><a href="http://cn.spritegen.website-performance.org/" target="_blank" rel="external">中文版</a></p>
 <hr>
-<h2 id="js跨域获取数据"><a href="#js跨域获取数据" class="headerlink" title="js跨域获取数据"></a>js跨域获取数据</h2><p>1.只要协议、域名、端口有任何一个不同,都被当作是不同的域。<br>2.使用jsonp进行跨域。<br>3.使用window.name来进行跨域。<br>4.通过修改document.domain来跨子域。</p>
+<h2 id="js跨域获取数据"><a href="#js跨域获取数据" class="headerlink" title="js跨域获取数据"></a>js跨域获取数据</h2><ol>
+<li>只要协议、域名、端口有任何一个不同,都被当作是不同的域。</li>
+<li>使用jsonp进行跨域。</li>
+<li>使用window.name来进行跨域。</li>
+<li>通过修改document.domain来跨子域。</li>
+</ol>
 <h2 id="call和apply方法"><a href="#call和apply方法" class="headerlink" title="call和apply方法"></a>call和apply方法</h2><h4 id="call方法"><a href="#call方法" class="headerlink" title="call方法:"></a>call方法:</h4><p>语法：call([thisObj[, arg1[, arg2[,   [, argN]]]]])<br>定义：调用一个对象的一个方法，以另一个对象替换当前对象。<br>说明：<br>call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。<br>如果没有提供 thisObj 参数，那么 Global 对象被用作 thisObj。 </p>
 <h4 id="apply方法："><a href="#apply方法：" class="headerlink" title="apply方法："></a>apply方法：</h4><p>语法：apply(thisObj，[argArray])<br>定义：应用某一对象的一个方法，用另一个对象替换当前对象。<br>说明：<br>如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。<br>如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。</p>
 <p>两者作用相同，只是参数传递方式不同。</p>
@@ -368,10 +412,10 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -388,7 +432,7 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
           
@@ -398,7 +442,7 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -430,7 +474,7 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM加载顺序"><span class="nav-number">1.</span> <span class="nav-text">DOM加载顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOMContentLoaded早于onload"><span class="nav-number">2.</span> <span class="nav-text">DOMContentLoaded早于onload</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#false、0、空字符串、null和undefined"><span class="nav-number">3.</span> <span class="nav-text">false、0、空字符串、null和undefined</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#与false比较"><span class="nav-number">3.0.1.</span> <span class="nav-text">与false比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null和undefined区别"><span class="nav-number">3.0.2.</span> <span class="nav-text">null和undefined区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JQuery-ajax-方法"><span class="nav-number">4.</span> <span class="nav-text">JQuery ajax() 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof与instanceof"><span class="nav-number">5.</span> <span class="nav-text">typeof与instanceof</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof"><span class="nav-number">5.0.1.</span> <span class="nav-text">typeof</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof"><span class="nav-number">6.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素alt和title属性"><span class="nav-number">7.</span> <span class="nav-text">元素alt和title属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-Sprites"><span class="nav-number">8.</span> <span class="nav-text">CSS Sprites</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">8.0.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点"><span class="nav-number">8.0.2.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS清除浮动"><span class="nav-number">9.</span> <span class="nav-text">CSS清除浮动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS-Sprite-generator-在线生成工具"><span class="nav-number">9.0.1.</span> <span class="nav-text">CSS Sprite generator 在线生成工具</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js跨域获取数据"><span class="nav-number">10.</span> <span class="nav-text">js跨域获取数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#call和apply方法"><span class="nav-number">11.</span> <span class="nav-text">call和apply方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#call方法"><span class="nav-number">11.0.1.</span> <span class="nav-text">call方法:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#apply方法："><span class="nav-number">11.0.2.</span> <span class="nav-text">apply方法：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM加载顺序"><span class="nav-number">1.</span> <span class="nav-text">DOM加载顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOMContentLoaded早于onload"><span class="nav-number">2.</span> <span class="nav-text">DOMContentLoaded早于onload</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#false、0、空字符串、null和undefined"><span class="nav-number">3.</span> <span class="nav-text">false、0、空字符串、null和undefined</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#与false比较"><span class="nav-number">3.0.1.</span> <span class="nav-text">与false比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null和undefined区别"><span class="nav-number">3.0.2.</span> <span class="nav-text">null和undefined区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JQuery-ajax-方法"><span class="nav-number">4.</span> <span class="nav-text">JQuery ajax() 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof与instanceof"><span class="nav-number">5.</span> <span class="nav-text">typeof与instanceof</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof"><span class="nav-number">5.0.1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof"><span class="nav-number">5.0.2.</span> <span class="nav-text">instanceof</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素alt和title属性"><span class="nav-number">6.</span> <span class="nav-text">元素alt和title属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-Sprites"><span class="nav-number">7.</span> <span class="nav-text">CSS Sprites</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">7.0.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点"><span class="nav-number">7.0.2.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS-Sprite-generator-在线生成工具"><span class="nav-number">7.0.3.</span> <span class="nav-text">CSS Sprite generator 在线生成工具</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js跨域获取数据"><span class="nav-number">8.</span> <span class="nav-text">js跨域获取数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#call和apply方法"><span class="nav-number">9.</span> <span class="nav-text">call和apply方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#call方法"><span class="nav-number">9.0.1.</span> <span class="nav-text">call方法:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#apply方法："><span class="nav-number">9.0.2.</span> <span class="nav-text">apply方法：</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -460,7 +504,7 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

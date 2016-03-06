@@ -71,7 +71,7 @@ W3C示例：
 W3C示例：
 &amp;lt;div contextmenu=&amp;quot;mymenu&amp;quot;&amp;gt;
     &amp;lt;menu type=&amp;quot;context&amp;quot">
-<meta property="og:updated_time" content="2016-03-05T07:19:55.151Z">
+<meta property="og:updated_time" content="2016-03-06T07:16:19.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端笔记01">
 <meta name="twitter:description" content="HTML5全局属性contextmenu规定元素的上下文菜单：当用户右键点击元素时，会出现上下文菜单。
@@ -152,7 +152,7 @@ W3C示例：
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -162,7 +162,7 @@ W3C示例：
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -237,7 +237,7 @@ W3C示例：
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-04T22:19:23+08:00" content="2016-03-04">
               2016-03-04
             </time>
@@ -286,9 +286,9 @@ W3C示例：
 <h4 id="Google-Gear"><a href="#Google-Gear" class="headerlink" title="Google Gear"></a>Google Gear</h4><p>Google开发出的一种本地存储技术。<br>缺点：需要安装Gear组件。</p>
 <h4 id="Global-Storage"><a href="#Global-Storage" class="headerlink" title="Global Storage"></a>Global Storage</h4><p>类似于IE的userData，Firefox2+支持，IE不支持。<br>使用：<br>    globalStorage[location.hostname][‘name’] = ‘tugai’;<br>    globalStorage[location.hostname][‘name’];<br>    globalStorage[location.hostname].removeItem(‘name’);</p>
 <hr>
-<h2 id="CSS定位机制"><a href="#CSS定位机制" class="headerlink" title="CSS定位机制"></a>CSS定位机制</h2><h3 id="1-文档流"><a href="#1-文档流" class="headerlink" title="1.文档流"></a>1.文档流</h3><p>元素的位置在正常的流中，与<code>position:static</code>位置相同</p>
-<h3 id="2-浮动（float）"><a href="#2-浮动（float）" class="headerlink" title="2.浮动（float）"></a>2.浮动（float）</h3><p>元素浮动会脱离原来的文档流。</p>
-<h3 id="3-定位（position）"><a href="#3-定位（position）" class="headerlink" title="3.定位（position）"></a>3.定位（position）</h3><h4 id="Static-定位"><a href="#Static-定位" class="headerlink" title="Static 定位"></a>Static 定位</h4><p>HTML元素的默认值，即没有定位，元素出现在正常的流中。</p>
+<h2 id="CSS定位机制"><a href="#CSS定位机制" class="headerlink" title="CSS定位机制"></a>CSS定位机制</h2><h3 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h3><p>元素的位置在正常的流中，与<code>position:static</code>位置相同</p>
+<h3 id="浮动（float）"><a href="#浮动（float）" class="headerlink" title="浮动（float）"></a>浮动（float）</h3><p>元素浮动会脱离原来的文档流。</p>
+<h3 id="定位（position）"><a href="#定位（position）" class="headerlink" title="定位（position）"></a>定位（position）</h3><h4 id="Static-定位"><a href="#Static-定位" class="headerlink" title="Static 定位"></a>Static 定位</h4><p>HTML元素的默认值，即没有定位，元素出现在正常的流中。</p>
 <h4 id="Fixed-定位"><a href="#Fixed-定位" class="headerlink" title="Fixed 定位"></a>Fixed 定位</h4><p>元素的位置相对于浏览器窗口是固定位置，即使窗口是滚动的它也不会移动，会脱离原来的文档流。</p>
 <h4 id="Relative-定位"><a href="#Relative-定位" class="headerlink" title="Relative 定位"></a>Relative 定位</h4><p>相对定位元素的定位是相对其正常位置，仍在正常的流中。</p>
 <h4 id="Absolute-定位"><a href="#Absolute-定位" class="headerlink" title="Absolute 定位"></a>Absolute 定位</h4><p>绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于<code>&lt;html&gt;</code>，会脱离原来的文档流。</p>
@@ -394,10 +394,10 @@ W3C示例：
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -414,7 +414,7 @@ W3C示例：
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
           
@@ -424,7 +424,7 @@ W3C示例：
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -456,7 +456,7 @@ W3C示例：
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5全局属性contextmenu"><span class="nav-number">1.</span> <span class="nav-text">HTML5全局属性contextmenu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见数据存储方式"><span class="nav-number">2.</span> <span class="nav-text">常见数据存储方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IndexdDB"><span class="nav-number">2.0.1.</span> <span class="nav-text">IndexdDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie"><span class="nav-number">2.0.2.</span> <span class="nav-text">Cookie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL参数"><span class="nav-number">2.0.3.</span> <span class="nav-text">URL参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Session-Storage"><span class="nav-number">2.0.4.</span> <span class="nav-text">Session Storage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#post"><span class="nav-number">2.0.5.</span> <span class="nav-text">post</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Local-Storage"><span class="nav-number">2.0.6.</span> <span class="nav-text">Local Storage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UserData"><span class="nav-number">2.0.7.</span> <span class="nav-text">UserData</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flash-ShareObject"><span class="nav-number">2.0.8.</span> <span class="nav-text">Flash ShareObject</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Google-Gear"><span class="nav-number">2.0.9.</span> <span class="nav-text">Google Gear</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Global-Storage"><span class="nav-number">2.0.10.</span> <span class="nav-text">Global Storage</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS定位机制"><span class="nav-number">3.</span> <span class="nav-text">CSS定位机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-文档流"><span class="nav-number">3.1.</span> <span class="nav-text">1.文档流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-浮动（float）"><span class="nav-number">3.2.</span> <span class="nav-text">2.浮动（float）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-定位（position）"><span class="nav-number">3.3.</span> <span class="nav-text">3.定位（position）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Static-定位"><span class="nav-number">3.3.1.</span> <span class="nav-text">Static 定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fixed-定位"><span class="nav-number">3.3.2.</span> <span class="nav-text">Fixed 定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Relative-定位"><span class="nav-number">3.3.3.</span> <span class="nav-text">Relative 定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Absolute-定位"><span class="nav-number">3.3.4.</span> <span class="nav-text">Absolute 定位</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-keys-obj"><span class="nav-number">4.</span> <span class="nav-text">Object.keys(obj)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-Array-filter-方法"><span class="nav-number">5.</span> <span class="nav-text">JavaScript Array filter()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-splice-方法"><span class="nav-number">6.</span> <span class="nav-text">JavaScript splice()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS布局"><span class="nav-number">7.</span> <span class="nav-text">CSS布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#position实现相对定位"><span class="nav-number">7.0.1.</span> <span class="nav-text">position实现相对定位</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS奇偶选择器"><span class="nav-number">8.</span> <span class="nav-text">CSS奇偶选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清除浮动"><span class="nav-number">9.</span> <span class="nav-text">清除浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宽度自适应"><span class="nav-number">10.</span> <span class="nav-text">宽度自适应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM事件阻止取消"><span class="nav-number">11.</span> <span class="nav-text">DOM事件阻止取消</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM中的事件对象：（符合-W3C-标准）"><span class="nav-number">11.0.1.</span> <span class="nav-text">DOM中的事件对象：（符合 W3C 标准）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IE中的事件对象："><span class="nav-number">11.0.2.</span> <span class="nav-text">IE中的事件对象：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取自定义属性"><span class="nav-number">12.</span> <span class="nav-text">获取自定义属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原生Javascript选择器"><span class="nav-number">13.</span> <span class="nav-text">原生Javascript选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-DOM-querySelector-方法"><span class="nav-number">13.0.1.</span> <span class="nav-text">HTML DOM querySelector()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-DOM-querySelectorAll-方法"><span class="nav-number">13.0.2.</span> <span class="nav-text">HTML DOM querySelectorAll()方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5全局属性contextmenu"><span class="nav-number">1.</span> <span class="nav-text">HTML5全局属性contextmenu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见数据存储方式"><span class="nav-number">2.</span> <span class="nav-text">常见数据存储方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IndexdDB"><span class="nav-number">2.0.1.</span> <span class="nav-text">IndexdDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie"><span class="nav-number">2.0.2.</span> <span class="nav-text">Cookie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL参数"><span class="nav-number">2.0.3.</span> <span class="nav-text">URL参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Session-Storage"><span class="nav-number">2.0.4.</span> <span class="nav-text">Session Storage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#post"><span class="nav-number">2.0.5.</span> <span class="nav-text">post</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Local-Storage"><span class="nav-number">2.0.6.</span> <span class="nav-text">Local Storage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UserData"><span class="nav-number">2.0.7.</span> <span class="nav-text">UserData</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flash-ShareObject"><span class="nav-number">2.0.8.</span> <span class="nav-text">Flash ShareObject</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Google-Gear"><span class="nav-number">2.0.9.</span> <span class="nav-text">Google Gear</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Global-Storage"><span class="nav-number">2.0.10.</span> <span class="nav-text">Global Storage</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS定位机制"><span class="nav-number">3.</span> <span class="nav-text">CSS定位机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文档流"><span class="nav-number">3.1.</span> <span class="nav-text">文档流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动（float）"><span class="nav-number">3.2.</span> <span class="nav-text">浮动（float）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定位（position）"><span class="nav-number">3.3.</span> <span class="nav-text">定位（position）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Static-定位"><span class="nav-number">3.3.1.</span> <span class="nav-text">Static 定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fixed-定位"><span class="nav-number">3.3.2.</span> <span class="nav-text">Fixed 定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Relative-定位"><span class="nav-number">3.3.3.</span> <span class="nav-text">Relative 定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Absolute-定位"><span class="nav-number">3.3.4.</span> <span class="nav-text">Absolute 定位</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-keys-obj"><span class="nav-number">4.</span> <span class="nav-text">Object.keys(obj)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-Array-filter-方法"><span class="nav-number">5.</span> <span class="nav-text">JavaScript Array filter()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-splice-方法"><span class="nav-number">6.</span> <span class="nav-text">JavaScript splice()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS布局"><span class="nav-number">7.</span> <span class="nav-text">CSS布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#position实现相对定位"><span class="nav-number">7.0.1.</span> <span class="nav-text">position实现相对定位</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS奇偶选择器"><span class="nav-number">8.</span> <span class="nav-text">CSS奇偶选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清除浮动"><span class="nav-number">9.</span> <span class="nav-text">清除浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宽度自适应"><span class="nav-number">10.</span> <span class="nav-text">宽度自适应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM事件阻止取消"><span class="nav-number">11.</span> <span class="nav-text">DOM事件阻止取消</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM中的事件对象：（符合-W3C-标准）"><span class="nav-number">11.0.1.</span> <span class="nav-text">DOM中的事件对象：（符合 W3C 标准）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IE中的事件对象："><span class="nav-number">11.0.2.</span> <span class="nav-text">IE中的事件对象：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取自定义属性"><span class="nav-number">12.</span> <span class="nav-text">获取自定义属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原生Javascript选择器"><span class="nav-number">13.</span> <span class="nav-text">原生Javascript选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-DOM-querySelector-方法"><span class="nav-number">13.0.1.</span> <span class="nav-text">HTML DOM querySelector()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-DOM-querySelectorAll-方法"><span class="nav-number">13.0.2.</span> <span class="nav-text">HTML DOM querySelectorAll()方法</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -486,7 +486,7 @@ W3C示例：
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
