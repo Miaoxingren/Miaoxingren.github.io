@@ -81,7 +81,7 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
 
 DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，样式表，脚本，图片，flash都已经加载完成了。
 当DOMContentLoaded事件触发时，仅当DOM加载完成，不包括样式表，图片，flash。">
-<meta property="og:updated_time" content="2016-03-06T07:16:20.399Z">
+<meta property="og:updated_time" content="2016-03-07T09:56:23.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端笔记02">
 <meta name="twitter:description" content="DOM加载顺序
@@ -167,7 +167,7 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -177,7 +177,7 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -252,7 +252,7 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-05T10:41:59+08:00" content="2016-03-05">
               2016-03-05
             </time>
@@ -304,7 +304,18 @@ alert(false == 0);                      //true
 alert(false == &quot;&quot;);                     //true
 alert(null == undefined);               //true
 </code></pre><p>“假值”：0、空字符串和false<br>“空值”：null和undefined</p>
-<h4 id="null和undefined区别"><a href="#null和undefined区别" class="headerlink" title="null和undefined区别"></a>null和undefined区别</h4><p>undefined：无效对象，变量显式或者隐式（由Javascript引擎进行赋值）地被赋予了undefined，那么代表了此变量未被定义。<br>null：空对象，变量被赋予null值，则代表此变量被初始化为空值。</p>
+<h4 id="null和undefined区别"><a href="#null和undefined区别" class="headerlink" title="null和undefined区别"></a>null和undefined区别</h4><p>undefined：无效对象，转为数值时为0。变量显式或者隐式（由Javascript引擎进行赋值）地被赋予了undefined，那么代表了此变量未被定义。</p>
+<ol>
+<li>变量被声明了，但没有赋值时，就等于 undefined</li>
+<li>调用函数时，应该提供的参数没有提供，该参数等于 undefined</li>
+<li>对象没有赋值的属性，该属性的值为 undefined</li>
+<li>函数没有返回值时，默认返回 undefined</li>
+</ol>
+<p>null：空对象，变量被赋予null值，则代表此变量被初始化为空值，转为数值时为NaN。</p>
+<ol>
+<li>作为函数的参数，表示该函数的参数不是对象</li>
+<li>作为对象原型链的终点</li>
+</ol>
 <hr>
 <h2 id="JQuery-ajax-方法"><a href="#JQuery-ajax-方法" class="headerlink" title="JQuery ajax() 方法"></a>JQuery ajax() 方法</h2><p>dataType 期服务器返回的数据类型</p>
 <p>“xml”: 返回 XML 文档，可用 jQuery 处理。<br>“html”: 返回纯文本 HTML 信息；包含的 script 标签会在插入 dom 时执行。<br>“script”: 返回纯文本 JavaScript 代码。不会自动缓存结果。除非设置了 “cache” 参数。注意：在远程请求时(不在同一个域下)，所有 POST 请求都将转为 GET 请求。（因为将使用 DOM 的 script标签来加载）<br>“json”: 返回 JSON 数据 。<br>“jsonp”: JSONP 格式。使用 JSONP 形式调用函数时，如 “myurl?callback=?” jQuery 将自动替换 ? 为正确的函数名，以执行回调函数。<br>“text”: 返回纯文本字符串。</p>
@@ -412,10 +423,10 @@ alert(null == undefined);               //true
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -431,8 +442,8 @@ alert(null == undefined);               //true
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
           
@@ -442,7 +453,7 @@ alert(null == undefined);               //true
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -504,7 +515,7 @@ alert(null == undefined);               //true
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

@@ -2,7 +2,7 @@
 img-size 800 *504
 */
 
-body, #container div {
+body, div {
     margin: 0;
     padding: 0;
 }
@@ -11,8 +11,10 @@ body, #container div {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: contain;
     width: 100%;
     height: 55%;
+    min-height: 190px;
     max-height: 502px;
 }
 
@@ -89,4 +91,3 @@ body, #container div {
     background-color: #9966CC;
     background-image: url('images/cat12.gif');
 }
-
