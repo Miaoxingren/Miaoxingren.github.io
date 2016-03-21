@@ -141,7 +141,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -151,7 +151,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -235,7 +235,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-20T15:10:05+08:00" content="2016-03-20">
               2016-03-20
             </time>
@@ -479,7 +479,7 @@ return price;
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-20T10:14:26+08:00" content="2016-03-20">
               2016-03-20
             </time>
@@ -629,7 +629,7 @@ return child;
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-16T11:27:08+08:00" content="2016-03-16">
               2016-03-16
             </time>
@@ -815,8 +815,39 @@ var bootscat = function(spec) {
 };
 var bootscat_instance = bootscat({val: 1});
 bootscat_instance.getName();    //1 pairs of boots
-</code></pre><h2 id="利用部件组装对象"><a href="#利用部件组装对象" class="headerlink" title="利用部件组装对象"></a>利用部件组装对象</h2><p>var eventuality = function(that) {<br>    var registry = {};<br>    that.fire = function(event) {<br>        var array, func, handler, i;<br>        var type = typeof event === ‘string’ ? event : event.type;<br>        if (registry.hasOwnProperty(type)) {<br>            array = registry[type];<br>            for (i = 0; i &lt; array.length; ++i) {<br>                handler = array[i];<br>                func = handler.method;<br>                if (typeof func === ‘string’) {<br>                    func = this[func];<br>                }<br>                func.apply(this, handler.parameters || [event]);<br>            }<br>        }<br>        return this;<br>    };<br>    that.on = function(type, method, parameters) {<br>        var handler = {<br>            method: method,<br>            parameters: parameters<br>        };<br>        if (registry.hasOwnProperty(type)) {<br>            registry[type].push(handler);<br>        } else {<br>            registry[type] = [handler];<br>        }<br>        return this;<br>    };<br>    return that;<br>};</p>
-<h2 id="类数组对象"><a href="#类数组对象" class="headerlink" title="类数组对象"></a>类数组对象</h2><p><code>var array = [1, &#39;miao&#39;, false];</code></p>
+</code></pre><h2 id="利用部件组装对象"><a href="#利用部件组装对象" class="headerlink" title="利用部件组装对象"></a>利用部件组装对象</h2><pre><code>var eventuality = function(that) {
+    var registry = {};
+    that.fire = function(event) {
+        var array, func, handler, i;
+        var type = typeof event === &apos;string&apos; ? event : event.type;
+        if (registry.hasOwnProperty(type)) {
+            array = registry[type];
+            for (i = 0; i &lt; array.length; ++i) {
+                handler = array[i];
+                func = handler.method;
+                if (typeof func === &apos;string&apos;) {
+                    func = this[func];
+                }
+                func.apply(this, handler.parameters || [event]);
+            }
+        }
+        return this;
+    };
+    that.on = function(type, method, parameters) {
+        var handler = {
+            method: method,
+            parameters: parameters
+        };
+        if (registry.hasOwnProperty(type)) {
+            registry[type].push(handler);
+        } else {
+            registry[type] = [handler];
+        }
+        return this;
+    };
+    return that;
+};
+</code></pre><h2 id="类数组对象"><a href="#类数组对象" class="headerlink" title="类数组对象"></a>类数组对象</h2><p><code>var array = [1, &#39;miao&#39;, false];</code></p>
 <ol>
 <li>依序各值对应属性名’0’, ‘1’, …</li>
 <li>array继承自Array.prototype</li>
@@ -880,7 +911,7 @@ bootscat_instance.getName();    //1 pairs of boots
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-08T09:21:29+08:00" content="2016-03-08">
               2016-03-08
             </time>
@@ -1041,7 +1072,7 @@ bootscat_instance.getName();    //1 pairs of boots
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-07T08:51:43+08:00" content="2016-03-07">
               2016-03-07
             </time>
@@ -1070,8 +1101,7 @@ bootscat_instance.getName();    //1 pairs of boots
       
         
           
-            <p>##　CSS中link和@import的区别</p>
-<ol>
+            <h2 id="CSS中link和-import的区别"><a href="#CSS中link和-import的区别" class="headerlink" title="CSS中link和@import的区别"></a>CSS中link和@import的区别</h2><ol>
 <li>link属于HTML标签，而@import是CSS提供的; </li>
 <li>页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;</li>
 <li>import只在IE5以上才能识别，而link是HTML标签，无兼容问题; </li>
@@ -1230,7 +1260,7 @@ bootscat_instance.getName();    //1 pairs of boots
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-06T10:41:58+08:00" content="2016-03-06">
               2016-03-06
             </time>
@@ -1348,7 +1378,7 @@ bootscat_instance.getName();    //1 pairs of boots
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-05T10:41:59+08:00" content="2016-03-05">
               2016-03-05
             </time>
@@ -1499,7 +1529,7 @@ alert(null == undefined);               //true
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-04T22:19:23+08:00" content="2016-03-04">
               2016-03-04
             </time>
@@ -1649,7 +1679,7 @@ alert(null == undefined);               //true
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
           
@@ -1659,7 +1689,7 @@ alert(null == undefined);               //true
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -1704,7 +1734,7 @@ alert(null == undefined);               //true
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

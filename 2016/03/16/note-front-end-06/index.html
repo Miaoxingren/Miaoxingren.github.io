@@ -67,7 +67,7 @@ Javascript中，在一个函数中定义的变量，当这个函数调用完后�
 <meta property="og:description" content="Javascript语言精粹Javascript与块级作用域块级作用域任何一对花括号（｛和｝）中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。
 Javascript并不支持块级作用域，它只支持函数作用域，而且在一个函数中的任何位置定义的变量在该函数中的任何地方都是可见的。
 Javascript中，在一个函数中定义的变量，当这个函数调用完后，变量会被销毁。">
-<meta property="og:updated_time" content="2016-03-16T13:15:59.116Z">
+<meta property="og:updated_time" content="2016-03-21T09:47:07.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端笔记06">
 <meta name="twitter:description" content="Javascript语言精粹Javascript与块级作用域块级作用域任何一对花括号（｛和｝）中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。
@@ -146,7 +146,7 @@ Javascript中，在一个函数中定义的变量，当这个函数调用完后�
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -156,7 +156,7 @@ Javascript中，在一个函数中定义的变量，当这个函数调用完后�
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -231,7 +231,7 @@ Javascript中，在一个函数中定义的变量，当这个函数调用完后�
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-16T11:27:08+08:00" content="2016-03-16">
               2016-03-16
             </time>
@@ -415,8 +415,39 @@ var bootscat = function(spec) {
 };
 var bootscat_instance = bootscat({val: 1});
 bootscat_instance.getName();    //1 pairs of boots
-</code></pre><h2 id="利用部件组装对象"><a href="#利用部件组装对象" class="headerlink" title="利用部件组装对象"></a>利用部件组装对象</h2><p>var eventuality = function(that) {<br>    var registry = {};<br>    that.fire = function(event) {<br>        var array, func, handler, i;<br>        var type = typeof event === ‘string’ ? event : event.type;<br>        if (registry.hasOwnProperty(type)) {<br>            array = registry[type];<br>            for (i = 0; i &lt; array.length; ++i) {<br>                handler = array[i];<br>                func = handler.method;<br>                if (typeof func === ‘string’) {<br>                    func = this[func];<br>                }<br>                func.apply(this, handler.parameters || [event]);<br>            }<br>        }<br>        return this;<br>    };<br>    that.on = function(type, method, parameters) {<br>        var handler = {<br>            method: method,<br>            parameters: parameters<br>        };<br>        if (registry.hasOwnProperty(type)) {<br>            registry[type].push(handler);<br>        } else {<br>            registry[type] = [handler];<br>        }<br>        return this;<br>    };<br>    return that;<br>};</p>
-<h2 id="类数组对象"><a href="#类数组对象" class="headerlink" title="类数组对象"></a>类数组对象</h2><p><code>var array = [1, &#39;miao&#39;, false];</code></p>
+</code></pre><h2 id="利用部件组装对象"><a href="#利用部件组装对象" class="headerlink" title="利用部件组装对象"></a>利用部件组装对象</h2><pre><code>var eventuality = function(that) {
+    var registry = {};
+    that.fire = function(event) {
+        var array, func, handler, i;
+        var type = typeof event === &apos;string&apos; ? event : event.type;
+        if (registry.hasOwnProperty(type)) {
+            array = registry[type];
+            for (i = 0; i &lt; array.length; ++i) {
+                handler = array[i];
+                func = handler.method;
+                if (typeof func === &apos;string&apos;) {
+                    func = this[func];
+                }
+                func.apply(this, handler.parameters || [event]);
+            }
+        }
+        return this;
+    };
+    that.on = function(type, method, parameters) {
+        var handler = {
+            method: method,
+            parameters: parameters
+        };
+        if (registry.hasOwnProperty(type)) {
+            registry[type].push(handler);
+        } else {
+            registry[type] = [handler];
+        }
+        return this;
+    };
+    return that;
+};
+</code></pre><h2 id="类数组对象"><a href="#类数组对象" class="headerlink" title="类数组对象"></a>类数组对象</h2><p><code>var array = [1, &#39;miao&#39;, false];</code></p>
 <ol>
 <li>依序各值对应属性名’0’, ‘1’, …</li>
 <li>array继承自Array.prototype</li>
@@ -502,10 +533,10 @@ bootscat_instance.getName();    //1 pairs of boots
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -522,7 +553,7 @@ bootscat_instance.getName();    //1 pairs of boots
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
           
@@ -532,7 +563,7 @@ bootscat_instance.getName();    //1 pairs of boots
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -594,7 +625,7 @@ bootscat_instance.getName();    //1 pairs of boots
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
