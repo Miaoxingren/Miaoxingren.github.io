@@ -81,7 +81,7 @@ function Child(name) {
 }
 
 默认模式 Child.prototype = new Paren">
-<meta property="og:updated_time" content="2016-03-20T07:09:16.072Z">
+<meta property="og:updated_time" content="2016-03-21T09:50:59.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端笔记07">
 <meta name="twitter:description" content="代码复用模式类式继承function Parent(name) {
@@ -345,8 +345,19 @@ return child;
 <li>深复制<code>JQuery: extend()</code></li>
 <li>深复制<code>YUI3: Y.clone()</code></li>
 </ol>
-<h2 id="混入"><a href="#混入" class="headerlink" title="混入"></a>混入</h2><p>从多个对象中复制出任意的成员并将这些成员组合成一个新的对象<br>    function mix() {<br>        var arg, prop, child = {};<br>        for (arg = 0; arg &lt; arguments.length; arg += 1) {<br>            for (prop in arguments[arg]) {<br>                if (arguments[i].hasOwnProperty(prop)) {<br>                    child[prop] = arguments[arg][prop];<br>                }<br>            }<br>            return child;<br>        }<br>    }</p>
-
+<h2 id="混入"><a href="#混入" class="headerlink" title="混入"></a>混入</h2><p>从多个对象中复制出任意的成员并将这些成员组合成一个新的对象</p>
+<pre><code>function mix() {
+    var arg, prop, child = {};
+    for (arg = 0; arg &lt; arguments.length; arg += 1) {
+        for (prop in arguments[arg]) {
+            if (arguments[i].hasOwnProperty(prop)) {
+                child[prop] = arguments[arg][prop];
+            }
+        }
+        return child;
+    }
+}
+</code></pre>
       
     </div>
 
