@@ -1,0 +1,833 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Web前端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="Javascript语言精粹Javascript与块级作用域块级作用域任何一对花括号（｛和｝）中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。
+Javascript并不支持块级作用域，它只支持函数作用域，而且在一个函数中的任何位置定义的变量在该函数中的任何地方都是可见的。
+Javascript中，在一个函数中定义的变量，当这个函数调用完后，变量会被销毁。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web前端笔记06">
+<meta property="og:url" content="http://yoursite.com/2016/03/16/note-front-end-06/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Javascript语言精粹Javascript与块级作用域块级作用域任何一对花括号（｛和｝）中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。
+Javascript并不支持块级作用域，它只支持函数作用域，而且在一个函数中的任何位置定义的变量在该函数中的任何地方都是可见的。
+Javascript中，在一个函数中定义的变量，当这个函数调用完后，变量会被销毁。">
+<meta property="og:updated_time" content="2016-03-16T13:15:59.116Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web前端笔记06">
+<meta name="twitter:description" content="Javascript语言精粹Javascript与块级作用域块级作用域任何一对花括号（｛和｝）中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。
+Javascript并不支持块级作用域，它只支持函数作用域，而且在一个函数中的任何位置定义的变量在该函数中的任何地方都是可见的。
+Javascript中，在一个函数中定义的变量，当这个函数调用完后，变量会被销毁。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Web前端笔记06 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-work">
+          <a href="/work/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            menu.work
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Web前端笔记06
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-16T11:27:08+08:00" content="2016-03-16">
+              2016-03-16
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Javascript语言精粹"><a href="#Javascript语言精粹" class="headerlink" title="Javascript语言精粹"></a>Javascript语言精粹</h1><h2 id="Javascript与块级作用域"><a href="#Javascript与块级作用域" class="headerlink" title="Javascript与块级作用域"></a>Javascript与块级作用域</h2><p><strong>块级作用域</strong><br>任何一对花括号（｛和｝）中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。</p>
+<p>Javascript并不支持块级作用域，它只支持函数作用域，而且在一个函数中的任何位置定义的变量在该函数中的任何地方都是可见的。</p>
+<p>Javascript中，在一个函数中定义的变量，当这个函数调用完后，变量会被销毁。<br>运行代码：输出3<br>    function test() {<br>        for(var i = 0; i &lt; 3; i++) {<br>        }<br>        alert(i);<br>    }<br>    test();</p>
+<p>运行代码：i is not defined<br>    function test() {<br>        (function() {<br>            for(var i = 0; i &lt; 4; i++){<br>            }<br>        })();<br>        alert(i);<br>    }<br>    test();</p>
+<p>因此，可以把要定义的所有内容放入到一个<br>(function (){<br>//内容<br>})();<br>之中，这时候，相当于给它们的外层添加了一个函数作用域</p>
+<h2 id="原型prototype"><a href="#原型prototype" class="headerlink" title="原型prototype"></a>原型prototype</h2><pre><code>var stooge = {
+    &apos;first-name&apos;:&apos;j&apos;,
+    &apos;last-name&apos;:&apos;h&apos;
+}
+
+if (typeof Object.create !== &apos;function&apos;) {
+    Object.create = function(obj) {
+        var F = function() {};
+        F.prototype = obj;
+        return new F();
+    }
+}
+var another_stooge = Object.create(stooge);
+console.log(another_stooge[&apos;first-name&apos;]);   //j
+another_stooge[&apos;first-name&apos;]=&apos;k&apos;;
+console.log(another_stooge[&apos;first-name&apos;]);   //k
+delete another_stooge[&apos;first-name&apos;];
+console.log(another_stooge[&apos;first-name&apos;]);   //j
+</code></pre><h2 id="Javascript调用模式"><a href="#Javascript调用模式" class="headerlink" title="Javascript调用模式"></a>Javascript调用模式</h2><ol>
+<li>方法调用模式<br>通过<code>.</code>、<code>[]</code>调用某一对象的方法，如obj.methodname()，this指向调用自己的对象，这里this指向obj。</li>
+<li>函数调用模式<br> var add = function(a, b) {<pre><code>return a + b;
+</code></pre> }<br> add(5, 5);    //10<br>this指向全局对象。</li>
+<li>构造器调用模式<br>在一个函数前单上new来调用，将会创建一个连接到该函数的prototype成员的新对象，同时this会绑定到新对象上。</li>
+<li>Apply调用模式<br> var add = function(a, b) {<pre><code>return a + b;
+</code></pre> }<br> var array = [5, 5];<br> add.apply(null, array);    //10</li>
+</ol>
+<h2 id="扩展类型的功能"><a href="#扩展类型的功能" class="headerlink" title="扩展类型的功能"></a>扩展类型的功能</h2><pre><code>Function.prototype.method = function(name, func) {
+    if (!this.prototype[name]) {
+        this.prototype[name] = func;
+    }
+    return this;
+}
+</code></pre><h2 id="遍历文档节点"><a href="#遍历文档节点" class="headerlink" title="遍历文档节点"></a>遍历文档节点</h2><pre><code>var traverse = function(node, func) {
+    func(node);
+    node = node.firstChild;
+    while(node) {
+        traverse(node, func);
+        node = node.nextSibling;
+    }
+}
+traverse(document.body, function(node) {
+    console.log(node.nodeName);
+    });
+</code></pre><h2 id="函数柯里化-局部套用"><a href="#函数柯里化-局部套用" class="headerlink" title="函数柯里化/局部套用"></a>函数柯里化/局部套用</h2><pre><code>Function.method(&apos;curry&apos;, function() {
+    var slice = Array.prototype.slice;
+    var args = slice.apply(arguments);
+    var that = this;
+    return function() {
+        return that.apply(null, args.concat(slice.apply(arguments)));
+    }
+});
+
+var add = function(a, b) {
+    return a + b;
+}
+var addplus = add.curry(1);
+console.log(addplus(6));    //7
+</code></pre><p>##记忆memoization<br>函数可以将先前操作的结果记录在某个对象里，从而避免无谓的重复运算。<br>    var fibonacci = function() {<br>        var memo = [0, 1];<br>        var fib = function(n) {<br>            var result = memo[n];<br>            if (typeof result !== ‘number’) {<br>                result = fib(n - 1) + fib(n -2);<br>                memo[n] = result;<br>            }<br>            return result;<br>        };<br>    }();</p>
+<pre><code>var memoizer = function(memo, formula) {
+    var recur = function(n) {
+        var result = memo[n];
+        if (typeof result !== &apos;number&apos;) {
+            result = formula(recur, n);
+            memo[n] = result;
+        }
+        return result;
+    };
+    return recur;
+};
+</code></pre><h2 id="构造器模式与继承-基于类的继承-伪类构造器"><a href="#构造器模式与继承-基于类的继承-伪类构造器" class="headerlink" title="构造器模式与继承/基于类的继承/伪类构造器"></a>构造器模式与继承/基于类的继承/伪类构造器</h2><pre><code>var Animal = function(name) {
+    this.name = name;
+}
+
+Animal.prototype.getName = function() {
+    return this.name;
+}
+
+Animal.prototype.setName = function(name) {
+    this.name = name;
+}
+
+var animal_instance = new Animal(&apos;animal&apos;);
+animal_instance.getName();  //animal
+
+var Cat = function(name) {
+    this.name = name;
+}
+
+Cat.prototype = new Animal();
+//扩展新原型对象
+Cat.prototype.say = function() {
+    return &apos;This is &apos; + this.name;
+}
+
+vat cat_instance = new Cat(&apos;cat&apos;);
+cat.say();  //This is cat
+</code></pre><h2 id="基于原型的继承"><a href="#基于原型的继承" class="headerlink" title="基于原型的继承"></a>基于原型的继承</h2><pre><code>if (typeof Object.create !== &apos;function&apos;) {
+    Object.create = function(obj) {
+        var F = function() {};
+        F.prototype = obj;
+        return new F();
+    }
+}
+var animal = {
+    name: &apos;animal&apos;,
+    getName: function() {
+        return this.name;
+    }
+}
+var cat = Object.create(animal);
+cat.name = &apos;cat&apos;;
+cat.getName = function() {
+    return &apos;cat &apos; + this.name;
+}
+</code></pre><h2 id="函数化模式"><a href="#函数化模式" class="headerlink" title="函数化模式"></a>函数化模式</h2><pre><code>var animal = function(spec) {
+    var taht = {};
+    that.getVal = function() {
+        return spec.val;
+    }
+    return that;
+}
+var animal_instance = animal({val: 1});
+animal_instance.getVal();   //1
+var cat = function(spec) {
+    spec.name = &apos;cat&apos;;
+    var that = animal(spec);
+    that.getName = function() {
+        return that.val + &apos; &apos; + spec.name;
+    }
+    return that;
+}
+var cat_instance = cat({val: 2});
+cat_instance.getName();    //cat
+
+Object.method(&apos;superior&apos;, function(name) {
+    var that = this;
+    var method = that[name];
+    return function() {
+        return method.apply(that, arguments);
+    };
+});
+
+var bootscat = function(spec) {
+    var that = cat(spec);
+    var superGetVal = that.superior(&apos;getVal&apos;);
+    that.getName = function() {
+        return superGetVal() + &apos; pairs of boots&apos;;
+    };
+    return that;
+};
+var bootscat_instance = bootscat({val: 1});
+bootscat_instance.getName();    //1 pairs of boots
+</code></pre><h2 id="利用部件组装对象"><a href="#利用部件组装对象" class="headerlink" title="利用部件组装对象"></a>利用部件组装对象</h2><p>var eventuality = function(that) {<br>    var registry = {};<br>    that.fire = function(event) {<br>        var array, func, handler, i;<br>        var type = typeof event === ‘string’ ? event : event.type;<br>        if (registry.hasOwnProperty(type)) {<br>            array = registry[type];<br>            for (i = 0; i &lt; array.length; ++i) {<br>                handler = array[i];<br>                func = handler.method;<br>                if (typeof func === ‘string’) {<br>                    func = this[func];<br>                }<br>                func.apply(this, handler.parameters || [event]);<br>            }<br>        }<br>        return this;<br>    };<br>    that.on = function(type, method, parameters) {<br>        var handler = {<br>            method: method,<br>            parameters: parameters<br>        };<br>        if (registry.hasOwnProperty(type)) {<br>            registry[type].push(handler);<br>        } else {<br>            registry[type] = [handler];<br>        }<br>        return this;<br>    };<br>    return that;<br>};</p>
+<h2 id="类数组对象"><a href="#类数组对象" class="headerlink" title="类数组对象"></a>类数组对象</h2><p><code>var array = [1, &#39;miao&#39;, false];</code></p>
+<ol>
+<li>依序各值对应属性名’0’, ‘1’, …</li>
+<li>array继承自Array.prototype</li>
+<li>元素类型不必相同</li>
+<li>下标大于当前length不会发生越界，length值自动增大以容乃新元素</li>
+<li>属性length的值为数组的最大整数属性么加1</li>
+<li>使用delete删除元素，属性值变为undefined<br> delete array[1];<br> console.log(array); //[1, undefined, fale];</li>
+<li>方法扩展，可以通过原型扩展和对象扩展</li>
+</ol>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web前端/" rel="tag">#Web前端</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/08/note-front-end-05/" rel="next" title="Web前端笔记05">
+                <i class="fa fa-chevron-left"></i> Web前端笔记05
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/20/note-front-end-07/" rel="prev" title="Web前端笔记07">
+                Web前端笔记07 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+          
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Javascript语言精粹"><span class="nav-number">1.</span> <span class="nav-text">Javascript语言精粹</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Javascript与块级作用域"><span class="nav-number">1.1.</span> <span class="nav-text">Javascript与块级作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型prototype"><span class="nav-number">1.2.</span> <span class="nav-text">原型prototype</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Javascript调用模式"><span class="nav-number">1.3.</span> <span class="nav-text">Javascript调用模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展类型的功能"><span class="nav-number">1.4.</span> <span class="nav-text">扩展类型的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历文档节点"><span class="nav-number">1.5.</span> <span class="nav-text">遍历文档节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数柯里化-局部套用"><span class="nav-number">1.6.</span> <span class="nav-text">函数柯里化/局部套用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造器模式与继承-基于类的继承-伪类构造器"><span class="nav-number">1.7.</span> <span class="nav-text">构造器模式与继承/基于类的继承/伪类构造器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于原型的继承"><span class="nav-number">1.8.</span> <span class="nav-text">基于原型的继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数化模式"><span class="nav-number">1.9.</span> <span class="nav-text">函数化模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用部件组装对象"><span class="nav-number">1.10.</span> <span class="nav-text">利用部件组装对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类数组对象"><span class="nav-number">1.11.</span> <span class="nav-text">类数组对象</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>

@@ -57,37 +57,40 @@
 
 
 
-<meta name="description" content="内存泄漏内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为 0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收。
-
-setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。
-闭包
-控制台日志
-循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）
-
-优雅降">
+<meta name="description" content="设计模式单例模式
+全局变量（不推荐）
+在构造函数的静态函数中缓存实例 function Game() {if (typeof Game.instance === &amp;apos;object&amp;apos;) {
+    return Game.instance;
+}
+this.name = &amp;apos;game&amp;apos;;
+Game.instance = this;
+//return this;
+ }">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web前端笔记05">
-<meta property="og:url" content="http://yoursite.com/2016/03/08/note-front-end-05/index.html">
+<meta property="og:title" content="Web前端笔记08">
+<meta property="og:url" content="http://yoursite.com/2016/03/20/note-front-end-08/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="内存泄漏内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为 0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收。
-
-setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。
-闭包
-控制台日志
-循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）
-
-优雅降">
-<meta property="og:updated_time" content="2016-03-08T03:36:20.830Z">
+<meta property="og:description" content="设计模式单例模式
+全局变量（不推荐）
+在构造函数的静态函数中缓存实例 function Game() {if (typeof Game.instance === &amp;apos;object&amp;apos;) {
+    return Game.instance;
+}
+this.name = &amp;apos;game&amp;apos;;
+Game.instance = this;
+//return this;
+ }">
+<meta property="og:updated_time" content="2016-03-20T09:27:26.878Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web前端笔记05">
-<meta name="twitter:description" content="内存泄漏内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为 0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收。
-
-setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。
-闭包
-控制台日志
-循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）
-
-优雅降">
+<meta name="twitter:title" content="Web前端笔记08">
+<meta name="twitter:description" content="设计模式单例模式
+全局变量（不推荐）
+在构造函数的静态函数中缓存实例 function Game() {if (typeof Game.instance === &amp;apos;object&amp;apos;) {
+    return Game.instance;
+}
+this.name = &amp;apos;game&amp;apos;;
+Game.instance = this;
+//return this;
+ }">
 
 
 
@@ -105,7 +108,7 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
   };
 </script>
 
-  <title> Web前端笔记05 | Hexo </title>
+  <title> Web前端笔记08 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -235,7 +238,7 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
             
             
               
-                Web前端笔记05
+                Web前端笔记08
               
             
           </h1>
@@ -247,8 +250,8 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-08T09:21:29+08:00" content="2016-03-08">
-              2016-03-08
+            <time itemprop="dateCreated" datetime="2016-03-20T15:10:05+08:00" content="2016-03-20">
+              2016-03-20
             </time>
           </span>
 
@@ -273,84 +276,167 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
       
 
       
-        <h2 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h2><p>内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。<br>垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为 0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收。</p>
-<ol>
-<li>setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。</li>
-<li>闭包</li>
-<li>控制台日志</li>
-<li>循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）</li>
+        <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><ol>
+<li>全局变量（不推荐）</li>
+<li>在构造函数的静态函数中缓存实例<br> function Game() {<pre><code>if (typeof Game.instance === &apos;object&apos;) {
+    return Game.instance;
+}
+this.name = &apos;game&apos;;
+Game.instance = this;
+//return this;
+</code></pre> }</li>
+<li>将实例包装在闭包中<br>3.1 初始定义和重定义时刻之间添加的属性不保留<br> function Game() {<pre><code>var instance = this;
+this.name = &apos;game&apos;;
+Game = function () {
+    return instance;
+};
+</code></pre> }<br>3.2 保留原型上添加的属性<br> function Game() {<pre><code>var instance;
+Game = function Game() {
+    return instance;
+};
+Game.prototype = this;
+instance = new Game();
+instance.constructor = Game;
+instance.name = &apos;game&apos;;
+return instance;
+</code></pre> }<br>3.3 将构造函数和实例包装在即时函数中<br> var Game;<br> (function () {<pre><code>var instance;
+Game = function Game() {
+    if (instance) {
+        return instance;
+    }
+    instance = this;
+    this.name = &apos;game&apos;;
+};
+</code></pre> }());</li>
 </ol>
-<h2 id="优雅降级和渐进增强"><a href="#优雅降级和渐进增强" class="headerlink" title="优雅降级和渐进增强"></a>优雅降级和渐进增强</h2><ol>
-<li><p>优雅降级：Web站点在所有新式浏览器中都能正常工作，如果用户使用的是老式浏览器，则代码会检查以确认它们是否能正常工作。由于IE独特的盒模型布局问题，针对不同版本的IE的hack实践过优雅降级了,为那些无法支持功能的浏览器增加候选方案，使之在旧式浏览器上以某种形式降级体验却不至于完全失效。</p>
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><pre><code>function CarMaker() {}
+CarMaker.prototype.drive = function () {
+    return &quot;Vroom, I have &quot; + this.doors + &quot; doors&quot;;
+};
+CarMaker.factory = function (type) {
+    var constr = type,
+    newcar;
+    if (typeof CarMaker[constr] !== &quot;function&quot;) {
+        throw {
+            name: &quot;Error&quot;,
+            message: constr + &quot; doesn&apos;t exist&quot;
+        };
+    }
+    if (typeof CarMaker[constr].prototype.drive !== &quot;function&quot;) {
+        CarMaker[constr].prototype = new CarMaker();
+    }
+    newcar = new CarMaker[constr]();
+    return newcar;
+};
+CarMaker.Compact = function () {
+ this.doors = 4;
+};
+CarMaker.Convertible = function () {
+ this.doors = 2;
+};
+CarMaker.SUV = function () {
+ this.doors = 24;
+};
+</code></pre><h2 id="迭代器模式"><a href="#迭代器模式" class="headerlink" title="迭代器模式"></a>迭代器模式</h2><pre><code>var agg = (function () {
+    var index = 0,
+        data = [1, 2, 3, 4, 5],
+        length = data.length;
+    return {
+        next: function () {
+            var element;
+            if (!this.hasNext()) {
+                return null;
+            }
+            element = data[index];
+            index = index + 2;
+            return element;
+        },
+        hasNext: function () {
+            return index &lt; length;
+        },
+        rewind: function () {
+            index = 0;
+        },
+        current: function () {
+            return data[index];
+        }
+    };
+}());
+</code></pre><h2 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h2><ol>
+<li><p>使用继承<br> function Sale(price) {</p>
+<pre><code>this.price = price || 100;
+</code></pre><p> }<br> Sale.prototype.getPrice = function () {</p>
+<pre><code>return this.price;
+</code></pre><p> };<br> Sale.decorators = {};<br> Sale.decorators.fedtax = {</p>
+<pre><code>getPrice: function () {
+    var price = this.uber.getPrice();
+    price += price * 5 / 100;
+    return price;
+}
+</code></pre><p> };<br> Sale.decorators.quebec = {</p>
+<pre><code>getPrice: function () {
+    var price = this.uber.getPrice();
+    price += price * 7.5 / 100;
+    return price;
+}
+</code></pre><p> };<br> Sale.decorators.money = {</p>
+<pre><code>getPrice: function () {
+    return &quot;$&quot; + this.uber.getPrice().toFixed(2);
+}
+</code></pre><p> };<br> Sale.decorators.cdn = {</p>
+<pre><code>getPrice: function () {
+    return &quot;CDN$ &quot; + this.uber.getPrice().toFixed(2);
+}
+</code></pre><p> };<br> Sale.prototype.decorate = function (decorator) {</p>
+<pre><code>var F = function () {},
+    overrides = this.constructor.decorators[decorator],
+    i, newobj;
+F.prototype = this;
+newobj = new F();
+newobj.uber = F.prototype;
+for (i in overrides) {
+    if (overrides.hasOwnProperty(i)) {
+        newobj[i] = overrides[i];
+    }
+}
+return newobj;
+</code></pre><p> };</p>
 </li>
-<li><p>渐进增强：从被所有浏览器支持的基本功能开始，逐步地添加那些只有新式浏览器才支持的功能,向页面增加无害于基础浏览器的额外样式和功能的。当浏览器支持时，它们会自动地呈现出来并发挥作用。</p>
+<li><p>不使用继承<br> function Sale(price) {</p>
+<pre><code>this.price = (price &gt; 0) || 100;
+this.decorators_list = [];
+</code></pre><p> }<br> Sale.decorators = {};<br> Sale.decorators.fedtax = {</p>
+<pre><code>getPrice: function (price) {
+    return price + price * 5 / 100;
+}
+</code></pre><p> };<br> Sale.decorators.quebec = {</p>
+<pre><code>getPrice: function (price) {
+    return price + price * 7.5 / 100;
+}
+</code></pre><p> };<br> Sale.decorators.money = {</p>
+<pre><code>getPrice: function (price) {
+    return &quot;$&quot; + price.toFixed(2);
+}
+</code></pre><p> };<br> Sale.prototype.decorate = function (decorator) {</p>
+<pre><code>this.decorators_list.push(decorator);
+</code></pre><p> };<br> Sale.prototype.getPrice = function () {</p>
+<pre><code>var price = this.price,
+    i,
+    max = this.decorators_list.length,
+    name;
+for (i = 0; i &lt; max; i += 1) {
+    name = this.decorators_list[i];
+    price = Sale.decorators[name].getPrice(price);
+}
+return price;
+</code></pre><p> };</p>
 </li>
 </ol>
-<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p>Node.js优点：</p>
-<ol>
-<li>采用事件驱动、异步编程，为网络服务而设计。其实Javascript的匿名函数和闭包特性非常适合事件驱动、异步编程。而且JavaScript也简单易学，很多前端设计人员可以很快上手做后端设计。</li>
-<li>Node.js非阻塞模式的IO处理给Node.js带来在相对低系统资源耗用下的高性能与出众的负载能力，非常适合用作依赖其它IO资源的中间层服务。</li>
-<li>Node.js轻量高效，可以认为是数据密集型分布式部署环境下的实时应用系统的完美解决方案。Node非常适合如下情况：在响应客户端之前，您预计可能有很高的流量，但所需的服务器端逻辑和处理不一定很多。</li>
-</ol>
-<p>Node.js缺点：</p>
-<ol>
-<li>可靠性低</li>
-<li>单进程，单线程，只支持单核CPU，不能充分的利用多核CPU服务器。一旦这个进程崩掉，那么整个web服务就崩掉了</li>
-</ol>
-<p><a href="https://www.zhihu.com/question/19653241/answer/15993549" target="_blank" rel="external">FengqiAsia</a></p>
-<p>Node.js适用场景：</p>
-<ol>
-<li>高并发</li>
-<li>聊天</li>
-<li>实时消息推送</li>
-</ol>
-<h2 id="应用性能优化"><a href="#应用性能优化" class="headerlink" title="应用性能优化"></a>应用性能优化</h2><ol>
-<li>减少http请求次数：CSS Sprites, JS、CSS 源码压缩、图片大小控制合适；网页 Gzip，CDN 托管，data 缓存 ，图片服务器</li>
-<li>前端模板 JS + 数据，减少由于HTML标签导致的带宽浪费，前端用变量保存 AJAX 请求结果，每次操作本地变量，不用请求，减少请求次数</li>
-<li>用 innerHTML 代替 DOM 操作，减少 DOM 操作次数，优化 javascript 性能</li>
-<li>当需要设置的样式很多时设置 className 而不是直接操作 style</li>
-<li>少用全局变量、缓存DOM节点查找的结果。减少 IO 读取操作</li>
-<li>避免使用 CSS Expression（css表达式)又称 Dynamic properties(动态属性)</li>
-<li>图片预加载，将样式表放在顶部，将脚本放在底部，加上时间戳</li>
-</ol>
-<h2 id="AJAX-过程"><a href="#AJAX-过程" class="headerlink" title="AJAX 过程"></a>AJAX 过程</h2><ol>
-<li>创建XMLHttpRequest对象,也就是创建一个异步调用对象</li>
-<li>创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息</li>
-<li>设置响应HTTP请求状态变化的函数</li>
-<li>发送HTTP请求</li>
-<li>获取异步调用返回的数据</li>
-<li>使用JavaScript和DOM实现局部刷新</li>
-</ol>
-<h2 id="前端安全问题"><a href="#前端安全问题" class="headerlink" title="前端安全问题"></a>前端安全问题</h2><ol>
-<li>XSS</li>
-<li>sql注入</li>
-<li>CSRF：是跨站请求伪造，很明显根据刚刚的解释，他的核心也就是请求伪造，通过伪造身份提交POST和GET请求来进行跨域的攻击</li>
-</ol>
-<p>完成CSRF需要两个步骤：</p>
-<ol>
-<li>登陆受信任的网站A，在本地生成 COOKIE</li>
-<li>在不登出A的情况下，或者本地 COOKIE 没有过期的情况下，访问危险网站B。</li>
-</ol>
-<h2 id="IE各版本和Chrome可并行下载资源数"><a href="#IE各版本和Chrome可并行下载资源数" class="headerlink" title="IE各版本和Chrome可并行下载资源数"></a>IE各版本和Chrome可并行下载资源数</h2><ol>
-<li>IE6 2 个并发</li>
-<li>iE7 升级之后的 6 个并发，之后版本也是 6 个</li>
-<li>Firefox，chrome 也是6个</li>
-</ol>
-<h2 id="Javascript同源策略"><a href="#Javascript同源策略" class="headerlink" title="Javascript同源策略"></a>Javascript同源策略</h2><p>概念：<br>同源策略是客户端脚本（尤其是Javascript）的重要的安全度量标准。它最早出自Netscape Navigator2.0，其目的是防止某个文档或脚本从多个不同源装载。<br>这里的同源策略指的是：协议，域名，端口相同，同源策略是一种安全协议，指一段脚本只能读取来自同一来源的窗口和文档的属性。</p>
-<p>为什么要有同源限制：<br>我们举例说明：比如一个黑客程序，他利用Iframe把真正的银行登录页面嵌到他的页面上，当你使用真实的用户名，密码登录时，他的页面就可以通过Javascript读取到你的表单中input中的内容，这样用户名，密码就轻松到手了。</p>
-<h2 id="GET和POST"><a href="#GET和POST" class="headerlink" title="GET和POST"></a>GET和POST</h2><p>GET：一般用于信息获取，使用URL传递参数，对所发送信息的数量也有限制，一般在2000个字符<br>POST：一般用于修改服务器上的资源，对所发送的信息没有限制</p>
-<p>GET方式需要使用 Request.QueryString 来取得变量的值<br>POST方式通过 Request.Form 来获取变量的值<br>也就是说 Get 是通过地址栏来传值，而 Post 是通过提交表单来传值。</p>
-<p>在以下情况中，请使用 POST 请求：</p>
-<ol>
-<li>无法使用缓存文件（更新服务器上的文件或数据库）</li>
-<li>向服务器发送大量数据（POST 没有数据量限制）</li>
-<li>发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠</li>
-</ol>
-<h2 id="Javascript-eval方法"><a href="#Javascript-eval方法" class="headerlink" title="Javascript eval方法"></a>Javascript eval方法</h2><ol>
-<li>它的功能是把对应的字符串解析成JS代码并运行</li>
-<li>应该避免使用eval，不安全，非常耗性能（2次，一次解析成js语句，一次执行）</li>
-</ol>
-<h2 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h2><p>100 Continue  继续，一般在发送post请求时，已发送了http header之后服务端将返回此信息，表示确认，之后发送具体参数信息<br>200 OK   正常返回信息<br>201 Created  请求成功并且服务器创建了新的资源<br>202 Accepted  服务器已接受请求，但尚未处理<br>301 Moved Permanently  请求的网页已永久移动到新位置<br>302 Found  临时性重定向<br>303 See Other  临时性重定向，且总是使用 GET 请求新的 URI<br>304 Not Modified  自从上次请求后，请求的网页未修改过<br>400 Bad Request  服务器无法理解请求的格式，客户端不应当尝试再次使用相同的内容发起请求<br>401 Unauthorized  请求未授权<br>403 Forbidden  禁止访问<br>404 Not Found  找不到如何与 URI 相匹配的资源<br>500 Internal Server Error  最常见的服务器端错误<br>503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）</p>
+<h2 id="策咯模式"><a href="#策咯模式" class="headerlink" title="策咯模式"></a>策咯模式</h2><p>允许在运行时选择算法。如表单验证。</p>
+<h2 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h2><p>为对象提供一个可选择的接口</p>
+<h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><p>介于对象的客户端和对象本身之间，对该对象的访问进行保护。</p>
+<h2 id="中介者模式"><a href="#中介者模式" class="headerlink" title="中介者模式"></a>中介者模式</h2><p>独立对象之间并不直接通信，而是通过mediator对象通信。</p>
+<h2 id="观察者模式-自定义事件-订阅发布模式"><a href="#观察者模式-自定义事件-订阅发布模式" class="headerlink" title="观察者模式/自定义事件/订阅发布模式"></a>观察者模式/自定义事件/订阅发布模式</h2><p>一个对象订阅另一个对象的特定活动并在改编后获得通知。</p>
 
       
     </div>
@@ -368,17 +454,13 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/07/note-front-end-04/" rel="next" title="Web前端笔记04">
-                <i class="fa fa-chevron-left"></i> Web前端笔记04
+              <a href="/2016/03/20/note-front-end-07/" rel="next" title="Web前端笔记07">
+                <i class="fa fa-chevron-left"></i> Web前端笔记07
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/16/note-front-end-06/" rel="prev" title="Web前端笔记06">
-                Web前端笔记06 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -489,7 +571,7 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存泄漏"><span class="nav-number">1.</span> <span class="nav-text">内存泄漏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优雅降级和渐进增强"><span class="nav-number">2.</span> <span class="nav-text">优雅降级和渐进增强</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js"><span class="nav-number">3.</span> <span class="nav-text">Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用性能优化"><span class="nav-number">4.</span> <span class="nav-text">应用性能优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX-过程"><span class="nav-number">5.</span> <span class="nav-text">AJAX 过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端安全问题"><span class="nav-number">6.</span> <span class="nav-text">前端安全问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE各版本和Chrome可并行下载资源数"><span class="nav-number">7.</span> <span class="nav-text">IE各版本和Chrome可并行下载资源数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Javascript同源策略"><span class="nav-number">8.</span> <span class="nav-text">Javascript同源策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GET和POST"><span class="nav-number">9.</span> <span class="nav-text">GET和POST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Javascript-eval方法"><span class="nav-number">10.</span> <span class="nav-text">Javascript eval方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP状态码"><span class="nav-number">11.</span> <span class="nav-text">HTTP状态码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设计模式"><span class="nav-number">1.</span> <span class="nav-text">设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式"><span class="nav-number">1.1.</span> <span class="nav-text">单例模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工厂模式"><span class="nav-number">1.2.</span> <span class="nav-text">工厂模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器模式"><span class="nav-number">1.3.</span> <span class="nav-text">迭代器模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰者模式"><span class="nav-number">1.4.</span> <span class="nav-text">装饰者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#策咯模式"><span class="nav-number">1.5.</span> <span class="nav-text">策咯模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外观模式"><span class="nav-number">1.6.</span> <span class="nav-text">外观模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代理模式"><span class="nav-number">1.7.</span> <span class="nav-text">代理模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中介者模式"><span class="nav-number">1.8.</span> <span class="nav-text">中介者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#观察者模式-自定义事件-订阅发布模式"><span class="nav-number">1.9.</span> <span class="nav-text">观察者模式/自定义事件/订阅发布模式</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
