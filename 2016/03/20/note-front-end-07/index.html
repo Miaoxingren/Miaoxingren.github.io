@@ -66,7 +66,10 @@ Parent.prototype.say = function () {
 function Child(name) {
 }
 
-默认模式 Child.prototype = new Paren">
+默认模式
+
+示例：
+Child.prototype = new">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web前端笔记07">
 <meta property="og:url" content="http://yoursite.com/2016/03/20/note-front-end-07/index.html">
@@ -80,8 +83,11 @@ Parent.prototype.say = function () {
 function Child(name) {
 }
 
-默认模式 Child.prototype = new Paren">
-<meta property="og:updated_time" content="2016-03-21T09:50:59.604Z">
+默认模式
+
+示例：
+Child.prototype = new">
+<meta property="og:updated_time" content="2016-04-18T02:49:54.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端笔记07">
 <meta name="twitter:description" content="代码复用模式类式继承function Parent(name) {
@@ -93,7 +99,10 @@ Parent.prototype.say = function () {
 function Child(name) {
 }
 
-默认模式 Child.prototype = new Paren">
+默认模式
+
+示例：
+Child.prototype = new">
 
 
 
@@ -177,7 +186,7 @@ function Child(name) {
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Arquivos
           </a>
         </li>
       
@@ -252,7 +261,7 @@ function Child(name) {
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Postado em</span>
             <time itemprop="dateCreated" datetime="2016-03-20T10:14:26+08:00" content="2016-03-20">
               2016-03-20
             </time>
@@ -288,59 +297,131 @@ Parent.prototype.say = function () {
 function Child(name) {
 }
 </code></pre><ol>
-<li>默认模式<br> Child.prototype = new Parent();</li>
-<li>借用构造函数<br> function Child(name) {<pre><code>Parent.apply(this, arguments);
-</code></pre> }</li>
-<li>借用和设置原型<br> function Child(name) {<pre><code>Parent.apply(this, arguments);
-</code></pre> }<br> Child.prototype = new Parent();</li>
-<li>共享原型<br> Child.prototype = Parent.prototype;</li>
-<li>临时构造函数<br> var Func = function () {};<br> Func.prototype = Parent.prototype;<br> Child.prototype = new Func();<br> /**<ul>
-<li>存储超类</li>
-<li>Child.uber = Parent.prototype;</li>
-<li>重置构造函数</li>
-<li>Child.prototype.constructor = Child;<br>*/</li>
-</ul>
-</li>
-<li>代理构造函数<br> var Func = function () {};<br> Func.prototype = Parent.prototype;<br> Child.prototype = new Func();<br> Child.uber = Parent.prototype;<br> Child.prototype.constructor = Child;</li>
+<li>默认模式</li>
 </ol>
-<h2 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h2><ol>
-<li>子对象具有父对象的全部功能<br> var parent = {<pre><code>name: &apos;parent&apos;
-</code></pre> };<br> function Func() {};<br> Func.prototype = parent;<br> var child = new Func();</li>
-<li>继承”自身”属性和构造函数的原型属性<br> function Parent(name) {<pre><code>this.name = name || &apos;parent&apos;;
-</code></pre> }<br> Parent.prototype.getName = function () {<pre><code>return this.name;
-</code></pre> };<br> function Func() {};<br> Func.prototype = new Parent();<br> var child = new Func();</li>
-<li>仅继承现有构造函数的原型对象<br> function Parent(name) {<pre><code>this.name = name || &apos;parent&apos;;
-</code></pre> }<br> Parent.prototype.getName = function () {<pre><code>return this.name;
-</code></pre> };<br> function Func() {};<br> Func.prototype = Parent.prototype;<br> var child = new Func();</li>
-<li>ECMAScript5中使用Object.create<br> child = Object.create(parent, {<pre><code>age: {value：2}
-</code></pre> });</li>
+<p>示例：</p>
+<pre><code>Child.prototype = new Parent();
+</code></pre><ol>
+<li>借用构造函数</li>
 </ol>
-<h2 id="通过复制属性实现继承"><a href="#通过复制属性实现继承" class="headerlink" title="通过复制属性实现继承"></a>通过复制属性实现继承</h2><ol>
-<li>浅复制<br> function extend(parent, child) {<pre><code>var i;
-child = child || {};
-for (i in parent) {
-    if (parent.hasOwnProperty(i)) {
-        child[i] = parent[i];
-    }
+<p>示例：</p>
+<pre><code>function Child(name) {
+    Parent.apply(this, arguments);
 }
-return child;
-</code></pre> }</li>
-<li>深复制<br> function extendDeep(parent, child) {<pre><code>var i,
-    toStr = Object.prototype.toString,
-    astr = &apos;[object Array]&apos;;
-child = child || {};
-for (i in parent) {
-    if (parent.hasOwnProperty(i)) {
-        if (typeof parent[i] === &apos;object&apos;) {
-            child[i] = (toStr.call(parent[i]) === astr) ? [] : {};
-            extendDeep(parent[i], child[i]);
-        } else {
+</code></pre><ol>
+<li>借用和设置原型</li>
+</ol>
+<p>示例：</p>
+<pre><code>function Child(name) {
+    Parent.apply(this, arguments);
+}
+Child.prototype = new Parent();
+</code></pre><ol>
+<li>共享原型</li>
+</ol>
+<p>示例：</p>
+<pre><code>Child.prototype = Parent.prototype;
+</code></pre><ol>
+<li>临时构造函数</li>
+</ol>
+<p>示例：</p>
+<pre><code>var Func = function () {};
+Func.prototype = Parent.prototype;
+Child.prototype = new Func();
+/**
+* 存储超类
+* Child.uber = Parent.prototype;
+* 重置构造函数
+* Child.prototype.constructor = Child;
+*/
+</code></pre><ol>
+<li>代理构造函数</li>
+</ol>
+<p>示例：</p>
+<pre><code>var Func = function () {};
+Func.prototype = Parent.prototype;
+Child.prototype = new Func();
+Child.uber = Parent.prototype;
+Child.prototype.constructor = Child;
+</code></pre><h2 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h2><ol>
+<li>子对象具有父对象的全部功能</li>
+</ol>
+<p>示例：</p>
+<pre><code>var parent = {
+    name: &apos;parent&apos;
+};
+function Func() {};
+Func.prototype = parent;
+var child = new Func();
+</code></pre><ol>
+<li>继承”自身”属性和构造函数的原型属性</li>
+</ol>
+<p>示例：</p>
+<pre><code>function Parent(name) {
+    this.name = name || &apos;parent&apos;;
+}
+Parent.prototype.getName = function () {
+    return this.name;
+};
+function Func() {};
+Func.prototype = new Parent();
+var child = new Func();
+</code></pre><ol>
+<li>仅继承现有构造函数的原型对象</li>
+</ol>
+<p>示例：</p>
+<pre><code>function Parent(name) {
+    this.name = name || &apos;parent&apos;;
+}
+Parent.prototype.getName = function () {
+    return this.name;
+};
+function Func() {};
+Func.prototype = Parent.prototype;
+var child = new Func();
+</code></pre><ol>
+<li>ECMAScript5中使用Object.create</li>
+</ol>
+<p>示例：</p>
+<pre><code>child = Object.create(parent, {
+    age: {value：2}
+});
+</code></pre><h2 id="通过复制属性实现继承"><a href="#通过复制属性实现继承" class="headerlink" title="通过复制属性实现继承"></a>通过复制属性实现继承</h2><ol>
+<li>浅复制</li>
+</ol>
+<p>示例：</p>
+<pre><code>function extend(parent, child) {
+    var i;
+    child = child || {};
+    for (i in parent) {
+        if (parent.hasOwnProperty(i)) {
             child[i] = parent[i];
         }
     }
+    return child;
 }
-return child;
-</code></pre> }</li>
+</code></pre><ol>
+<li>深复制</li>
+</ol>
+<p>示例：</p>
+<pre><code>function extendDeep(parent, child) {
+    var i,
+        toStr = Object.prototype.toString,
+        astr = &apos;[object Array]&apos;;
+    child = child || {};
+    for (i in parent) {
+        if (parent.hasOwnProperty(i)) {
+            if (typeof parent[i] === &apos;object&apos;) {
+                child[i] = (toStr.call(parent[i]) === astr) ? [] : {};
+                extendDeep(parent[i], child[i]);
+            } else {
+                child[i] = parent[i];
+            }
+        }
+    }
+    return child;
+}
+</code></pre><ol>
 <li>浅复制<code>Firebug: extend()</code></li>
 <li>深复制<code>JQuery: extend()</code></li>
 <li>深复制<code>YUI3: Y.clone()</code></li>
@@ -433,10 +514,10 @@ return child;
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Tabela de Conteúdo
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Visão Geral
           </li>
         </ul>
       
@@ -453,7 +534,7 @@ return child;
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">publicações</span>
             </a>
           </div>
           
@@ -525,11 +606,11 @@ return child;
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Desenvolvido com amor com <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Theme -
+  Tema -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>

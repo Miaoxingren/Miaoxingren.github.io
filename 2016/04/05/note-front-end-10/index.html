@@ -75,7 +75,8 @@ JSONP该协议的一个要点就是允许用户传递一个callback参数给服�
 要有左外边距margin-left解决这个BUG，只需在相应的块状元素的CSS属性中加入display:inline。
 
 JSONP该协议的一个要点就是允许用户传递一个callback参数给服务端，然后服务端返回数据时会将这个callback参数作为函数名来包裹住JSON数据，这样客户端就可以随意定制自己">
-<meta property="og:updated_time" content="2016-04-05T16:10:36.664Z">
+<meta property="og:image" content="http://my.csdn.net/uploads/201208/25/1345859690_4578.jpg">
+<meta property="og:updated_time" content="2016-04-18T02:44:46.444Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端笔记10">
 <meta name="twitter:description" content="IE6的双边距BUG当满足下面这三个条件时，就会出现这个BUG：
@@ -85,6 +86,7 @@ JSONP该协议的一个要点就是允许用户传递一个callback参数给服�
 要有左外边距margin-left解决这个BUG，只需在相应的块状元素的CSS属性中加入display:inline。
 
 JSONP该协议的一个要点就是允许用户传递一个callback参数给服务端，然后服务端返回数据时会将这个callback参数作为函数名来包裹住JSON数据，这样客户端就可以随意定制自己">
+<meta name="twitter:image" content="http://my.csdn.net/uploads/201208/25/1345859690_4578.jpg">
 
 
 
@@ -168,7 +170,7 @@ JSONP该协议的一个要点就是允许用户传递一个callback参数给服�
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Arquivos
           </a>
         </li>
       
@@ -243,7 +245,7 @@ JSONP该协议的一个要点就是允许用户传递一个callback参数给服�
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Postado em</span>
             <time itemprop="dateCreated" datetime="2016-04-05T21:57:34+08:00" content="2016-04-05">
               2016-04-05
             </time>
@@ -282,6 +284,281 @@ JSONP该协议的一个要点就是允许用户传递一个callback参数给服�
 <li>但AJAX和JSONP其实本质上是不同的东西。AJAX的核心是通过XmlHttpRequest获取非本页内容，而JSONP的核心则是动态添加<code>&lt;script&gt;</code>标签来调用服务器提供的js脚本。</li>
 <li>所以说，其实AJAX与JSONP的区别不在于是否跨域，AJAX通过服务端代理一样可以实现跨域，JSONP本身也不排斥同域的数据的获取。</li>
 <li>还有就是，JSONP是一种方式或者说非强制性协议，如同AJAX一样，它也不一定非要用JSON格式来传递数据，如果你愿意，字符串都行，只不过这样不利于用JSONP提供公开服务。</li>
+</ol>
+<h2 id="元素嵌套"><a href="#元素嵌套" class="headerlink" title="元素嵌套"></a>元素嵌套</h2><ol>
+<li>块元素可以包含内联元素或某些块元素</li>
+<li>内联元素却不能包含块元素，它只能包含其他的内联元素</li>
+<li>DTD中规定了块级元素是不能放在`<p>里面的</p></li>
+</ol>
+<p><code>&lt;html&gt;</code>是在最外层，<code>&lt;html&gt;</code>下一级里面只会有<code>&lt;head&gt;</code>、<code>&lt;body&gt;</code>、<code>&lt;frameset&gt;</code>、<code>&lt;noframes&gt;</code>，而可视的元素只会出现在<code>&lt;body&gt;</code>里，所以把<code>&lt;body&gt;</code>划在第一个级里面，接着，把不可以自由嵌套的元素划在第三个级，其他的就归进第二个级。<br>所谓的不可自由嵌套的元素就是里面只能放内联元素的，它们包括有：<br>标题标记的<code>&lt;h1&gt;</code>、<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code>、<code>&lt;h4&gt;</code>、<code>&lt;h5&gt;</code>、<code>&lt;h6&gt;</code>、<code>&lt;caption&gt;</code>；<br>段落标记的<code>&lt;p&gt;</code>；<br>分隔线<code>&lt;hr&gt;</code>和一个特别的元素<code>&lt;dt&gt;</code>(它只存在于列表元素<code>&lt;dl&gt;</code>的子一级)。<br>第二级的元素可以自由嵌套，可以把它们看成是一些容器（或者说是盒子）， 这些容器的大小可以自由变化，例如可以把<code>&lt;ul&gt;</code>嵌在<code>&lt;div&gt;</code>里面，也可以把<code>&lt;div&gt;</code>嵌在<code>&lt;li&gt;</code>里面。<br>在HTML里有几个元素是比较特别的：<br><code>&lt;ul&gt;</code>、<code>&lt;ol&gt;</code>、<code>&lt;dl&gt;</code>、<code>&lt;table&gt;</code>，它们的子一层必须是指定元素，<br><code>&lt;ul&gt;</code>、<code>&lt;ol&gt;</code>的子一级必须是<code>&lt;li&gt;</code>；<br><code>&lt;dl&gt;</code>的子一级必须是<code>&lt;dt&gt;</code>或者<code>&lt;dd&gt;</code>；<br><code>&lt;table&gt;</code>的子一层必须是<code>&lt;caption&gt;</code> 或<code>&lt;thead&gt;</code>、<code>&lt;tfoot&gt;</code>、<code>&lt;tbody&gt;</code>等，而再子一层必须是<code>&lt;tr&gt;</code> （<code>&lt;tr&gt;</code>只存在于<code>&lt;thead&gt;</code>、<code>&lt;tfoot&gt;</code>、<code>&lt;tbody&gt;</code>中），之后才是可放内容的<code>&lt;td&gt;</code>或者<code>&lt;th&gt;</code>。 </p>
+<h4 id="X-HTML-Strict下嵌套规则的图"><a href="#X-HTML-Strict下嵌套规则的图" class="headerlink" title="(X)HTML Strict下嵌套规则的图"></a>(X)HTML Strict下嵌套规则的图</h4><p><img src="http://my.csdn.net/uploads/201208/25/1345859690_4578.jpg" alt="(X)HTML Strict下嵌套规则的图"></p>
+<h2 id="HTML5-Drag-实现"><a href="#HTML5-Drag-实现" class="headerlink" title="HTML5 Drag 实现"></a>HTML5 Drag 实现</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Drag&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        #drag {
+            width: 50px;
+            height: 50px;
+            background-color: #EEE;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;drag&quot;&gt;&lt;/div&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        window.onload = function () {
+            function Drag(obj) {
+                this.obj = obj;
+            }
+            Drag.prototype = {
+                constructor: Drag,
+                getMosuePos: function(e) {
+                    e = e || window.event;
+                    var eX = e.pageX || e.clientX + document.body.scrollLeft - document.body.clientLeft,
+                        eY = e.pageY || e.clientY + document.body.scrollTop - document.body.clientTop;
+                    return {
+                        x: eX,
+                        y: eY
+                    }
+                },
+                getInitPos: function (e) {
+                    e = e || window.event;
+                    var eX = e.pageX || e.clientX + document.body.scrollLeft - document.body.clientLeft,
+                        eY = e.pageY || e.clientY + document.body.scrollTop - document.body.clientTop;
+                    return {
+                        x: eX - this.obj.offsetLeft,
+                        y: eY - this.obj.offsetTop
+                    }
+                },
+                initDrag: function () {
+                    var that = this;
+                    this.obj.onmousedown = function (e) {
+                        var curPos = that.getInitPos(e);
+                        document.onmousemove = function (e) {
+                            var mousePos = that.getMosuePos(e);
+                            that.obj.style.marginLeft = mousePos.x - curPos.x + &quot;px&quot;;
+                            that.obj.style.marginTop = mousePos.y - curPos.y + &quot;px&quot;;
+                        };
+                        document.onmouseup = function (e) {
+                            document.onmousemove = null;
+                            document.onmouseup = null;
+                        }
+                    };
+
+                }
+            };
+            var drag = document.getElementById(&quot;drag&quot;),
+                dragable = new Drag(drag);
+            dragable.initDrag();
+        };
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="XMLHttpRequest对象"><a href="#XMLHttpRequest对象" class="headerlink" title="XMLHttpRequest对象"></a>XMLHttpRequest对象</h2><ol>
+<li>老版本的<code>Internet Explorer</code>(<code>IE5</code>和<code>IE6</code>)使用<code>ActiveXObject</code>。</li>
+<li>所有现代浏览器（<code>IE7+</code>、<code>Firefox</code>、<code>Chrome</code>、<code>Safari</code>以及<code>Opera</code>）均内建<code>XMLHttpRequest</code>对象。</li>
+</ol>
+<p>兼容IE：</p>
+<pre><code>var xmlhttp;
+if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp = new XMLHttpRequest();
+} else {
+    // code for IE6, IE5
+    xmlhttp = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+}
+xmlhttp.onreadystatechange = function () {
+    if (xmlhttp.readyState == 4 &amp;&amp; xmlhttp.status == 200) {
+        document.getElementById(&quot;myDiv&quot;).innerHTML = xmlhttp.responseText;
+    }
+}
+xmlhttp.open(&quot;GET&quot;, queryString, true);
+xmlhttp.send();
+</code></pre><h2 id="CSS-单位"><a href="#CSS-单位" class="headerlink" title="CSS 单位"></a>CSS 单位</h2><table>
+<thead>
+<tr>
+<th>单位</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%</td>
+<td style="text-align:center">百分比</td>
+</tr>
+<tr>
+<td>in</td>
+<td style="text-align:center">英寸</td>
+</tr>
+<tr>
+<td>cm</td>
+<td style="text-align:center">厘米</td>
+</tr>
+<tr>
+<td>mm</td>
+<td style="text-align:center">毫米</td>
+</tr>
+<tr>
+<td>em</td>
+<td style="text-align:center">1em 等于当前的字体尺寸。2em 等于当前字体尺寸的两倍。相对于父元素</td>
+</tr>
+<tr>
+<td>rem</td>
+<td style="text-align:center">r指root。相对于根元素</td>
+</tr>
+<tr>
+<td>ex</td>
+<td style="text-align:center">一个 ex 是一个字体的 x-height。 (x-height 通常是字体尺寸的一半。)</td>
+</tr>
+<tr>
+<td>pt</td>
+<td style="text-align:center">磅 (1 pt 等于 1/72 英寸)</td>
+</tr>
+<tr>
+<td>pc</td>
+<td style="text-align:center">12 点活字 (1 pc 等于 12 点)</td>
+</tr>
+<tr>
+<td>px</td>
+<td style="text-align:center">像素 (计算机屏幕上的一个点)</td>
+</tr>
+<tr>
+<td>vw</td>
+<td style="text-align:center">Viewport宽度， 1vw 等于viewport宽度的1%</td>
+</tr>
+<tr>
+<td>vh</td>
+<td style="text-align:center">Viewport高度， 1vh 等于viewport高的的1%</td>
+</tr>
+<tr>
+<td>vmin</td>
+<td style="text-align:center">取Viewport宽度和Viewport高度中比较小的值</td>
+</tr>
+<tr>
+<td>vmax</td>
+<td style="text-align:center">取Viewport宽度和Viewport高度中比较大的值</td>
+</tr>
+</tbody>
+</table>
+<h2 id="循环中变量赋值问题"><a href="#循环中变量赋值问题" class="headerlink" title="循环中变量赋值问题"></a>循环中变量赋值问题</h2><p>变量key随循环结束最终变为z：</p>
+<pre><code>function A(params) {
+    params = params || {};
+    for (var key in params) {
+        Object.defineProperty(this, key, {
+            get: function() {
+                return params[key];
+            },
+            enumerable: false
+        });
+    } 
+}
+var a = new A({
+    &apos;x&apos;: &apos;x&apos;,
+    &apos;y&apos;: &apos;y&apos;,
+    &apos;z&apos;: &apos;z&apos;
+});
+console.log(a.x); //&apos;z&apos;
+console.log(a.y); //&apos;z&apos;
+console.log(a.z); //&apos;z&apos;
+</code></pre><p>使用函数保存变量的值：</p>
+<pre><code>function A(params) {
+    params = params || {};
+    function generateVal(obj, key) {
+        Object.defineProperty(obj, key, {
+            get: function() {
+                return params[key];
+            },
+            enumerable: false
+        });
+    }
+    for (var key in params) {
+        generateVal(this, key);
+    } 
+}
+var a = new A({
+    &apos;x&apos;: &apos;x&apos;,
+    &apos;y&apos;: &apos;y&apos;,
+    &apos;z&apos;: &apos;z&apos;
+});
+</code></pre><h2 id="嵌套数组拆分"><a href="#嵌套数组拆分" class="headerlink" title="嵌套数组拆分"></a>嵌套数组拆分</h2><pre><code>function flatten(array) {
+    var i,
+        res,
+        length;
+    res = (array + &apos;&apos;).split(&apos;,&apos;);
+    for (i = 0, length = res.length; i &lt; length; i++) {
+        res[i] = res[i] - &quot;0&quot;;
+    }
+    return res;
+}
+flatten([1, [2, 3]]); //[1, 2, 3]
+</code></pre><h2 id="iframe自定义高度"><a href="#iframe自定义高度" class="headerlink" title="iframe自定义高度"></a>iframe自定义高度</h2><pre><code>// document.domain = &quot;caibaojian.com&quot;;
+function setIframeHeight(iframe) {
+    if (iframe) {
+        var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+        if (iframeWin.document.body) {
+            iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+        }
+    }
+};
+window.onload = function () {
+    setIframeHeight(document.getElementById(&apos;external-frame&apos;));
+};
+</code></pre><h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><pre><code>function formater(str) {
+    var step = 3,
+        tmp = str + &apos;&apos;,
+        length = tmp.length,
+        res = [];
+    while (length &gt; 0) {
+        if (length &lt; 3) {
+            step = length;
+        }
+        res.unshift(tmp.substring(length - step, length));
+        tmp = tmp.substring(0, length - step);
+        length = tmp.length;
+    }
+    return res.join(&quot;,&quot;);
+}
+
+formater(9999999); // &quot;9,999,999&quot;
+</code></pre><h2 id="获取查询参数"><a href="#获取查询参数" class="headerlink" title="获取查询参数"></a>获取查询参数</h2><pre><code>function URL(url) {
+    this.url = url;
+}
+URL.prototype.parse = function () {
+    var i,
+        length,
+        pair,
+        queries = {},
+        queryArray = this.url.split(&apos;?&apos;)[1].split(&apos;&amp;&apos;);
+    function addParam(key, val) {
+        queries[key] = val;
+    }
+    for (i = 0, length = queryArray.length; i &lt; length; ++i) {
+        pair = queryArray[i].split(&apos;=&apos;);
+        addParam(pair[0], pair[1]);
+    }
+    return queries;
+}
+var url = new URL( &quot;http://witmax.cn/index.php?key0=0&amp;key1=1&amp;key2=2&quot;)
+url.parse(); //{key0: &quot;0&quot;, key1: &quot;1&quot;, key2: &quot;2&quot;}
+</code></pre><h2 id="内联的alert"><a href="#内联的alert" class="headerlink" title="内联的alert"></a>内联的alert</h2><ol>
+<li><code>IE</code>下<code>&lt;s style=&quot;top:expression(alert(1))&quot;&gt;&lt;/s&gt;</code></li>
+<li><code>&lt;div onclick=&quot;alert(1)&quot;&gt;&lt;/div&gt;</code></li>
+</ol>
+<h2 id="JavaScript全局函数"><a href="#JavaScript全局函数" class="headerlink" title="JavaScript全局函数"></a>JavaScript全局函数</h2><ol>
+<li>escape</li>
+<li>eval</li>
+<li>isNaN</li>
+<li>isFinite</li>
+<li>parseFloat</li>
+<li>parseInt</li>
+<li>unescape</li>
+</ol>
+<h2 id="addEventListener和attachEvent的this指向不同"><a href="#addEventListener和attachEvent的this指向不同" class="headerlink" title="addEventListener和attachEvent的this指向不同"></a>addEventListener和attachEvent的this指向不同</h2><ol>
+<li>标准浏览器中可以使用<code>addEventListener</code>函数来给DOM元素绑定事件，而<code>IE6</code>、<code>IE7</code>、<code>IE8</code>不支持<code>addEventListener</code>，只能使用<code>attachEvent</code>方法。</li>
+<li>标准浏览器中可以使用<code>removeEventListener</code>函数来给DOM元素移除绑定的事件，而<code>IE6</code>、<code>IE7</code>、<code>IE8</code>不支持<code>removeEventListener</code>，只能使用<code>detachEvent</code>方法。</li>
+<li><code>IE6</code>、<code>IE7</code>、<code>IE8</code>使用<code>attachEvent</code>以后事件绑定程序中的<code>this</code>指向出现错误，<code>this</code>指向<code>window</code>。通过使用<code>call</code>或<code>apply</code>可以改变<code>this</code>指针的指向。</li>
 </ol>
 
       
@@ -355,10 +632,10 @@ JSONP该协议的一个要点就是允许用户传递一个callback参数给服�
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Tabela de Conteúdo
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Visão Geral
           </li>
         </ul>
       
@@ -375,7 +652,7 @@ JSONP该协议的一个要点就是允许用户传递一个callback参数给服�
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">publicações</span>
             </a>
           </div>
           
@@ -417,7 +694,7 @@ JSONP该协议的一个要点就是允许用户传递一个callback参数给服�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IE6的双边距BUG"><span class="nav-number">1.</span> <span class="nav-text">IE6的双边距BUG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSONP"><span class="nav-number">2.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX与JSONP"><span class="nav-number">3.</span> <span class="nav-text">AJAX与JSONP</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IE6的双边距BUG"><span class="nav-number">1.</span> <span class="nav-text">IE6的双边距BUG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSONP"><span class="nav-number">2.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX与JSONP"><span class="nav-number">3.</span> <span class="nav-text">AJAX与JSONP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素嵌套"><span class="nav-number">4.</span> <span class="nav-text">元素嵌套</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#X-HTML-Strict下嵌套规则的图"><span class="nav-number">4.0.1.</span> <span class="nav-text">(X)HTML Strict下嵌套规则的图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-Drag-实现"><span class="nav-number">5.</span> <span class="nav-text">HTML5 Drag 实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XMLHttpRequest对象"><span class="nav-number">6.</span> <span class="nav-text">XMLHttpRequest对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-单位"><span class="nav-number">7.</span> <span class="nav-text">CSS 单位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环中变量赋值问题"><span class="nav-number">8.</span> <span class="nav-text">循环中变量赋值问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌套数组拆分"><span class="nav-number">9.</span> <span class="nav-text">嵌套数组拆分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iframe自定义高度"><span class="nav-number">10.</span> <span class="nav-text">iframe自定义高度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化输出"><span class="nav-number">11.</span> <span class="nav-text">格式化输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取查询参数"><span class="nav-number">12.</span> <span class="nav-text">获取查询参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联的alert"><span class="nav-number">13.</span> <span class="nav-text">内联的alert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript全局函数"><span class="nav-number">14.</span> <span class="nav-text">JavaScript全局函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#addEventListener和attachEvent的this指向不同"><span class="nav-number">15.</span> <span class="nav-text">addEventListener和attachEvent的this指向不同</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -447,11 +724,11 @@ JSONP该协议的一个要点就是允许用户传递一个callback参数给服�
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Desenvolvido com amor com <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Theme -
+  Tema -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>

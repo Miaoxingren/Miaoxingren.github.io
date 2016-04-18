@@ -59,44 +59,53 @@
 
 <meta name="description" content="整数判断
 余数检查
- function isInteger(x) {
-return typeof x === &amp;apos;number&amp;apos; &amp;amp;&amp;amp; x % 1 === 0;
- }
+
+示例：
+function isInteger(x) {
+    return typeof x === &amp;apos;number&amp;apos; &amp;amp;&amp;amp; x % 1 === 0;
+}
 
 Math库函数
- function isInteger(x) {
-return Math.round(x) === x;
-//return Math.floor(x) === x;
-//retur">
+
+示例：
+function isInteger(x) {
+    return Math.round(x) === x;
+    //return Math.floo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web前端笔记09">
 <meta property="og:url" content="http://yoursite.com/2016/03/21/note-front-end-09/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="整数判断
 余数检查
- function isInteger(x) {
-return typeof x === &amp;apos;number&amp;apos; &amp;amp;&amp;amp; x % 1 === 0;
- }
+
+示例：
+function isInteger(x) {
+    return typeof x === &amp;apos;number&amp;apos; &amp;amp;&amp;amp; x % 1 === 0;
+}
 
 Math库函数
- function isInteger(x) {
-return Math.round(x) === x;
-//return Math.floor(x) === x;
-//retur">
-<meta property="og:updated_time" content="2016-03-22T12:57:09.809Z">
+
+示例：
+function isInteger(x) {
+    return Math.round(x) === x;
+    //return Math.floo">
+<meta property="og:updated_time" content="2016-04-18T02:48:05.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端笔记09">
 <meta name="twitter:description" content="整数判断
 余数检查
- function isInteger(x) {
-return typeof x === &amp;apos;number&amp;apos; &amp;amp;&amp;amp; x % 1 === 0;
- }
+
+示例：
+function isInteger(x) {
+    return typeof x === &amp;apos;number&amp;apos; &amp;amp;&amp;amp; x % 1 === 0;
+}
 
 Math库函数
- function isInteger(x) {
-return Math.round(x) === x;
-//return Math.floor(x) === x;
-//retur">
+
+示例：
+function isInteger(x) {
+    return Math.round(x) === x;
+    //return Math.floo">
 
 
 
@@ -180,7 +189,7 @@ return Math.round(x) === x;
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Arquivos
           </a>
         </li>
       
@@ -255,7 +264,7 @@ return Math.round(x) === x;
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Postado em</span>
             <time itemprop="dateCreated" datetime="2016-03-21T20:02:37+08:00" content="2016-03-21">
               2016-03-21
             </time>
@@ -283,39 +292,45 @@ return Math.round(x) === x;
 
       
         <h2 id="整数判断"><a href="#整数判断" class="headerlink" title="整数判断"></a>整数判断</h2><ol>
-<li><p>余数检查</p>
-<p> function isInteger(x) {</p>
-<pre><code>return typeof x === &apos;number&apos; &amp;&amp; x % 1 === 0;
-</code></pre><p> }</p>
-</li>
-<li><p>Math库函数</p>
-<p> function isInteger(x) {</p>
-<pre><code>return Math.round(x) === x;
-//return Math.floor(x) === x;
-//return Math.ceil(x) === x;
-</code></pre><p> }</p>
-</li>
-<li><p>位操作（无法处理超过32位的数字）</p>
-<p> function isInteger(x) {</p>
-<pre><code>return (x | 0) === x;
-</code></pre><p> }</p>
-</li>
-<li><p>parseInt()</p>
-<p> function isInteger(x) {</p>
-<pre><code>return parseInt(x, 10) === x;
-</code></pre><p> }</p>
-</li>
+<li>余数检查</li>
 </ol>
-<p>不能正确地处理所有的整型数字，parseInt()在解析整数之前强迫将第一个参数解析成字符串。因此使用这种方法将数字转换成整型不是一个好的选择。</p>
-<ol>
-<li><p>ECMAScript</p>
-<p> function isInteger(x) {</p>
-<pre><code>return Math.trunc(x) === x;
-//Math.trunc()移除数字的小数部分
-</code></pre><p> }<br> 或：内置函数<code>Number.isInteger()</code></p>
-</li>
+<p>示例：</p>
+<pre><code>function isInteger(x) {
+    return typeof x === &apos;number&apos; &amp;&amp; x % 1 === 0;
+}
+</code></pre><ol>
+<li>Math库函数</li>
 </ol>
-<h2 id="DIV宽度自适应"><a href="#DIV宽度自适应" class="headerlink" title="DIV宽度自适应"></a>DIV宽度自适应</h2><pre><code>&lt;div id=&apos;left&apos;&gt;&lt;/div&gt;
+<p>示例：</p>
+<pre><code>function isInteger(x) {
+    return Math.round(x) === x;
+    //return Math.floor(x) === x;
+    //return Math.ceil(x) === x;
+}
+</code></pre><ol>
+<li>位操作（无法处理超过32位的数字）</li>
+</ol>
+<p>示例：</p>
+<pre><code>function isInteger(x) {
+    return (x | 0) === x;
+}
+</code></pre><ol>
+<li>parseInt()<br>不能正确地处理所有的整型数字，parseInt()在解析整数之前强迫将第一个参数解析成字符串。因此使用这种方法将数字转换成整型不是一个好的选择。</li>
+</ol>
+<p>示例：</p>
+<pre><code>function isInteger(x) {
+    return parseInt(x, 10) === x;
+}
+</code></pre><ol>
+<li>ECMAScript</li>
+</ol>
+<p>示例：</p>
+<pre><code>function isInteger(x) {
+    return Math.trunc(x) === x;
+    //Math.trunc()移除数字的小数部分
+}
+或：内置函数`Number.isInteger()`
+</code></pre><h2 id="DIV宽度自适应"><a href="#DIV宽度自适应" class="headerlink" title="DIV宽度自适应"></a>DIV宽度自适应</h2><pre><code>&lt;div id=&apos;left&apos;&gt;&lt;/div&gt;
 &lt;div id=&apos;right&apos;&gt;&lt;/div&gt;
 &lt;div id=&apos;auto-width&apos;&gt;&lt;/div&gt;
 
@@ -348,25 +363,36 @@ return Math.round(x) === x;
 <li><code>hover != mouseover + mouseout</code><br><code>hover = mouseenter + mouseleave</code></li>
 </ol>
 <h2 id="元素排序、计数"><a href="#元素排序、计数" class="headerlink" title="元素排序、计数"></a>元素排序、计数</h2><ol>
-<li><p>ol元素的属性reverse</p>
- <ol reversed><br>     <li>1</li><br>     <li>2</li><br>     <li>3</li><br> </ol>
-</li>
-<li><p>counter</p>
- <ol><br>     <li>1</li><br>     <li>2</li><br>     <li>3</li><br> </ol>
-
-<p> ol {</p>
-<pre><code>list-style: none;
-counter-reset: increment 4;
-//counter-reset: increment-variable initial-value;
-</code></pre><p> }</p>
-<p> ol li:before {</p>
-<pre><code>counter-increment: increment -1;
-//counter-reset: increment-variable increment-step;
-content: counter(increment) &quot;. &quot;;
-</code></pre><p> }</p>
-</li>
+<li>ol元素的属性reverse</li>
 </ol>
+<p>示例：</p>
+<pre><code>&lt;ol reversed&gt;
+    &lt;li&gt;1&lt;/li&gt;
+    &lt;li&gt;2&lt;/li&gt;
+    &lt;li&gt;3&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre><ol>
+<li>counter</li>
+</ol>
+<p>示例：</p>
+<pre><code>&lt;ol&gt;
+    &lt;li&gt;1&lt;/li&gt;
+    &lt;li&gt;2&lt;/li&gt;
+    &lt;li&gt;3&lt;/li&gt;
+&lt;/ol&gt;
 
+ol {
+    list-style: none;
+    counter-reset: increment 4;
+    //counter-reset: increment-variable initial-value;
+}
+
+ol li:before {
+    counter-increment: increment -1;
+    //counter-reset: increment-variable increment-step;
+    content: counter(increment) &quot;. &quot;;
+}
+</code></pre>
       
     </div>
 
@@ -442,10 +468,10 @@ content: counter(increment) &quot;. &quot;;
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Tabela de Conteúdo
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Visão Geral
           </li>
         </ul>
       
@@ -462,7 +488,7 @@ content: counter(increment) &quot;. &quot;;
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">publicações</span>
             </a>
           </div>
           
@@ -534,11 +560,11 @@ content: counter(increment) &quot;. &quot;;
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Desenvolvido com amor com <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Theme -
+  Tema -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>

@@ -57,22 +57,22 @@
 
 
 
-<meta name="description" content="Javascript语言精粹Javascript与块级作用域块级作用域任何一对花括号（｛和｝）中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。
+<meta name="description" content="Javascript语言精粹Javascript与块级作用域块级作用域任何一对花括号｛和｝中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。
 Javascript并不支持块级作用域，它只支持函数作用域，而且在一个函数中的任何位置定义的变量在该函数中的任何地方都是可见的。
-Javascript中，在一个函数中定义的变量，当这个函数调用完后，变量会被销毁。">
+Javascript中，在一个函数中定义的变量，当这个函数调用完后，变量会被销毁。运行">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web前端笔记06">
 <meta property="og:url" content="http://yoursite.com/2016/03/16/note-front-end-06/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Javascript语言精粹Javascript与块级作用域块级作用域任何一对花括号（｛和｝）中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。
+<meta property="og:description" content="Javascript语言精粹Javascript与块级作用域块级作用域任何一对花括号｛和｝中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。
 Javascript并不支持块级作用域，它只支持函数作用域，而且在一个函数中的任何位置定义的变量在该函数中的任何地方都是可见的。
-Javascript中，在一个函数中定义的变量，当这个函数调用完后，变量会被销毁。">
-<meta property="og:updated_time" content="2016-03-21T09:54:03.912Z">
+Javascript中，在一个函数中定义的变量，当这个函数调用完后，变量会被销毁。运行">
+<meta property="og:updated_time" content="2016-04-18T02:52:46.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端笔记06">
-<meta name="twitter:description" content="Javascript语言精粹Javascript与块级作用域块级作用域任何一对花括号（｛和｝）中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。
+<meta name="twitter:description" content="Javascript语言精粹Javascript与块级作用域块级作用域任何一对花括号｛和｝中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。
 Javascript并不支持块级作用域，它只支持函数作用域，而且在一个函数中的任何位置定义的变量在该函数中的任何地方都是可见的。
-Javascript中，在一个函数中定义的变量，当这个函数调用完后，变量会被销毁。">
+Javascript中，在一个函数中定义的变量，当这个函数调用完后，变量会被销毁。运行">
 
 
 
@@ -156,7 +156,7 @@ Javascript中，在一个函数中定义的变量，当这个函数调用完后�
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Arquivos
           </a>
         </li>
       
@@ -231,7 +231,7 @@ Javascript中，在一个函数中定义的变量，当这个函数调用完后�
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Postado em</span>
             <time itemprop="dateCreated" datetime="2016-03-16T11:27:08+08:00" content="2016-03-16">
               2016-03-16
             </time>
@@ -258,7 +258,7 @@ Javascript中，在一个函数中定义的变量，当这个函数调用完后�
       
 
       
-        <h1 id="Javascript语言精粹"><a href="#Javascript语言精粹" class="headerlink" title="Javascript语言精粹"></a>Javascript语言精粹</h1><h2 id="Javascript与块级作用域"><a href="#Javascript与块级作用域" class="headerlink" title="Javascript与块级作用域"></a>Javascript与块级作用域</h2><p><strong>块级作用域</strong><br>任何一对花括号（｛和｝）中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。</p>
+        <h1 id="Javascript语言精粹"><a href="#Javascript语言精粹" class="headerlink" title="Javascript语言精粹"></a>Javascript语言精粹</h1><h2 id="Javascript与块级作用域"><a href="#Javascript与块级作用域" class="headerlink" title="Javascript与块级作用域"></a>Javascript与块级作用域</h2><p><strong>块级作用域</strong><br>任何一对花括号｛和｝中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。</p>
 <p>Javascript并不支持块级作用域，它只支持函数作用域，而且在一个函数中的任何位置定义的变量在该函数中的任何地方都是可见的。</p>
 <p>Javascript中，在一个函数中定义的变量，当这个函数调用完后，变量会被销毁。<br>运行代码：输出3</p>
 <pre><code>function test() { 
@@ -277,8 +277,10 @@ test();
 }
 test();
 </code></pre><p>因此，可以把要定义的所有内容放入到一个</p>
-<p>(function (){<br>//内容<br>})();</p>
-<p>之中，这时候，相当于给它们的外层添加了一个函数作用域</p>
+<pre><code>(function (){ 
+    //内容
+})();
+</code></pre><p>之中，这时候，相当于给它们的外层添加了一个函数作用域</p>
 <h2 id="原型prototype"><a href="#原型prototype" class="headerlink" title="原型prototype"></a>原型prototype</h2><pre><code>var stooge = {
     &apos;first-name&apos;:&apos;j&apos;,
     &apos;last-name&apos;:&apos;h&apos;
@@ -298,23 +300,26 @@ console.log(another_stooge[&apos;first-name&apos;]);   //k
 delete another_stooge[&apos;first-name&apos;];
 console.log(another_stooge[&apos;first-name&apos;]);   //j
 </code></pre><h2 id="Javascript调用模式"><a href="#Javascript调用模式" class="headerlink" title="Javascript调用模式"></a>Javascript调用模式</h2><ol>
-<li>方法调用模式<br>通过<code>.</code>、<code>[]</code>调用某一对象的方法，如obj.methodname()，this指向调用自己的对象，这里this指向obj。</li>
-<li><p>函数调用模式</p>
-<p> var add = function(a, b) {</p>
-<pre><code>return a + b;
-</code></pre><p> }<br> add(5, 5);    //10</p>
-</li>
+<li>方法调用模式<br>通过<code>.</code>、<code>[]</code>调用某一对象的方法，如<code>obj.methodname()</code>，<code>this</code>指向调用自己的对象，这里<code>this</code>指向<code>obj</code>。</li>
+<li>函数调用模式</li>
 </ol>
-<p>this指向全局对象。</p>
+<p>示例：</p>
+<pre><code>var add = function(a, b) {
+    return a + b;
+}
+add(5, 5);    //10
+</code></pre><p><code>this</code>指向全局对象。</p>
 <ol>
-<li>构造器调用模式<br>在一个函数前单上new来调用，将会创建一个连接到该函数的prototype成员的新对象，同时this会绑定到新对象上。</li>
-<li><p>Apply调用模式</p>
-<p> var add = function(a, b) {</p>
-<pre><code>return a + b;
-</code></pre><p> }<br> var array = [5, 5];<br> add.apply(null, array);    //10</p>
-</li>
+<li>构造器调用模式<br>在一个函数前单上<code>new</code>来调用，将会创建一个连接到该函数的<code>prototype</code>成员的新对象，同时<code>this</code>会绑定到新对象上。</li>
+<li>Apply调用模式</li>
 </ol>
-<h2 id="扩展类型的功能"><a href="#扩展类型的功能" class="headerlink" title="扩展类型的功能"></a>扩展类型的功能</h2><pre><code>Function.prototype.method = function(name, func) {
+<p>示例：</p>
+<pre><code>var add = function(a, b) {
+    return a + b;
+}
+var array = [5, 5];
+add.apply(null, array);    //10
+</code></pre><h2 id="扩展类型的功能"><a href="#扩展类型的功能" class="headerlink" title="扩展类型的功能"></a>扩展类型的功能</h2><pre><code>Function.prototype.method = function(name, func) {
     if (!this.prototype[name]) {
         this.prototype[name] = func;
     }
@@ -487,15 +492,17 @@ bootscat_instance.getName();    //1 pairs of boots
 </code></pre><h2 id="类数组对象"><a href="#类数组对象" class="headerlink" title="类数组对象"></a>类数组对象</h2><p><code>var array = [1, &#39;miao&#39;, false];</code></p>
 <ol>
 <li>依序各值对应属性名’0’, ‘1’, …</li>
-<li>array继承自Array.prototype</li>
+<li>array继承自<code>Array.prototype</code></li>
 <li>元素类型不必相同</li>
-<li>下标大于当前length不会发生越界，length值自动增大以容乃新元素</li>
-<li>属性length的值为数组的最大整数属性么加1</li>
-<li><p>使用delete删除元素，属性值变为undefined</p>
-<p> delete array[1];<br> console.log(array); //[1, undefined, fale];</p>
-</li>
-<li><p>方法扩展，可以通过原型扩展和对象扩展</p>
-</li>
+<li>下标大于当前<code>length</code>不会发生越界，<code>length</code>值自动增大以容乃新元素</li>
+<li>属性<code>length</code>的值为数组的最大整数属性么加1</li>
+<li>使用<code>delete</code>删除元素，属性值变为<code>undefined</code></li>
+</ol>
+<p>示例：</p>
+<pre><code>delete array[1];
+console.log(array); //[1, undefined, fale];
+</code></pre><ol>
+<li>方法扩展，可以通过原型扩展和对象扩展</li>
 </ol>
 
       
@@ -573,10 +580,10 @@ bootscat_instance.getName();    //1 pairs of boots
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Tabela de Conteúdo
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Visão Geral
           </li>
         </ul>
       
@@ -593,7 +600,7 @@ bootscat_instance.getName();    //1 pairs of boots
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">publicações</span>
             </a>
           </div>
           
@@ -665,11 +672,11 @@ bootscat_instance.getName();    //1 pairs of boots
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Desenvolvido com amor com <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Theme -
+  Tema -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
