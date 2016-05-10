@@ -81,7 +81,7 @@ DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，�
 
 DOMContentLoaded早于onload当onload事件触发时，页面上所有的DOM，样式表，脚本，图片，flash都已经加载完成了。
 当DOMContentLoaded事件触发时，仅当DOM加载完成，不包括样式表，图片，flash。">
-<meta property="og:updated_time" content="2016-04-18T09:37:50.749Z">
+<meta property="og:updated_time" content="2016-05-10T06:41:49.682Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端笔记02">
 <meta name="twitter:description" content="DOM加载顺序
@@ -303,6 +303,7 @@ alert(null || undefined || false);      //fasle
 alert(false == 0);                      //true
 alert(false == &quot;&quot;);                     //true
 alert(null == undefined);               //true
+alert(null === undefined);               //false
 </code></pre><p>“假值”：0、空字符串和false<br>“空值”：null和undefined</p>
 <h4 id="null和undefined区别"><a href="#null和undefined区别" class="headerlink" title="null和undefined区别"></a>null和undefined区别</h4><p>undefined：无效对象，转为数值时为0。变量显式或者隐式（由Javascript引擎进行赋值）地被赋予了undefined，那么代表了此变量未被定义。</p>
 <ol>
@@ -442,7 +443,7 @@ alert(null == undefined);               //true
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
