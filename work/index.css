@@ -91,3 +91,37 @@ body, div {
     background-color: #9966CC;
     background-image: url('images/cat12.gif');
 }
+
+#health .heart {
+    display: inline-block;
+    margin: 10px 5px;
+}
+
+.heart {
+    position: relative;
+    width: 25px;
+    height: 20px;
+}
+
+.heart::before {
+    position: absolute;
+    left: 50%;
+    transform-origin: 0% 100%;
+    transform: rotate(-45deg);
+    background-color: red;
+    content: " ";
+    width: 50%;
+    height: 100%;
+    border-radius: 50% 50% 0 0;
+}
+
+.heart::after {
+    position: absolute;
+    transform-origin: 100% 100%;
+    transform: rotate(45deg);
+    background-color: red;
+    content: " ";
+    width: 50%;
+    height: 100%;
+    border-radius: 50% 50% 0 0;
+}

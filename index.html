@@ -1,2744 +1,1415 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.4 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+        MiaoxingJournal
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Miaoxingren">
+    <meta name="description" content="null">
+    <meta name="keywords" content="null">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="MiaoxingJournal">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://Miaoxingren.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="MiaoxingJournal">
+    <meta property="og:description" content="null">
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
 
 
 
-  
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
 
 
-<html class="theme-next muse use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
 
 
+    <!-- Bing Background -->
+    
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
-
-
-
-
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-
-
-
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="MiaoxingJournal, Miaoxingren" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
-
-
-
-
-
-
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MiaoxingJournal">
-<meta property="og:url" content="http://Miaoxingren.github.io/index.html">
-<meta property="og:site_name" content="MiaoxingJournal">
-<meta property="og:description">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MiaoxingJournal">
-<meta name="twitter:description">
-
-
-
-<script type="text/javascript" id="hexo.configuration">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: 0,
-      author: 'Author'
-    }
-  };
-</script>
-
-  <title> MiaoxingJournal </title>
+    <!-- Custom Head -->
+    
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-  
-
-
-
-
-
-
-
-
-  
-  
     
-  
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
-    <div class="headband"></div>
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">MiaoxingJournal</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-  <p class="site-subtitle"></p>
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
+    
+        <!-- Paradox Header -->
+        <!-- Daily pic -->
+<div class="mdl-card mdl-shadow--2dp daily-pic mdl-cell mdl-cell--8-col index-top-block">
+
+    <!-- Pic & Slogan -->
+    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
+        <p class="index-top-block-slogan"><a href="#">
+        
+            
+                Hi, nice to meet you
+            
+        
+        </a></p>
+    </div>
+
+    <!-- Avatar & Name -->
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+        <!-- Author Avatar -->
+        <div id="author-avatar">
+            <img src="/img/avatar.png" width="32px" height="32px" alt="avatar">
+        </div>
+        <div>
+            <strong>Miaoxingren</strong>
+        </div>
+    </div>
 </div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+        <!-- Blog info -->
+<div class="mdl-card mdl-shadow--2dp something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
+
+    <!-- Search -->
+    
+    <!-- Google -->
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
+        <label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
+            <i class="material-icons mdl-color-text--white" role="presentation">search</i>
+        </label>
+
+        <form autocomplete="off" id="search-form" method="get" action="//google.com/search" accept-charset="UTF-8" class="mdl-textfield__expandable-holder" target="_blank">
+            <input class="mdl-textfield__input search-input" type="search" name="q" id="search" placeholder="">
+            <label id="search-form-label" class="mdl-textfield__label" for="search"></label>
+
+            <input type="hidden" name="sitesearch" value="http://Miaoxingren.github.io">
+        </form>
+    </div>
+
+
+
+
+
+
+
+    <!-- LOGO -->
+    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
+        <a href="#">
+            <img src="/img/logo.png" alt="logo" />
+        </a>
+    </div>
+
+    <!-- Infomation -->
+    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
+        <!-- Blog Title -->
+        <div>
+            <strong>MiaoxingJournal</strong>
+        </div>
+        <div class="section-spacer"></div>
+
+        <!-- Pages -->
+        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">view_carousel</i>
+            <span class="visuallyhidden">Pages</span>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
+            
+        </ul>
+
+        <!-- Menu -->
+        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">more_vert</i>
+            <span class="visuallyhidden">show menu</span>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
+            
+
+            
+
+            
+                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=MiaoxingJournal&url=http://Miaoxingren.github.io/&pic=&searchPic=false&style=simple" target="_blank">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        Share to Weibo
+                    </li>
+                </a>
+            
+
+            
+                <a class="index_share-link" href="https://twitter.com/intent/tweet?text=MiaoxingJournal&url=http://Miaoxingren.github.io/&via=Miaoxingren" target="_blank">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        Share to Twitter
+                    </li>
+                </a>
+            
+
+            
+                <a class="index_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://Miaoxingren.github.io//index.html" target="_blank">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        Share to Facebook
+                    </li>
+                </a>
+            
+
+            
+                <a class="index_share-link" href="https://plus.google.com/share?url=http://Miaoxingren.github.io/" target="_blank">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        Share to Google+
+                    </li>
+                </a>
+            
+
+            
+
+            
+
+            
+        </ul>
+    </div>
 </div>
 
-<nav class="site-nav">
-  
+    
+    <div class="locate-thumbnail-symbol"></div>
 
-  
-    <ul id="menu" class="menu ">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-work">
-          <a href="/work" rel="section">
-            
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
-            
-            menu.work
-          </a>
-        </li>
-      
-
-      
-      
-      
-    </ul>
-  
-
-  
-</nav>
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-
+    <!-- Pin on top -->
     
 
+    <!-- Normal Post -->
     
-    
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
         
-        
-          <h1 class="post-title" itemprop="name headline">
             
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/10/note-front-end-11/" itemprop="url">
-                  Web前端笔记11
-                </a>
-              
-            
-          </h1>
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-10T12:02:58+08:00" content="2016-05-10">
-              2016-05-10
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
     
 
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="CSS预处理器"><a href="#CSS预处理器" class="headerlink" title="CSS预处理器"></a>CSS预处理器</h2><p>CSS预处理器定义了一种新的语言，其基本思想是，用一种专门的编程语言，为CSS增加了一些编程的特性，将CSS作为目标生成文件，然后开发者就只要使用这种语言进行编码工作。通俗的说，CSS预处理器用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。CSS预处理器为CSS增加一些编程的特性，无需考虑浏览器的兼容性问题，例如你可以在CSS中使用变量、简单的逻辑程序、函数等等在编程语言中的一些基本特性，可以让你的CSS更加简洁、适应性更强、可读性更佳，更易于代码的维护等诸多好处。到目前为止，在众多优秀的CSS预处理器语言中就属Sass、LESS和Stylus最优秀。</p>
-<h2 id="浮动的工作原理"><a href="#浮动的工作原理" class="headerlink" title="浮动的工作原理"></a>浮动的工作原理</h2><p>浮动元素脱离文档流，不占据空间。浮动元素碰到包含它的边框或者浮动元素的边框停留。</p>
-<h2 id="Javascript数据类型"><a href="#Javascript数据类型" class="headerlink" title="Javascript数据类型"></a>Javascript数据类型</h2><ol>
-<li><p>数据类型：<br><code>Number</code><br><code>String</code><br><code>Boolean</code><br><code>Undefined</code><br><code>Null</code><br><code>Array</code><br><code>Obejct</code></p>
-</li>
-<li><p>基本数据类型：<br><code>Number</code><br><code>String</code><br><code>Boolean</code><br><code>Undefined</code><br><code>Null</code></p>
-</li>
-<li><p>引用类型：</p>
-</li>
-</ol>
-<p>非空对象(凡是通过<code>new Function()</code>创建的对象都是函数对象，其他通过<code>new</code>创建的对象的都是普通对象。)<br><code>Object</code><br><code>Array</code><br><code>Function</code></p>
-<ol>
-<li>typeof返回类型：<br><code>number</code><br><code>string</code><br><code>boolean</code><br><code>object</code><br><code>undefined</code><br><code>function</code></li>
-</ol>
-<p>运行以下代码：</p>
-<pre><code>alert(typeof(false) === &apos;boolean&apos;);                            //true
-alert(typeof(0) === &apos;number&apos;);                                 //true
-alert(typeof(&quot;&quot;) === &apos;string&apos;);                                //true
-alert(typeof(null) === &apos;object&apos;);                              //true
-alert(typeof undefined === &apos;undefined&apos;);                       //true
-alert(typeof [1,2] === &apos;object&apos;);                              //true
-alert(typeof Object === &apos;function&apos;);                           //true
-alert(typeof Function === &apos;function&apos;);                         //true
-alert(typeof Object.prototype === &apos;object&apos;);                   //true
-alert(typeof Function.prototype === &apos;function&apos;);               //true
-alert(typeof Function.prototype.prototype === &apos;undefined&apos;);    //true
-</code></pre><h2 id="原型与原型链"><a href="#原型与原型链" class="headerlink" title="原型与原型链"></a>原型与原型链</h2><p>JS在创建对象（不论是普通对象还是函数对象）的时候，都有一个叫做<strong>proto</strong>的内置属性，通常称之为原型，用于指向创建它的函数对象的原型对象prototype。<br>函数对象的一个属性prototype就是原型对象。Function.prototype除外，它是函数对象，但它很特殊，他没有prototype属性。<br>原型的值可以是一个对象，也可以是null。<br>如果它的值是一个对象，则这个对象也一定有自己的原型。这样就形成了一条线性的链，称之为原型链。<br>访问一个对象的原型可以使用ES5中的Object.getPrototypeOf方法，或者ES6中的<strong>proto</strong>属性。</p>
-<p>运行以下代码：</p>
-<pre><code>alert(typeof Object.prototype === &apos;object&apos;);                 //true
-alert(typeof Function.prototype === &apos;function&apos;);             //true
-alert(typeof Function.prototype.prototype === &apos;undefined&apos;);  //true
-alert(Function.prototype.__proto__ === Object.prototype);    //true
-alert(Object.__proto__ === Function.prototype);              //true
-alert(Function.__proto__ === Function.prototype);            //true
-alert(Function.prototype.constructor === Function);          //true
-alert(Object.prototype.constructor === Object);              //true
-alert(Function.constructor === Function);                    //true
-alert(Object.constructor === Object);                        //true
-
-var Person = function (name) {
-    this.name = name;
-}
-Person.prototype.getName = function () {
-    return this.name;
-}
-var anny = new Person(&quot;Anny&quot;);
-
-alert(anny.__proto__ === Person.prototype);                   //true
-alert(typeof Person.prototype === &apos;object&apos;);                  //true
-alert(Person.__proto__ === Function.prototype);               //true
-alert(Person.constructor === Person);                         //true
-alert(Person.prototype.constructor === Person);               //true
-alert(Person.prototype.__proto__ === Object.prototype);       //true
-alert(Object.prototype.__proto__ === null);                   //true
-</code></pre><h2 id="函数表达式和函数声明"><a href="#函数表达式和函数声明" class="headerlink" title="函数表达式和函数声明"></a>函数表达式和函数声明</h2><p>函数表达式<code>function functionName() {}</code><br>函数声明<code>var functionName = function(){}</code><br>函数的声明的解析是在预执行(pre-execution)阶段，也就是浏览器准备执行代码的时候。因此，通过函数声明来定义函数，可以在定义前或后被调用。<br>函数表达式会在执行流(execution flow)执行到它的时候才会创建函数。所以，函数表达式必须被执行了（此时函数才定义了）才能被调用。</p>
-<h2 id="Javascript闭包"><a href="#Javascript闭包" class="headerlink" title="Javascript闭包"></a>Javascript闭包</h2><p>Javascript里的function能访问它们的：</p>
-<ol>
-<li>参数</li>
-<li>局部变量或函数</li>
-<li>外部变量，包括<br>3.1 全局变量，包括DOM<br>3.2 外部函数的变量或函数。</li>
-</ol>
-<p>如果一个函数访问了它的外部变量，那么它就是一个闭包。<br>注意，外部函数不是必需的。通过访问外部变量，一个闭包可以维持（keep alive）这些变量。在内部函数和外部函数的例子中，外部函数可以创建局部变量，并且最终退出；但是，如果任何一个或多个内部函数在它退出后却没有退出，那么内部函数就维持了外部函数的局部数据。<br>闭包可以用于创建含有隐藏数据的函数。<br>闭包是一种设计原则，它通过分析上下文，来简化用户的调用，让用户在不知晓的情况下，达到他的目的。</p>
-<h2 id="property和attribute"><a href="#property和attribute" class="headerlink" title="property和attribute"></a>property和attribute</h2><p>property是DOM中的属性，是JavaScript里的对象中的一个属性；<br>attribute是HTML标签上的特性，它的值只能够是字符串。<br>在IE6\7\8里面，propertites与attributies是自动同步的，并且attributies的值不限于字符串。<br>在IE6\7里面，propertites与attributies的键名不区分大小写。</p>
-<h4 id="attribute"><a href="#attribute" class="headerlink" title="attribute"></a>attribute</h4><p>attribute是一个特性节点，每个DOM元素都有一个对应的attributes属性来存放所有的attribute节点，attributes是一个类数组的容器，说得准确点就是NameNodeMap，总之就是一个类似数组但又和数组不太一样的容器。<br>Attribute会显示在DOM上面，它的键名不区分大小写。<br>与Property不同，Attribute会DOM节点上显示出来，但不会在DOM对象中被for-in遍历出来。<br>attributes的每个数字索引以名值对<code>(name=&quot;value&quot;)</code>的形式存放了一个attribute节点。<br><code>elem.attributes[index].name</code><br><code>elem.attributes[index].value</code><br>但是IE6-7将很多东西都存放在attributes中，上面的访问方法和标准浏览器的返回结果又不同。<br>通常要获取一个attribute节点直接用getAttribute方法：<br><code>elem.getAttribute(attributeName)</code><br>要设置一个attribute节点使用setAttribute方法，要删除就用removeAttribute：<br><code>elem.setAttribute(attributeName, attributeValue)</code><br><code>elem.removeAttribute(attributeName)</code><br>attributes是会随着添加或删除attribute节点动态更新的。</p>
-<h4 id="property"><a href="#property" class="headerlink" title="property"></a>property</h4><p>property就是一个属性，如果把DOM元素看成是一个普通的Object对象，那么property就是一个以名值对<code>(name=&quot;value&quot;)</code>的形式存放在Object中的属性。<br>每一个DOM节点，都是一个对象。像其他JS对象一样，DOM节点这类型HTMLElement对象，也可以添加一些方法或者属性。这些自定义添加的属性，就是property。（它能被JS的for-in方法遍历出来，但innerHTML里面不会显示）<br>要添加和删除property也简单多了，和普通的对象没啥分别：<br><code>elem.propertyName = propertyValue; // 添加</code><br><code>console.log( elem.propertyName ) // 获取</code><br><code>delete elem.propertyName // 删除</code></p>
-<p>DOM元素一些默认常见的attribute节点都有与之对应的property属性，比如div元素的id和class既是attribute，也有对应的property，不管使用哪种方法都可以访问和修改。比较特殊的是一些值为Boolean类型的property，如一些表单元素，对于这些特殊的attribute节点，只有存在该节点，对应的property的值就为true：</p>
-<pre><code>&lt;input type=&quot;radio&quot; checked=&quot;checked&quot; id=&quot;raido&quot;&gt;
-var radio = document.getElementById( &apos;radio&apos; );
-console.log( radio.getAttribute(&apos;checked&apos;) ); // checked
-console.log( radio.checked ); // true
-</code></pre><p>但是对于自定义的attribute节点，或者自定义property，两者就没有关系了。<br>对于IE6-7来说，没有区分attribute和property。<br>所有的DOM节点对象，都有一套标准的properties。这些DOM对象的标准properties，会与其attributes自动同步，但值并不完全相等。<br>只能从Attribute单向同步到Property，Property却不能同步到Attribute。</p>
-<h2 id="从输入URL到页面呈现"><a href="#从输入URL到页面呈现" class="headerlink" title="从输入URL到页面呈现"></a>从输入URL到页面呈现</h2><ol>
-<li>浏览器向Web缓存器请求，如果Web缓存器存有请求的对象则发送响应，如果没有则向Web服务器请求</li>
-<li>浏览器查找域名的IP地址（浏览器缓存-&gt;系统缓存-&gt;路由器缓存-&gt;ISP DNS 缓存-&gt;递归搜索）</li>
-<li>浏览器向 web 服务器发送一个 HTTP 请求</li>
-<li>服务器的永久重定向响应（从 <a href="http://example.com" target="_blank" rel="external">http://example.com</a> 到 <a href="http://www.example.com）" target="_blank" rel="external">http://www.example.com）</a></li>
-<li>浏览器跟踪重定向地址,发送另一个获取请求</li>
-<li>服务器处理请求，返回一个 HTTP 响应</li>
-<li>浏览器解析HTML，渲染呈现页面</li>
-<li>浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等）</li>
-</ol>
-
-          
-        
-      
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/05/30/polyfill/">polyfill</a></p>
     </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
+            bind
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/05/note-front-end-10/" itemprop="url">
-                  Web前端笔记10
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-05T21:57:34+08:00" content="2016-04-05">
-              2016-04-05
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="IE6的双边距BUG"><a href="#IE6的双边距BUG" class="headerlink" title="IE6的双边距BUG"></a>IE6的双边距BUG</h2><p>当满足下面这三个条件时，就会出现这个BUG：</p>
-<ol>
-<li>要为块状元素</li>
-<li>要左侧浮动</li>
-<li>要有左外边距<code>margin-left</code><br>解决这个BUG，只需在相应的块状元素的CSS属性中加入<code>display:inline</code>。</li>
-</ol>
-<h2 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h2><p>该协议的一个要点就是允许用户传递一个callback参数给服务端，然后服务端返回数据时会将这个callback参数作为函数名来包裹住JSON数据，这样客户端就可以随意定制自己的函数来自动处理返回数据了。</p>
-<h2 id="AJAX与JSONP"><a href="#AJAX与JSONP" class="headerlink" title="AJAX与JSONP"></a>AJAX与JSONP</h2><ol>
-<li>AJAX和JSONP这两种技术在调用方式上“看起来”很像，目的也一样，都是请求一个<code>url</code>，然后把服务器返回的数据进行处理，因此<code>jquery</code>和<code>ext</code>等框架都把JSONP作为AJAX的一种形式进行了封装；</li>
-<li>但AJAX和JSONP其实本质上是不同的东西。AJAX的核心是通过XmlHttpRequest获取非本页内容，而JSONP的核心则是动态添加<code>&lt;script&gt;</code>标签来调用服务器提供的js脚本。</li>
-<li>所以说，其实AJAX与JSONP的区别不在于是否跨域，AJAX通过服务端代理一样可以实现跨域，JSONP本身也不排斥同域的数据的获取。</li>
-<li>还有就是，JSONP是一种方式或者说非强制性协议，如同AJAX一样，它也不一定非要用JSON格式来传递数据，如果你愿意，字符串都行，只不过这样不利于用JSONP提供公开服务。</li>
-</ol>
-<h2 id="元素嵌套"><a href="#元素嵌套" class="headerlink" title="元素嵌套"></a>元素嵌套</h2><ol>
-<li>块元素可以包含内联元素或某些块元素</li>
-<li>内联元素却不能包含块元素，它只能包含其他的内联元素</li>
-<li>DTD中规定了块级元素是不能放在`<p>里面的</p></li>
-</ol>
-<p><code>&lt;html&gt;</code>是在最外层，<code>&lt;html&gt;</code>下一级里面只会有<code>&lt;head&gt;</code>、<code>&lt;body&gt;</code>、<code>&lt;frameset&gt;</code>、<code>&lt;noframes&gt;</code>，而可视的元素只会出现在<code>&lt;body&gt;</code>里，所以把<code>&lt;body&gt;</code>划在第一个级里面，接着，把不可以自由嵌套的元素划在第三个级，其他的就归进第二个级。<br>所谓的不可自由嵌套的元素就是里面只能放内联元素的，它们包括有：<br>标题标记的<code>&lt;h1&gt;</code>、<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code>、<code>&lt;h4&gt;</code>、<code>&lt;h5&gt;</code>、<code>&lt;h6&gt;</code>、<code>&lt;caption&gt;</code>；<br>段落标记的<code>&lt;p&gt;</code>；<br>分隔线<code>&lt;hr&gt;</code>和一个特别的元素<code>&lt;dt&gt;</code>(它只存在于列表元素<code>&lt;dl&gt;</code>的子一级)。<br>第二级的元素可以自由嵌套，可以把它们看成是一些容器（或者说是盒子）， 这些容器的大小可以自由变化，例如可以把<code>&lt;ul&gt;</code>嵌在<code>&lt;div&gt;</code>里面，也可以把<code>&lt;div&gt;</code>嵌在<code>&lt;li&gt;</code>里面。<br>在HTML里有几个元素是比较特别的：<br><code>&lt;ul&gt;</code>、<code>&lt;ol&gt;</code>、<code>&lt;dl&gt;</code>、<code>&lt;table&gt;</code>，它们的子一层必须是指定元素，<br><code>&lt;ul&gt;</code>、<code>&lt;ol&gt;</code>的子一级必须是<code>&lt;li&gt;</code>；<br><code>&lt;dl&gt;</code>的子一级必须是<code>&lt;dt&gt;</code>或者<code>&lt;dd&gt;</code>；<br><code>&lt;table&gt;</code>的子一层必须是<code>&lt;caption&gt;</code> 或<code>&lt;thead&gt;</code>、<code>&lt;tfoot&gt;</code>、<code>&lt;tbody&gt;</code>等，而再子一层必须是<code>&lt;tr&gt;</code> （<code>&lt;tr&gt;</code>只存在于<code>&lt;thead&gt;</code>、<code>&lt;tfoot&gt;</code>、<code>&lt;tbody&gt;</code>中），之后才是可放内容的<code>&lt;td&gt;</code>或者<code>&lt;th&gt;</code>。 </p>
-<h4 id="X-HTML-Strict下嵌套规则的图"><a href="#X-HTML-Strict下嵌套规则的图" class="headerlink" title="(X)HTML Strict下嵌套规则的图"></a>(X)HTML Strict下嵌套规则的图</h4><p><img src="http://my.csdn.net/uploads/201208/25/1345859690_4578.jpg" alt="(X)HTML Strict下嵌套规则的图"></p>
-<h2 id="HTML5-Drag-实现"><a href="#HTML5-Drag-实现" class="headerlink" title="HTML5 Drag 实现"></a>HTML5 Drag 实现</h2><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Drag&lt;/title&gt;
-    &lt;style type=&quot;text/css&quot;&gt;
-        #drag {
-            width: 50px;
-            height: 50px;
-            background-color: #EEE;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id=&quot;drag&quot;&gt;&lt;/div&gt;
-    &lt;script type=&quot;text/javascript&quot;&gt;
-        window.onload = function () {
-            function Drag(obj) {
-                this.obj = obj;
-            }
-            Drag.prototype = {
-                constructor: Drag,
-                getMosuePos: function(e) {
-                    e = e || window.event;
-                    var eX = e.pageX || e.clientX + document.body.scrollLeft - document.body.clientLeft,
-                        eY = e.pageY || e.clientY + document.body.scrollTop - document.body.clientTop;
-                    return {
-                        x: eX,
-                        y: eY
-                    }
-                },
-                getInitPos: function (e) {
-                    e = e || window.event;
-                    var eX = e.pageX || e.clientX + document.body.scrollLeft - document.body.clientLeft,
-                        eY = e.pageY || e.clientY + document.body.scrollTop - document.body.clientTop;
-                    return {
-                        x: eX - this.obj.offsetLeft,
-                        y: eY - this.obj.offsetTop
-                    }
-                },
-                initDrag: function () {
-                    var that = this;
-                    this.obj.onmousedown = function (e) {
-                        var curPos = that.getInitPos(e);
-                        document.onmousemove = function (e) {
-                            var mousePos = that.getMosuePos(e);
-                            that.obj.style.marginLeft = mousePos.x - curPos.x + &quot;px&quot;;
-                            that.obj.style.marginTop = mousePos.y - curPos.y + &quot;px&quot;;
-                        };
-                        document.onmouseup = function (e) {
-                            document.onmousemove = null;
-                            document.onmouseup = null;
-                        }
-                    };
-
-                }
-            };
-            var drag = document.getElementById(&quot;drag&quot;),
-                dragable = new Drag(drag);
-            dragable.initDrag();
-        };
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><h2 id="XMLHttpRequest对象"><a href="#XMLHttpRequest对象" class="headerlink" title="XMLHttpRequest对象"></a>XMLHttpRequest对象</h2><ol>
-<li>老版本的<code>Internet Explorer</code>(<code>IE5</code>和<code>IE6</code>)使用<code>ActiveXObject</code>。</li>
-<li>所有现代浏览器（<code>IE7+</code>、<code>Firefox</code>、<code>Chrome</code>、<code>Safari</code>以及<code>Opera</code>）均内建<code>XMLHttpRequest</code>对象。</li>
-</ol>
-<p>兼容IE：</p>
-<pre><code>var xmlhttp;
-if (window.XMLHttpRequest) {
-    // code for IE7+, Firefox, Chrome, Opera, Safari
-    xmlhttp = new XMLHttpRequest();
-} else {
-    // code for IE6, IE5
-    xmlhttp = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
-}
-xmlhttp.onreadystatechange = function () {
-    if (xmlhttp.readyState == 4 &amp;&amp; xmlhttp.status == 200) {
-        document.getElementById(&quot;myDiv&quot;).innerHTML = xmlhttp.responseText;
-    }
-}
-xmlhttp.open(&quot;GET&quot;, queryString, true);
-xmlhttp.send();
-</code></pre><h2 id="CSS-单位"><a href="#CSS-单位" class="headerlink" title="CSS 单位"></a>CSS 单位</h2><table>
-<thead>
-<tr>
-<th>单位</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>%</td>
-<td style="text-align:center">百分比</td>
-</tr>
-<tr>
-<td>in</td>
-<td style="text-align:center">英寸</td>
-</tr>
-<tr>
-<td>cm</td>
-<td style="text-align:center">厘米</td>
-</tr>
-<tr>
-<td>mm</td>
-<td style="text-align:center">毫米</td>
-</tr>
-<tr>
-<td>em</td>
-<td style="text-align:center">1em 等于当前的字体尺寸。2em 等于当前字体尺寸的两倍。相对于父元素</td>
-</tr>
-<tr>
-<td>rem</td>
-<td style="text-align:center">r指root。相对于根元素</td>
-</tr>
-<tr>
-<td>ex</td>
-<td style="text-align:center">一个 ex 是一个字体的 x-height。 (x-height 通常是字体尺寸的一半。)</td>
-</tr>
-<tr>
-<td>pt</td>
-<td style="text-align:center">磅 (1 pt 等于 1/72 英寸)</td>
-</tr>
-<tr>
-<td>pc</td>
-<td style="text-align:center">12 点活字 (1 pc 等于 12 点)</td>
-</tr>
-<tr>
-<td>px</td>
-<td style="text-align:center">像素 (计算机屏幕上的一个点)</td>
-</tr>
-<tr>
-<td>vw</td>
-<td style="text-align:center">Viewport宽度， 1vw 等于viewport宽度的1%</td>
-</tr>
-<tr>
-<td>vh</td>
-<td style="text-align:center">Viewport高度， 1vh 等于viewport高的的1%</td>
-</tr>
-<tr>
-<td>vmin</td>
-<td style="text-align:center">取Viewport宽度和Viewport高度中比较小的值</td>
-</tr>
-<tr>
-<td>vmax</td>
-<td style="text-align:center">取Viewport宽度和Viewport高度中比较大的值</td>
-</tr>
-</tbody>
-</table>
-<h2 id="循环中变量赋值问题"><a href="#循环中变量赋值问题" class="headerlink" title="循环中变量赋值问题"></a>循环中变量赋值问题</h2><p>变量key随循环结束最终变为z：</p>
-<pre><code>function A(params) {
-    params = params || {};
-    for (var key in params) {
-        Object.defineProperty(this, key, {
-            get: function() {
-                return params[key];
-            },
-            enumerable: false
-        });
-    } 
-}
-var a = new A({
-    &apos;x&apos;: &apos;x&apos;,
-    &apos;y&apos;: &apos;y&apos;,
-    &apos;z&apos;: &apos;z&apos;
-});
-console.log(a.x); //&apos;z&apos;
-console.log(a.y); //&apos;z&apos;
-console.log(a.z); //&apos;z&apos;
-</code></pre><p>使用函数保存变量的值：</p>
-<pre><code>function A(params) {
-    params = params || {};
-    function generateVal(obj, key) {
-        Object.defineProperty(obj, key, {
-            get: function() {
-                return params[key];
-            },
-            enumerable: false
-        });
-    }
-    for (var key in params) {
-        generateVal(this, key);
-    } 
-}
-var a = new A({
-    &apos;x&apos;: &apos;x&apos;,
-    &apos;y&apos;: &apos;y&apos;,
-    &apos;z&apos;: &apos;z&apos;
-});
-</code></pre><h2 id="嵌套数组拆分"><a href="#嵌套数组拆分" class="headerlink" title="嵌套数组拆分"></a>嵌套数组拆分</h2><pre><code>function flatten(array) {
-    var i,
-        res,
-        length;
-    res = (array + &apos;&apos;).split(&apos;,&apos;);
-    for (i = 0, length = res.length; i &lt; length; i++) {
-        res[i] = res[i] - &quot;0&quot;;
-    }
-    return res;
-}
-flatten([1, [2, 3]]); //[1, 2, 3]
-</code></pre><h2 id="iframe自定义高度"><a href="#iframe自定义高度" class="headerlink" title="iframe自定义高度"></a>iframe自定义高度</h2><pre><code>// document.domain = &quot;caibaojian.com&quot;;
-function setIframeHeight(iframe) {
-    if (iframe) {
-        var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
-        if (iframeWin.document.body) {
-            iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
-        }
-    }
-};
-window.onload = function () {
-    setIframeHeight(document.getElementById(&apos;external-frame&apos;));
-};
-</code></pre><h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><pre><code>function formater(str) {
-    var step = 3,
-        tmp = str + &apos;&apos;,
-        length = tmp.length,
-        res = [];
-    while (length &gt; 0) {
-        if (length &lt; 3) {
-            step = length;
-        }
-        res.unshift(tmp.substring(length - step, length));
-        tmp = tmp.substring(0, length - step);
-        length = tmp.length;
-    }
-    return res.join(&quot;,&quot;);
-}
-
-formater(9999999); // &quot;9,999,999&quot;
-</code></pre><h2 id="获取查询参数"><a href="#获取查询参数" class="headerlink" title="获取查询参数"></a>获取查询参数</h2><pre><code>function URL(url) {
-    this.url = url;
-}
-URL.prototype.parse = function () {
-    var i,
-        length,
-        pair,
-        queries = {},
-        queryArray = this.url.split(&apos;?&apos;)[1].split(&apos;&amp;&apos;);
-    function addParam(key, val) {
-        queries[key] = val;
-    }
-    for (i = 0, length = queryArray.length; i &lt; length; ++i) {
-        pair = queryArray[i].split(&apos;=&apos;);
-        addParam(pair[0], pair[1]);
-    }
-    return queries;
-}
-var url = new URL( &quot;http://witmax.cn/index.php?key0=0&amp;key1=1&amp;key2=2&quot;)
-url.parse(); //{key0: &quot;0&quot;, key1: &quot;1&quot;, key2: &quot;2&quot;}
-</code></pre><h2 id="内联的alert"><a href="#内联的alert" class="headerlink" title="内联的alert"></a>内联的alert</h2><ol>
-<li><code>IE</code>下<code>&lt;s style=&quot;top:expression(alert(1))&quot;&gt;&lt;/s&gt;</code></li>
-<li><code>&lt;div onclick=&quot;alert(1)&quot;&gt;&lt;/div&gt;</code></li>
-</ol>
-<h2 id="JavaScript全局函数"><a href="#JavaScript全局函数" class="headerlink" title="JavaScript全局函数"></a>JavaScript全局函数</h2><ol>
-<li>escape</li>
-<li>eval</li>
-<li>isNaN</li>
-<li>isFinite</li>
-<li>parseFloat</li>
-<li>parseInt</li>
-<li>unescape</li>
-</ol>
-<h2 id="addEventListener和attachEvent的this指向不同"><a href="#addEventListener和attachEvent的this指向不同" class="headerlink" title="addEventListener和attachEvent的this指向不同"></a>addEventListener和attachEvent的this指向不同</h2><ol>
-<li>标准浏览器中可以使用<code>addEventListener</code>函数来给DOM元素绑定事件，而<code>IE6</code>、<code>IE7</code>、<code>IE8</code>不支持<code>addEventListener</code>，只能使用<code>attachEvent</code>方法。</li>
-<li>标准浏览器中可以使用<code>removeEventListener</code>函数来给DOM元素移除绑定的事件，而<code>IE6</code>、<code>IE7</code>、<code>IE8</code>不支持<code>removeEventListener</code>，只能使用<code>detachEvent</code>方法。</li>
-<li><code>IE6</code>、<code>IE7</code>、<code>IE8</code>使用<code>attachEvent</code>以后事件绑定程序中的<code>this</code>指向出现错误，<code>this</code>指向<code>window</code>。通过使用<code>call</code>或<code>apply</code>可以改变<code>this</code>指针的指向。</li>
-</ol>
-
-          
-        
-      
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/05/30/polyfill/" target="_self">Continue Reading</a>
+        </span>
     </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/21/note-front-end-09/" itemprop="url">
-                  Web前端笔记09
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-21T20:02:37+08:00" content="2016-03-21">
-              2016-03-21
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="整数判断"><a href="#整数判断" class="headerlink" title="整数判断"></a>整数判断</h2><ol>
-<li>余数检查</li>
-</ol>
-<p>示例：</p>
-<pre><code>function isInteger(x) {
-    return typeof x === &apos;number&apos; &amp;&amp; x % 1 === 0;
-}
-</code></pre><ol>
-<li>Math库函数</li>
-</ol>
-<p>示例：</p>
-<pre><code>function isInteger(x) {
-    return Math.round(x) === x;
-    //return Math.floor(x) === x;
-    //return Math.ceil(x) === x;
-}
-</code></pre><ol>
-<li>位操作（无法处理超过32位的数字）</li>
-</ol>
-<p>示例：</p>
-<pre><code>function isInteger(x) {
-    return (x | 0) === x;
-}
-</code></pre><ol>
-<li>parseInt()<br>不能正确地处理所有的整型数字，parseInt()在解析整数之前强迫将第一个参数解析成字符串。因此使用这种方法将数字转换成整型不是一个好的选择。</li>
-</ol>
-<p>示例：</p>
-<pre><code>function isInteger(x) {
-    return parseInt(x, 10) === x;
-}
-</code></pre><ol>
-<li>ECMAScript</li>
-</ol>
-<p>示例：</p>
-<pre><code>function isInteger(x) {
-    return Math.trunc(x) === x;
-    //Math.trunc()移除数字的小数部分
-}
-或：内置函数`Number.isInteger()`
-</code></pre><h2 id="DIV宽度自适应"><a href="#DIV宽度自适应" class="headerlink" title="DIV宽度自适应"></a>DIV宽度自适应</h2><pre><code>&lt;div id=&apos;left&apos;&gt;&lt;/div&gt;
-&lt;div id=&apos;right&apos;&gt;&lt;/div&gt;
-&lt;div id=&apos;auto-width&apos;&gt;&lt;/div&gt;
-
-#left {
-    float: left;
-    width: 100px;
-}
-#right {
-    float: right;
-    width: 100px;
-}
-#auto-width {
-    margin-left: 100px;
-    margin-right: 100px;
-}
-</code></pre><ol>
-<li>自适应宽度的层不要指定宽度和<code>float</code>属性</li>
-<li>自适应宽度的层物理的位置放在最下面</li>
-<li>自适应的div中不能出现<code>width: 100%</code>，否则在<code>IE6</code>中会出现错位现象，<code>IE7</code>，<code>IE8</code>，<code>ff3</code>，<code>chrome</code>都正常。</li>
-<li><code>DIV</code>的默认（不写）宽度是100%，但不撑大父框架，写出<code>width: 100%</code>，如果再使用了<code>margin</code>或<code>padding</code>就会将父框架撑大。 </li>
-<li><code>Table</code>默认宽度为内容的长度，与<code>DIV</code>不同，因此最好不要混着用，否者这个宽度自适应的方法在<code>IE6</code>下就有问题了。</li>
-<li>如果父框架设定了固定宽度，那么子div的宽度设为<code>width: 100%</code>，即使设定了<code>margin</code>、<code>padding</code>、<code>border</code>都不会撑大父框架。</li>
-</ol>
-<h2 id="CSS3-FlexBox布局"><a href="#CSS3-FlexBox布局" class="headerlink" title="CSS3 FlexBox布局"></a>CSS3 FlexBox布局</h2><p><a href="http://www.w3cplus.com/css3/a-guide-to-flexbox.html" target="_blank" rel="external">FlexBox</a></p>
-<h2 id="DOM鼠标事件"><a href="#DOM鼠标事件" class="headerlink" title="DOM鼠标事件"></a>DOM鼠标事件</h2><ol>
-<li>mouseover<br>鼠标指针经过任何子元素都会触发绑定在父元素上的<code>mouseover</code>事件</li>
-<li>mouseout<br>鼠标指针离开任何子元素时都会触发父元素上的<code>mouseover</code>事件</li>
-<li>mouseenter<br>鼠标指针经过绑定的元素时触发事件，经过其子元素时，不会触发事件</li>
-<li>mouseleave<br>只有当鼠标离开绑定的元素时才会触发该事件，经过其子元素时，不会触发事件</li>
-<li><code>hover != mouseover + mouseout</code><br><code>hover = mouseenter + mouseleave</code></li>
-</ol>
-<h2 id="元素排序、计数"><a href="#元素排序、计数" class="headerlink" title="元素排序、计数"></a>元素排序、计数</h2><ol>
-<li>ol元素的属性reverse</li>
-</ol>
-<p>示例：</p>
-<pre><code>&lt;ol reversed&gt;
-    &lt;li&gt;1&lt;/li&gt;
-    &lt;li&gt;2&lt;/li&gt;
-    &lt;li&gt;3&lt;/li&gt;
-&lt;/ol&gt;
-</code></pre><ol>
-<li>counter</li>
-</ol>
-<p>示例：</p>
-<pre><code>&lt;ol&gt;
-    &lt;li&gt;1&lt;/li&gt;
-    &lt;li&gt;2&lt;/li&gt;
-    &lt;li&gt;3&lt;/li&gt;
-&lt;/ol&gt;
-
-ol {
-    list-style: none;
-    counter-reset: increment 4;
-    //counter-reset: increment-variable initial-value;
-}
-
-ol li:before {
-    counter-increment: increment -1;
-    //counter-reset: increment-variable increment-step;
-    content: counter(increment) &quot;. &quot;;
-}
-</code></pre>
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/20/note-front-end-08/" itemprop="url">
-                  Web前端笔记08
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-20T15:10:05+08:00" content="2016-03-20">
-              2016-03-20
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><ol>
-<li>全局变量（不推荐）</li>
-<li>在构造函数的静态函数中缓存实例</li>
-</ol>
-<p>示例：</p>
-<pre><code>function Game() {
-    if (typeof Game.instance === &apos;object&apos;) {
-        return Game.instance;
-    }
-    this.name = &apos;game&apos;;
-    Game.instance = this;
-    //return this;
-}
-</code></pre><ol>
-<li>将实例包装在闭包中<br>3.1 初始定义和重定义时刻之间添加的属性不保留</li>
-</ol>
-<p>示例：</p>
-<pre><code>function Game() {
-    var instance = this;
-    this.name = &apos;game&apos;;
-    Game = function () {
-        return instance;
-    };
-}
-</code></pre><p>3.2 保留原型上添加的属性</p>
-<p>示例：</p>
-<pre><code>function Game() {
-    var instance;
-    Game = function Game() {
-        return instance;
-    };
-    Game.prototype = this;
-    instance = new Game();
-    instance.constructor = Game;
-    instance.name = &apos;game&apos;;
-    return instance;
-}
-</code></pre><p>3.3 将构造函数和实例包装在即时函数中</p>
-<p>示例：</p>
-<pre><code>var Game;
-(function () {
-    var instance;
-    Game = function Game() {
-        if (instance) {
-            return instance;
-        }
-        instance = this;
-        this.name = &apos;game&apos;;
-    };
-}());
-</code></pre><h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><pre><code>function CarMaker() {}
-CarMaker.prototype.drive = function () {
-    return &quot;Vroom, I have &quot; + this.doors + &quot; doors&quot;;
-};
-CarMaker.factory = function (type) {
-    var constr = type,
-    newcar;
-    if (typeof CarMaker[constr] !== &quot;function&quot;) {
-        throw {
-            name: &quot;Error&quot;,
-            message: constr + &quot; doesn&apos;t exist&quot;
-        };
-    }
-    if (typeof CarMaker[constr].prototype.drive !== &quot;function&quot;) {
-        CarMaker[constr].prototype = new CarMaker();
-    }
-    newcar = new CarMaker[constr]();
-    return newcar;
-};
-CarMaker.Compact = function () {
- this.doors = 4;
-};
-CarMaker.Convertible = function () {
- this.doors = 2;
-};
-CarMaker.SUV = function () {
- this.doors = 24;
-};
-</code></pre><h2 id="迭代器模式"><a href="#迭代器模式" class="headerlink" title="迭代器模式"></a>迭代器模式</h2><pre><code>var agg = (function () {
-    var index = 0,
-        data = [1, 2, 3, 4, 5],
-        length = data.length;
-    return {
-        next: function () {
-            var element;
-            if (!this.hasNext()) {
-                return null;
-            }
-            element = data[index];
-            index = index + 2;
-            return element;
-        },
-        hasNext: function () {
-            return index &lt; length;
-        },
-        rewind: function () {
-            index = 0;
-        },
-        current: function () {
-            return data[index];
-        }
-    };
-}());
-</code></pre><h2 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h2><ol>
-<li>使用继承</li>
-</ol>
-<p>示例：</p>
-<pre><code>function Sale(price) {
-    this.price = price || 100;
-}
-Sale.prototype.getPrice = function () {
-    return this.price;
-};
-Sale.decorators = {};
-Sale.decorators.fedtax = {
-    getPrice: function () {
-        var price = this.uber.getPrice();
-        price += price * 5 / 100;
-        return price;
-    }
-};
-Sale.decorators.quebec = {
-    getPrice: function () {
-        var price = this.uber.getPrice();
-        price += price * 7.5 / 100;
-        return price;
-    }
-};
-Sale.decorators.money = {
-    getPrice: function () {
-        return &quot;$&quot; + this.uber.getPrice().toFixed(2);
-    }
-};
-Sale.decorators.cdn = {
-    getPrice: function () {
-        return &quot;CDN$ &quot; + this.uber.getPrice().toFixed(2);
-    }
-};
-Sale.prototype.decorate = function (decorator) {
-    var F = function () {},
-        overrides = this.constructor.decorators[decorator],
-        i, newobj;
-    F.prototype = this;
-    newobj = new F();
-    newobj.uber = F.prototype;
-    for (i in overrides) {
-        if (overrides.hasOwnProperty(i)) {
-            newobj[i] = overrides[i];
-        }
-    }
-    return newobj;
-};
-</code></pre><ol>
-<li>不使用继承</li>
-</ol>
-<p>示例：</p>
-<pre><code>function Sale(price) {
-    this.price = (price &gt; 0) || 100;
-    this.decorators_list = [];
-}
-Sale.decorators = {};
-Sale.decorators.fedtax = {
-    getPrice: function (price) {
-        return price + price * 5 / 100;
-    }
-};
-Sale.decorators.quebec = {
-    getPrice: function (price) {
-        return price + price * 7.5 / 100;
-    }
-};
-Sale.decorators.money = {
-    getPrice: function (price) {
-        return &quot;$&quot; + price.toFixed(2);
-    }
-};
-Sale.prototype.decorate = function (decorator) {
-    this.decorators_list.push(decorator);
-};
-Sale.prototype.getPrice = function () {
-    var price = this.price,
-        i,
-        max = this.decorators_list.length,
-        name;
-    for (i = 0; i &lt; max; i += 1) {
-        name = this.decorators_list[i];
-        price = Sale.decorators[name].getPrice(price);
-    }
-    return price;
-};
-</code></pre><h2 id="策咯模式"><a href="#策咯模式" class="headerlink" title="策咯模式"></a>策咯模式</h2><p>允许在运行时选择算法。如表单验证。</p>
-<h2 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h2><p>为对象提供一个可选择的接口</p>
-<h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><p>介于对象的客户端和对象本身之间，对该对象的访问进行保护。</p>
-<h2 id="中介者模式"><a href="#中介者模式" class="headerlink" title="中介者模式"></a>中介者模式</h2><p>独立对象之间并不直接通信，而是通过<code>mediator</code>对象通信。</p>
-<h2 id="观察者模式-自定义事件-订阅发布模式"><a href="#观察者模式-自定义事件-订阅发布模式" class="headerlink" title="观察者模式/自定义事件/订阅发布模式"></a>观察者模式/自定义事件/订阅发布模式</h2><p>一个对象订阅另一个对象的特定活动并在改编后获得通知。</p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/20/note-front-end-07/" itemprop="url">
-                  Web前端笔记07
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-20T10:14:26+08:00" content="2016-03-20">
-              2016-03-20
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="代码复用模式"><a href="#代码复用模式" class="headerlink" title="代码复用模式"></a>代码复用模式</h1><h2 id="类式继承"><a href="#类式继承" class="headerlink" title="类式继承"></a>类式继承</h2><pre><code>function Parent(name) {
-    this.name = name || &apos;parent&apos;;
-}
-Parent.prototype.say = function () {
-    return this.name;
-};
-function Child(name) {
-}
-</code></pre><ol>
-<li>默认模式</li>
-</ol>
-<p>示例：</p>
-<pre><code>Child.prototype = new Parent();
-</code></pre><ol>
-<li>借用构造函数</li>
-</ol>
-<p>示例：</p>
-<pre><code>function Child(name) {
-    Parent.apply(this, arguments);
-}
-</code></pre><ol>
-<li>借用和设置原型</li>
-</ol>
-<p>示例：</p>
-<pre><code>function Child(name) {
-    Parent.apply(this, arguments);
-}
-Child.prototype = new Parent();
-</code></pre><ol>
-<li>共享原型</li>
-</ol>
-<p>示例：</p>
-<pre><code>Child.prototype = Parent.prototype;
-</code></pre><ol>
-<li>临时构造函数</li>
-</ol>
-<p>示例：</p>
-<pre><code>var Func = function () {};
-Func.prototype = Parent.prototype;
-Child.prototype = new Func();
-/**
-* 存储超类
-* Child.uber = Parent.prototype;
-* 重置构造函数
-* Child.prototype.constructor = Child;
-*/
-</code></pre><ol>
-<li>代理构造函数</li>
-</ol>
-<p>示例：</p>
-<pre><code>var Func = function () {};
-Func.prototype = Parent.prototype;
-Child.prototype = new Func();
-Child.uber = Parent.prototype;
-Child.prototype.constructor = Child;
-</code></pre><h2 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h2><ol>
-<li>子对象具有父对象的全部功能</li>
-</ol>
-<p>示例：</p>
-<pre><code>var parent = {
-    name: &apos;parent&apos;
-};
-function Func() {};
-Func.prototype = parent;
-var child = new Func();
-</code></pre><ol>
-<li>继承”自身”属性和构造函数的原型属性</li>
-</ol>
-<p>示例：</p>
-<pre><code>function Parent(name) {
-    this.name = name || &apos;parent&apos;;
-}
-Parent.prototype.getName = function () {
-    return this.name;
-};
-function Func() {};
-Func.prototype = new Parent();
-var child = new Func();
-</code></pre><ol>
-<li>仅继承现有构造函数的原型对象</li>
-</ol>
-<p>示例：</p>
-<pre><code>function Parent(name) {
-    this.name = name || &apos;parent&apos;;
-}
-Parent.prototype.getName = function () {
-    return this.name;
-};
-function Func() {};
-Func.prototype = Parent.prototype;
-var child = new Func();
-</code></pre><ol>
-<li>ECMAScript5中使用Object.create</li>
-</ol>
-<p>示例：</p>
-<pre><code>child = Object.create(parent, {
-    age: {value：2}
-});
-</code></pre><h2 id="通过复制属性实现继承"><a href="#通过复制属性实现继承" class="headerlink" title="通过复制属性实现继承"></a>通过复制属性实现继承</h2><ol>
-<li>浅复制</li>
-</ol>
-<p>示例：</p>
-<pre><code>function extend(parent, child) {
-    var i;
-    child = child || {};
-    for (i in parent) {
-        if (parent.hasOwnProperty(i)) {
-            child[i] = parent[i];
-        }
-    }
-    return child;
-}
-</code></pre><ol>
-<li>深复制</li>
-</ol>
-<p>示例：</p>
-<pre><code>function extendDeep(parent, child) {
-    var i,
-        toStr = Object.prototype.toString,
-        astr = &apos;[object Array]&apos;;
-    child = child || {};
-    for (i in parent) {
-        if (parent.hasOwnProperty(i)) {
-            if (typeof parent[i] === &apos;object&apos;) {
-                child[i] = (toStr.call(parent[i]) === astr) ? [] : {};
-                extendDeep(parent[i], child[i]);
-            } else {
-                child[i] = parent[i];
-            }
-        }
-    }
-    return child;
-}
-</code></pre><ol>
-<li>浅复制<code>Firebug: extend()</code></li>
-<li>深复制<code>JQuery: extend()</code></li>
-<li>深复制<code>YUI3: Y.clone()</code></li>
-</ol>
-<h2 id="混入"><a href="#混入" class="headerlink" title="混入"></a>混入</h2><p>从多个对象中复制出任意的成员并将这些成员组合成一个新的对象</p>
-<pre><code>function mix() {
-    var arg, prop, child = {};
-    for (arg = 0; arg &lt; arguments.length; arg += 1) {
-        for (prop in arguments[arg]) {
-            if (arguments[i].hasOwnProperty(prop)) {
-                child[prop] = arguments[arg][prop];
-            }
-        }
-        return child;
-    }
-}
-</code></pre>
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/16/note-front-end-06/" itemprop="url">
-                  Web前端笔记06
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-16T11:27:08+08:00" content="2016-03-16">
-              2016-03-16
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Javascript语言精粹"><a href="#Javascript语言精粹" class="headerlink" title="Javascript语言精粹"></a>Javascript语言精粹</h1><h2 id="Javascript与块级作用域"><a href="#Javascript与块级作用域" class="headerlink" title="Javascript与块级作用域"></a>Javascript与块级作用域</h2><p><strong>块级作用域</strong><br>任何一对花括号｛和｝中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。</p>
-<p>Javascript并不支持块级作用域，它只支持函数作用域，而且在一个函数中的任何位置定义的变量在该函数中的任何地方都是可见的。</p>
-<p>Javascript中，在一个函数中定义的变量，当这个函数调用完后，变量会被销毁。<br>运行代码：输出3</p>
-<pre><code>function test() { 
-    for(var i = 0; i &lt; 3; i++) { 
-    }
-    alert(i);
-}
-test();
-</code></pre><p>运行代码：i is not defined</p>
-<pre><code>function test() { 
-    (function() { 
-        for(var i = 0; i &lt; 4; i++){ 
-        }
-    })(); 
-    alert(i);
-}
-test();
-</code></pre><p>因此，可以把要定义的所有内容放入到一个</p>
-<pre><code>(function (){ 
-    //内容
-})();
-</code></pre><p>之中，这时候，相当于给它们的外层添加了一个函数作用域</p>
-<h2 id="原型prototype"><a href="#原型prototype" class="headerlink" title="原型prototype"></a>原型prototype</h2><pre><code>var stooge = {
-    &apos;first-name&apos;:&apos;j&apos;,
-    &apos;last-name&apos;:&apos;h&apos;
-}
-
-if (typeof Object.create !== &apos;function&apos;) {
-    Object.create = function(obj) {
-        var F = function() {};
-        F.prototype = obj;
-        return new F();
-    }
-}
-var another_stooge = Object.create(stooge);
-console.log(another_stooge[&apos;first-name&apos;]);   //j
-another_stooge[&apos;first-name&apos;]=&apos;k&apos;;
-console.log(another_stooge[&apos;first-name&apos;]);   //k
-delete another_stooge[&apos;first-name&apos;];
-console.log(another_stooge[&apos;first-name&apos;]);   //j
-</code></pre><h2 id="Javascript调用模式"><a href="#Javascript调用模式" class="headerlink" title="Javascript调用模式"></a>Javascript调用模式</h2><ol>
-<li>方法调用模式<br>通过<code>.</code>、<code>[]</code>调用某一对象的方法，如<code>obj.methodname()</code>，<code>this</code>指向调用自己的对象，这里<code>this</code>指向<code>obj</code>。</li>
-<li>函数调用模式</li>
-</ol>
-<p>示例：</p>
-<pre><code>var add = function(a, b) {
-    return a + b;
-}
-add(5, 5);    //10
-</code></pre><p><code>this</code>指向全局对象。</p>
-<ol>
-<li>构造器调用模式<br>在一个函数前单上<code>new</code>来调用，将会创建一个连接到该函数的<code>prototype</code>成员的新对象，同时<code>this</code>会绑定到新对象上。</li>
-<li>Apply调用模式</li>
-</ol>
-<p>示例：</p>
-<pre><code>var add = function(a, b) {
-    return a + b;
-}
-var array = [5, 5];
-add.apply(null, array);    //10
-</code></pre><h2 id="扩展类型的功能"><a href="#扩展类型的功能" class="headerlink" title="扩展类型的功能"></a>扩展类型的功能</h2><pre><code>Function.prototype.method = function(name, func) {
-    if (!this.prototype[name]) {
-        this.prototype[name] = func;
-    }
-    return this;
-}
-</code></pre><h2 id="遍历文档节点"><a href="#遍历文档节点" class="headerlink" title="遍历文档节点"></a>遍历文档节点</h2><pre><code>var traverse = function(node, func) {
-    func(node);
-    node = node.firstChild;
-    while(node) {
-        traverse(node, func);
-        node = node.nextSibling;
-    }
-}
-traverse(document.body, function(node) {
-    console.log(node.nodeName);
-    });
-</code></pre><h2 id="函数柯里化-局部套用"><a href="#函数柯里化-局部套用" class="headerlink" title="函数柯里化/局部套用"></a>函数柯里化/局部套用</h2><pre><code>Function.method(&apos;curry&apos;, function() {
-    var slice = Array.prototype.slice;
-    var args = slice.apply(arguments);
-    var that = this;
-    return function() {
-        return that.apply(null, args.concat(slice.apply(arguments)));
-    }
-});
-
-var add = function(a, b) {
-    return a + b;
-}
-var addplus = add.curry(1);
-console.log(addplus(6));    //7
-</code></pre><p>##记忆memoization<br>函数可以将先前操作的结果记录在某个对象里，从而避免无谓的重复运算。</p>
-<pre><code>var fibonacci = function() {
-    var memo = [0, 1];
-    var fib = function(n) {
-        var result = memo[n];
-        if (typeof result !== &apos;number&apos;) {
-            result = fib(n - 1) + fib(n -2);
-            memo[n] = result;
-        }
-        return result;
-    };
-}();
-
-var memoizer = function(memo, formula) {
-    var recur = function(n) {
-        var result = memo[n];
-        if (typeof result !== &apos;number&apos;) {
-            result = formula(recur, n);
-            memo[n] = result;
-        }
-        return result;
-    };
-    return recur;
-};
-</code></pre><h2 id="构造器模式与继承-基于类的继承-伪类构造器"><a href="#构造器模式与继承-基于类的继承-伪类构造器" class="headerlink" title="构造器模式与继承/基于类的继承/伪类构造器"></a>构造器模式与继承/基于类的继承/伪类构造器</h2><pre><code>var Animal = function(name) {
-    this.name = name;
-}
-
-Animal.prototype.getName = function() {
-    return this.name;
-}
-
-Animal.prototype.setName = function(name) {
-    this.name = name;
-}
-
-var animal_instance = new Animal(&apos;animal&apos;);
-animal_instance.getName();  //animal
-
-var Cat = function(name) {
-    this.name = name;
-}
-
-Cat.prototype = new Animal();
-//扩展新原型对象
-Cat.prototype.say = function() {
-    return &apos;This is &apos; + this.name;
-}
-
-vat cat_instance = new Cat(&apos;cat&apos;);
-cat.say();  //This is cat
-</code></pre><h2 id="基于原型的继承"><a href="#基于原型的继承" class="headerlink" title="基于原型的继承"></a>基于原型的继承</h2><pre><code>if (typeof Object.create !== &apos;function&apos;) {
-    Object.create = function(obj) {
-        var F = function() {};
-        F.prototype = obj;
-        return new F();
-    }
-}
-var animal = {
-    name: &apos;animal&apos;,
-    getName: function() {
-        return this.name;
-    }
-}
-var cat = Object.create(animal);
-cat.name = &apos;cat&apos;;
-cat.getName = function() {
-    return &apos;cat &apos; + this.name;
-}
-</code></pre><h2 id="函数化模式"><a href="#函数化模式" class="headerlink" title="函数化模式"></a>函数化模式</h2><pre><code>var animal = function(spec) {
-    var taht = {};
-    that.getVal = function() {
-        return spec.val;
-    }
-    return that;
-}
-var animal_instance = animal({val: 1});
-animal_instance.getVal();   //1
-var cat = function(spec) {
-    spec.name = &apos;cat&apos;;
-    var that = animal(spec);
-    that.getName = function() {
-        return that.val + &apos; &apos; + spec.name;
-    }
-    return that;
-}
-var cat_instance = cat({val: 2});
-cat_instance.getName();    //cat
-
-Object.method(&apos;superior&apos;, function(name) {
-    var that = this;
-    var method = that[name];
-    return function() {
-        return method.apply(that, arguments);
-    };
-});
-
-var bootscat = function(spec) {
-    var that = cat(spec);
-    var superGetVal = that.superior(&apos;getVal&apos;);
-    that.getName = function() {
-        return superGetVal() + &apos; pairs of boots&apos;;
-    };
-    return that;
-};
-var bootscat_instance = bootscat({val: 1});
-bootscat_instance.getName();    //1 pairs of boots
-</code></pre><h2 id="利用部件组装对象"><a href="#利用部件组装对象" class="headerlink" title="利用部件组装对象"></a>利用部件组装对象</h2><pre><code>var eventuality = function(that) {
-    var registry = {};
-    that.fire = function(event) {
-        var array, func, handler, i;
-        var type = typeof event === &apos;string&apos; ? event : event.type;
-        if (registry.hasOwnProperty(type)) {
-            array = registry[type];
-            for (i = 0; i &lt; array.length; ++i) {
-                handler = array[i];
-                func = handler.method;
-                if (typeof func === &apos;string&apos;) {
-                    func = this[func];
-                }
-                func.apply(this, handler.parameters || [event]);
-            }
-        }
-        return this;
-    };
-    that.on = function(type, method, parameters) {
-        var handler = {
-            method: method,
-            parameters: parameters
-        };
-        if (registry.hasOwnProperty(type)) {
-            registry[type].push(handler);
-        } else {
-            registry[type] = [handler];
-        }
-        return this;
-    };
-    return that;
-};
-</code></pre><h2 id="类数组对象"><a href="#类数组对象" class="headerlink" title="类数组对象"></a>类数组对象</h2><p><code>var array = [1, &#39;miao&#39;, false];</code></p>
-<ol>
-<li>依序各值对应属性名’0’, ‘1’, …</li>
-<li>array继承自<code>Array.prototype</code></li>
-<li>元素类型不必相同</li>
-<li>下标大于当前<code>length</code>不会发生越界，<code>length</code>值自动增大以容乃新元素</li>
-<li>属性<code>length</code>的值为数组的最大整数属性么加1</li>
-<li>使用<code>delete</code>删除元素，属性值变为<code>undefined</code></li>
-</ol>
-<p>示例：</p>
-<pre><code>delete array[1];
-console.log(array); //[1, undefined, fale];
-</code></pre><ol>
-<li>方法扩展，可以通过原型扩展和对象扩展</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/08/note-front-end-05/" itemprop="url">
-                  Web前端笔记05
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-08T09:21:29+08:00" content="2016-03-08">
-              2016-03-08
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h2><p>内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。<br>垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为 0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收。</p>
-<ol>
-<li>setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。</li>
-<li>闭包</li>
-<li>控制台日志</li>
-<li>循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）</li>
-</ol>
-<h2 id="优雅降级和渐进增强"><a href="#优雅降级和渐进增强" class="headerlink" title="优雅降级和渐进增强"></a>优雅降级和渐进增强</h2><ol>
-<li><p>优雅降级：Web站点在所有新式浏览器中都能正常工作，如果用户使用的是老式浏览器，则代码会检查以确认它们是否能正常工作。由于IE独特的盒模型布局问题，针对不同版本的IE的hack实践过优雅降级了,为那些无法支持功能的浏览器增加候选方案，使之在旧式浏览器上以某种形式降级体验却不至于完全失效。</p>
-</li>
-<li><p>渐进增强：从被所有浏览器支持的基本功能开始，逐步地添加那些只有新式浏览器才支持的功能,向页面增加无害于基础浏览器的额外样式和功能的。当浏览器支持时，它们会自动地呈现出来并发挥作用。</p>
-</li>
-</ol>
-<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p>Node.js优点：</p>
-<ol>
-<li>采用事件驱动、异步编程，为网络服务而设计。其实Javascript的匿名函数和闭包特性非常适合事件驱动、异步编程。而且JavaScript也简单易学，很多前端设计人员可以很快上手做后端设计。</li>
-<li>Node.js非阻塞模式的IO处理给Node.js带来在相对低系统资源耗用下的高性能与出众的负载能力，非常适合用作依赖其它IO资源的中间层服务。</li>
-<li>Node.js轻量高效，可以认为是数据密集型分布式部署环境下的实时应用系统的完美解决方案。Node非常适合如下情况：在响应客户端之前，您预计可能有很高的流量，但所需的服务器端逻辑和处理不一定很多。</li>
-</ol>
-<p>Node.js缺点：</p>
-<ol>
-<li>可靠性低</li>
-<li>单进程，单线程，只支持单核CPU，不能充分的利用多核CPU服务器。一旦这个进程崩掉，那么整个web服务就崩掉了</li>
-</ol>
-<p><a href="https://www.zhihu.com/question/19653241/answer/15993549" target="_blank" rel="external">FengqiAsia</a></p>
-<p>Node.js适用场景：</p>
-<ol>
-<li>高并发</li>
-<li>聊天</li>
-<li>实时消息推送</li>
-</ol>
-<h2 id="应用性能优化"><a href="#应用性能优化" class="headerlink" title="应用性能优化"></a>应用性能优化</h2><ol>
-<li>减少http请求次数：CSS Sprites, JS、CSS 源码压缩、图片大小控制合适；网页 Gzip，CDN 托管，data 缓存 ，图片服务器</li>
-<li>前端模板 JS + 数据，减少由于HTML标签导致的带宽浪费，前端用变量保存 AJAX 请求结果，每次操作本地变量，不用请求，减少请求次数</li>
-<li>用 innerHTML 代替 DOM 操作，减少 DOM 操作次数，优化 javascript 性能</li>
-<li>当需要设置的样式很多时设置 className 而不是直接操作 style</li>
-<li>少用全局变量、缓存DOM节点查找的结果。减少 IO 读取操作</li>
-<li>避免使用 CSS Expression（css表达式)又称 Dynamic properties(动态属性)</li>
-<li>图片预加载，将样式表放在顶部，将脚本放在底部，加上时间戳</li>
-</ol>
-<h2 id="AJAX-过程"><a href="#AJAX-过程" class="headerlink" title="AJAX 过程"></a>AJAX 过程</h2><ol>
-<li>创建XMLHttpRequest对象,也就是创建一个异步调用对象</li>
-<li>创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息</li>
-<li>设置响应HTTP请求状态变化的函数</li>
-<li>发送HTTP请求</li>
-<li>获取异步调用返回的数据</li>
-<li>使用JavaScript和DOM实现局部刷新</li>
-</ol>
-<h2 id="前端安全问题"><a href="#前端安全问题" class="headerlink" title="前端安全问题"></a>前端安全问题</h2><ol>
-<li>XSS 跨站脚本（Cross-site scripting）它允许恶意用户将代码注入到网页上，其他用户在观看网页时就会受到影响。这类攻击通常包含了HTML以及用户端脚本语言。</li>
-<li>sql注入</li>
-<li>CSRF：是跨站请求伪造（Cross-site request forgery），很明显根据刚刚的解释，他的核心也就是请求伪造，通过伪造身份提交POST和GET请求来进行跨域的攻击</li>
-</ol>
-<p>完成CSRF需要两个步骤：</p>
-<ol>
-<li>登陆受信任的网站A，在本地生成 COOKIE</li>
-<li>在不登出A的情况下，或者本地 COOKIE 没有过期的情况下，访问危险网站B。</li>
-</ol>
-<h2 id="IE各版本和Chrome可并行下载资源数"><a href="#IE各版本和Chrome可并行下载资源数" class="headerlink" title="IE各版本和Chrome可并行下载资源数"></a>IE各版本和Chrome可并行下载资源数</h2><ol>
-<li>IE6 2 个并发</li>
-<li>iE7 升级之后的 6 个并发，之后版本也是 6 个</li>
-<li>Firefox，chrome 也是6个</li>
-</ol>
-<h2 id="Javascript同源策略"><a href="#Javascript同源策略" class="headerlink" title="Javascript同源策略"></a>Javascript同源策略</h2><p>概念：<br>同源策略是客户端脚本（尤其是Javascript）的重要的安全度量标准。它最早出自Netscape Navigator2.0，其目的是防止某个文档或脚本从多个不同源装载。<br>这里的同源策略指的是：协议，域名，端口相同，同源策略是一种安全协议，指一段脚本只能读取来自同一来源的窗口和文档的属性。</p>
-<p>为什么要有同源限制：<br>我们举例说明：比如一个黑客程序，他利用Iframe把真正的银行登录页面嵌到他的页面上，当你使用真实的用户名，密码登录时，他的页面就可以通过Javascript读取到你的表单中input中的内容，这样用户名，密码就轻松到手了。</p>
-<h2 id="GET和POST"><a href="#GET和POST" class="headerlink" title="GET和POST"></a>GET和POST</h2><p>GET：一般用于信息获取，使用URL传递参数，对所发送信息的数量也有限制，一般在2000个字符<br>POST：一般用于修改服务器上的资源，对所发送的信息没有限制</p>
-<p>GET方式需要使用 Request.QueryString 来取得变量的值<br>POST方式通过 Request.Form 来获取变量的值<br>也就是说 Get 是通过地址栏来传值，而 Post 是通过提交表单来传值。</p>
-<p>在以下情况中，请使用 POST 请求：</p>
-<ol>
-<li>无法使用缓存文件（更新服务器上的文件或数据库）</li>
-<li>向服务器发送大量数据（POST 没有数据量限制）</li>
-<li>发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠</li>
-</ol>
-<h2 id="Javascript-eval方法"><a href="#Javascript-eval方法" class="headerlink" title="Javascript eval方法"></a>Javascript eval方法</h2><ol>
-<li>它的功能是把对应的字符串解析成JS代码并运行</li>
-<li>应该避免使用eval，不安全，非常耗性能（2次，一次解析成js语句，一次执行）</li>
-</ol>
-<h2 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h2><p>100 Continue  继续，一般在发送post请求时，已发送了http header之后服务端将返回此信息，表示确认，之后发送具体参数信息<br>200 OK   正常返回信息<br>201 Created  请求成功并且服务器创建了新的资源<br>202 Accepted  服务器已接受请求，但尚未处理<br>301 Moved Permanently  请求的网页已永久移动到新位置<br>302 Found  临时性重定向<br>303 See Other  临时性重定向，且总是使用 GET 请求新的 URI<br>304 Not Modified  自从上次请求后，请求的网页未修改过<br>400 Bad Request  服务器无法理解请求的格式，客户端不应当尝试再次使用相同的内容发起请求<br>401 Unauthorized  请求未授权<br>403 Forbidden  禁止访问<br>404 Not Found  找不到如何与 URI 相匹配的资源<br>500 Internal Server Error  最常见的服务器端错误<br>503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）</p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/07/note-front-end-04/" itemprop="url">
-                  Web前端笔记04
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-07T08:51:43+08:00" content="2016-03-07">
-              2016-03-07
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="CSS中link和-import的区别"><a href="#CSS中link和-import的区别" class="headerlink" title="CSS中link和@import的区别"></a>CSS中link和@import的区别</h2><ol>
-<li>link属于HTML标签，而@import是CSS提供的; </li>
-<li>页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;</li>
-<li>import只在IE5以上才能识别，而link是HTML标签，无兼容问题; </li>
-<li>link方式的样式的权重 高于@import的权重。</li>
-</ol>
-<h2 id="CSS盒子模型"><a href="#CSS盒子模型" class="headerlink" title="CSS盒子模型"></a>CSS盒子模型</h2><ol>
-<li><p>盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)</p>
-</li>
-<li><p>IE 盒子模型、标准 W3C 盒子模型；IE 8以下的content部分包含了 border 和 pading。</p>
-</li>
-</ol>
-<h2 id="CSS属性继承"><a href="#CSS属性继承" class="headerlink" title="CSS属性继承"></a>CSS属性继承</h2><ol>
-<li>不可继承<br><code>display</code><br><code>margin</code><br><code>border</code><br><code>padding</code><br><code>background</code><br><code>height</code><br><code>min-height</code><br><code>max-height</code><br><code>width</code><br><code>min-width</code><br><code>max-width</code><br><code>overflow</code><br><code>position</code><br><code>left</code><br><code>right</code><br><code>top</code><br><code>bottom</code><br><code>z-index</code><br><code>float</code><br><code>clear</code><br><code>table-layout</code><br><code>vertical-align</code><br><code>page-break-after</code><br><code>page-bread-before</code><br><code>unicode-bidi</code></li>
-<li>所有元素可继承<br><code>visibility</code><br><code>cursor</code></li>
-<li>内联元素可继承<br><code>letter-spacing</code><br><code>word-spacing</code><br><code>white-space</code><br><code>line-height</code><br><code>color</code><br><code>font</code><br><code>font-family</code><br><code>font-size</code><br><code>font-style</code><br><code>font-variant</code><br><code>font-weight</code><br><code>text-decoration</code><br><code>text-transform</code><br><code>direction</code></li>
-<li>终端块状元素可继承<br><code>text-indent</code><br><code>text-align</code></li>
-<li>列表元素可继承<br><code>list-style</code><br><code>list-style-type</code><br><code>list-style-position</code><br><code>list-style-image</code></li>
-<li>表格元素可继承<br><code>border-collapse</code></li>
-</ol>
-<h2 id="CSS样式初始化"><a href="#CSS样式初始化" class="headerlink" title="CSS样式初始化"></a>CSS样式初始化</h2><p>由于浏览器的兼容问题，不同浏览器对某些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。<br>初始化样式会对SEO（搜索引擎优化）有一定的影响，力求影响最小的情况下初始化。</p>
-<p>最简单的初始化方法（不建议）：</p>
-<pre><code>* {
-    padding: 0;
-    margin: 0;
-}
-</code></pre><p>可使用工具：<br><a href="http://cssreset.com/" target="_blank" rel="external">Most Popular CSS Reset</a><br><a href="http://meyerweb.com/eric/tools/css/reset/" target="_blank" rel="external">Reset.CSS</a><br><a href="http://cssreset.com/scripts/normalize-css/" target="_blank" rel="external">Normalize.CSS</a></p>
-<hr>
-<h2 id="HTML语义化"><a href="#HTML语义化" class="headerlink" title="HTML语义化"></a>HTML语义化</h2><p><a href="http://www.html5jscss.com/html5-semantics-section.html" target="_blank" rel="external">语义化元素1</a><br><a href="http://www.html5jscss.com/html5-semantics-rich.html" target="_blank" rel="external">语义化元素2</a></p>
-<ol>
-<li>去掉或者丢失样式的时候能够让页面呈现出清晰的结构；</li>
-<li>有利于SEO：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息：爬虫依赖于标签来确定上下文和各个关键字的权重；</li>
-<li>方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以意义的方式来渲染网页；</li>
-<li>便于团队开发和维护，语义化更具可读性，是下一步吧网页的重要动向，遵循W3C标准的团队都遵循这个标准，可以减少差异化。</li>
-</ol>
-<h2 id="Doctype"><a href="#Doctype" class="headerlink" title="Doctype"></a>Doctype</h2><ol>
-<li>&lt;!DOCTYPE&gt; 声明位于文档中的最前面，处于 <html> 标签之前。告知浏览器以何种模式来渲染文档。 </html></li>
-<li>严格模式的排版和 JS 运作模式是  以该浏览器支持的最高标准运行。</li>
-<li>在混杂模式中，页面以宽松的向后兼容的方式显示。模拟老式浏览器的行为以防止站点无法工作。</li>
-<li>DOCTYPE不存在或格式不正确会导致文档以混杂模式呈现。 </li>
-</ol>
-<h3 id="HTML4-01和XHTML-1-0-Doctype"><a href="#HTML4-01和XHTML-1-0-Doctype" class="headerlink" title="HTML4.01和XHTML 1.0 Doctype"></a>HTML4.01和XHTML 1.0 Doctype</h3><ol>
-<li>该标签可声明三种 DTD 类型，分别表示严格版本、过渡版本以及基于框架的 HTML 文档。</li>
-<li>HTML 4.01 规定了三种文档类型：Strict、Transitional 以及 Frameset。</li>
-<li>XHTML 1.0 规定了三种 XML 文档类型：Strict、Transitional 以及 Frameset。</li>
-<li>Standards （标准）模式（也就是严格呈现模式）用于呈现遵循最新标准的网页，而 Quirks（包容）模式（也就是松散呈现模式或者兼容模式）用于呈现为传统浏览器而设计的网页。</li>
-</ol>
-<h2 id="HTML与XHTML的区别"><a href="#HTML与XHTML的区别" class="headerlink" title="HTML与XHTML的区别"></a>HTML与XHTML的区别</h2><ol>
-<li>所有的标记都必须要有一个相应的结束标记</li>
-<li>所有标签的元素和属性的名字都必须使用小写</li>
-<li>所有的 XML 标记都必须合理嵌套</li>
-<li>所有的属性必须用引号 “” 括起来</li>
-<li>把所有 &lt; 和 &amp; 特殊符号用编码表示</li>
-<li>给所有属性赋一个值</li>
-<li>不要在注释内容中使用 “–”</li>
-<li>图片必须有说明文字</li>
-</ol>
-<h2 id="支持HTML5新标签"><a href="#支持HTML5新标签" class="headerlink" title="支持HTML5新标签"></a>支持HTML5新标签</h2><p>IE8/IE7/IE6支持通过 document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式（当然最好的方式是直接使用成熟的框架、使用最多的是html5shiv框架）。</p>
-<pre><code>&lt;!--[if lt IE 9]&gt; 
-&lt;script&gt; src=&quot;http://html5shiv.googlecode.com/svn/trunk/html5.js&quot;&lt;/script&gt; 
-&lt;![endif]--&gt; 
-</code></pre><h2 id="WebSocket兼容低版本浏览器"><a href="#WebSocket兼容低版本浏览器" class="headerlink" title="WebSocket兼容低版本浏览器"></a>WebSocket兼容低版本浏览器</h2><p>Adobe Flash Socket 、 ActiveX HTMLFile (IE) 、 基于 multipart 编码发送 XHR 、 基于长轮询的 XHR</p>
-<h2 id="网站文件和资源的优化"><a href="#网站文件和资源的优化" class="headerlink" title="网站文件和资源的优化"></a>网站文件和资源的优化</h2><ol>
-<li>文件合并</li>
-<li>文件最小化/文件压缩</li>
-<li>使用 CDN 托管</li>
-<li>缓存的使用（多个域名来提供缓存）</li>
-</ol>
-<h2 id="减少页面加载时间"><a href="#减少页面加载时间" class="headerlink" title="减少页面加载时间"></a>减少页面加载时间</h2><ol>
-<li>优化图片 （CSSSprite、SVGSprite、Base64）</li>
-<li>图像格式的选择（GIF：提供的颜色较少，可用在一些对颜色要求不高的地方） </li>
-<li>优化CSS（压缩合并css，如 margin-top, margin-left…) </li>
-<li>网址后加斜杠（如www.campr.com/目录，会判断这个目录是什么文件类型，或者是目录。） </li>
-<li>标明高度和宽度（如果浏览器没有找到这两个参数，它需要一边下载图片一边计算大小，如果图片很多，浏览器需要不断地调整页面。这不但影响速度，也影响浏览体验。<br>当浏览器知道了高度和宽度参数后，即使图片暂时无法显示，页面上也会腾出图片的空位，然后继续加载后面的内容。从而加载时间快了，浏览体验也更好了） </li>
-<li>减少http请求（合并文件，合并图片）</li>
-</ol>
-<h2 id="FOUC-Flash-Of-Unstyled-Content-文档样式闪烁"><a href="#FOUC-Flash-Of-Unstyled-Content-文档样式闪烁" class="headerlink" title="FOUC - Flash Of Unstyled Content 文档样式闪烁"></a>FOUC - Flash Of Unstyled Content 文档样式闪烁</h2><p>它指的是在某些情况下，IE在加载网页时会出现短暂的CSS样式失效。这种问题出现的条件是比较独特的：</p>
-<ol>
-<li>只发生在Windows上的IE（5.0版本以上）</li>
-<li>只发生在那些会出现FOUC现象的网页</li>
-<li>IE的临时文件夹中没有缓存过该页面的CSS文件</li>
-</ol>
-<p>现在用IE访问这个页面，就可以看到FOUC发生的时候的情况（当然前提是你之前没有访问过它，否则可能需要清空IE的临时文件夹再访问）。</p>
-<pre><code>&lt;title&gt;Flash of Unstyled Content (FOUC)&lt;/title&gt;
-&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html&quot;; charset=&quot;iso-8859-1&quot;&gt;
-&lt;style type=&quot;text/css&quot; media=&quot;all&quot;&gt;@import &quot;../fouc.css&quot;;&lt;/style&gt; 
-</code></pre><p>这个页面的特殊之处在于它的<code>head</code>标签里是没有任何的<code>link</code>或<code>script</code>元素的。<br>而引用CSS文件的@import就是造成这个问题的罪魁祸首。IE会先加载整个HTML文档的DOM，然后再去导入外部的CSS文件，因此，在页面DOM加载完成到CSS导入完成中间会有一段时间页面上的内容是没有样式的，这段时间的长短跟网速，电脑速度都有关系。</p>
-<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>在<code>head</code>之间加入一个<code>link</code>或者<code>script</code>元素就可以了。</p>
-<h2 id="new操作符"><a href="#new操作符" class="headerlink" title="new操作符"></a>new操作符</h2><ol>
-<li>创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型</li>
-<li>属性和方法被加入到 this 引用的对象中</li>
-<li>新创建的对象由 this 所引用，并且最后隐式的返回 this</li>
-</ol>
-<p>示例：</p>
-<pre><code>var obj = new Base();
-// same as
-var obj = {};
-obj.__proto__ = Base.prototype;
-Base.call(obj); 
-</code></pre><p>如果在一个构造函数中忘了加new，那么这个新对象就不会绑定到新的实例上，不幸的是，它会绑定到全局对象上，就会影响全局变量。</p>
-<h2 id="JS异步加载和延迟加载"><a href="#JS异步加载和延迟加载" class="headerlink" title="JS异步加载和延迟加载"></a>JS异步加载和延迟加载</h2><ol>
-<li>defer和async</li>
-<li>Script DOM Element动态创建DOM方式（创建script，插入到DOM中，加载完毕后callBack）</li>
-<li>onload 时的异步加载</li>
-<li>按需异步载入js</li>
-</ol>
-<h2 id="跨域问题"><a href="#跨域问题" class="headerlink" title="跨域问题"></a>跨域问题</h2><ol>
-<li>jsonp（jsonp 的原理是动态插入 script 标签）</li>
-<li>document.domain + iframe</li>
-<li>window.name + iframe</li>
-<li>location.hash + iframe</li>
-<li>window.postMessage</li>
-<li>服务器上设置代理页面</li>
-<li>flash + crossdomain.xml</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/06/note-front-end-03/" itemprop="url">
-                  Web前端笔记03
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-06T10:41:58+08:00" content="2016-03-06">
-              2016-03-06
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="HTML元素显示优先级"><a href="#HTML元素显示优先级" class="headerlink" title="HTML元素显示优先级"></a>HTML元素显示优先级</h2><p>在<code>HTML</code>中，帧元素<code>frameset</code>的优先级最高，表单元素比非表单元素的优先级要高。<br>表单元素包括：文本输入框，密码输入框，单选框，复选框，文本输入域，列表框等等；<br>非表单元素包括：<code>a</code>，<code>div</code>，<code>table</code>，<code>span</code>等。</p>
-<p>所有的<code>HTML</code>元素又可以根据其显示分成两类：<br>有窗口元素以及无窗口元素。<br>有窗口元素总是显示在无窗口元素的前面。<br>有窗口元素包括：<code>select</code>，<code>object</code>，以及<code>frames</code>等等。<br>无窗口元素：大部分<code>HTML</code>元素都是无窗口元素。</p>
-<h2 id="浏览器类型与显示优先级"><a href="#浏览器类型与显示优先级" class="headerlink" title="浏览器类型与显示优先级"></a>浏览器类型与显示优先级</h2><ol>
-<li><p>Netscape/Mozilla<br>在NS浏览器6.0以前的版本中，表单元素总是比其他HTML元素有更高的优先级。<br>在NS 6+浏览器中，IFRAME元素和所有表单元素的显示次序或者由CSS的z-index属性值确定，或者由它们在HTML页面中出现的次序确定，但SELECT元素除外。</p>
-</li>
-<li><p>Opera<br>在最新的Opera（7.10*）浏览器中，包括SELECT在内的所有表单元素根据z-index属性或它们在HTML页面中的出现次序来确定显示优先级。<br>最新的Opera浏览器不将IFRAME作为无窗口元素显示，IFRAME被看做有窗口元素，在显示次序上要比所有无窗口元素优先。</p>
-</li>
-</ol>
-<h2 id="CSS-z-index-属性"><a href="#CSS-z-index-属性" class="headerlink" title="CSS z-index 属性"></a>CSS z-index 属性</h2><p>当多个<code>HTML</code>元素重叠在同一空间中时，<code>z-index</code>值较大的元素将覆盖<code>z-index</code>值较小的元素。<br><code>z-index</code>属性值只有在同一类元素之间才起决定作用。<br>有窗口元素和无窗口元素就像画在同一浏览器窗口的两块不同画布上，两类元素分别自成体系，它们的<code>z-index</code>属性也只相对于同一画布上的其他元素起作用。<br>当无窗口元素需要覆盖有窗口元素时，可以运用脚本动态地隐藏有窗口元素。</p>
-<h2 id="CSS-样式优先级"><a href="#CSS-样式优先级" class="headerlink" title="CSS 样式优先级"></a>CSS 样式优先级</h2><p>优先级由高到低：<br>（内联样式）Inline style<br>（内部样式）Internal style sheet<br>（外部样式）External style sheet</p>
-<p><strong>如果外部样式放在内部样式的后面，则外部样式将覆盖内部样式。</strong></p>
-<h2 id="选择器优先级"><a href="#选择器优先级" class="headerlink" title="选择器优先级"></a>选择器优先级</h2><p>权值分布：<br>内联样式表的权值最高 1000；<br>ID 选择器的权值为 100；<br>Class 类选择器的权值为 10；<br>HTML 标签选择器的权值为 1。</p>
-<p>优先级法则：<br>选择器都有一个权值，权值越大越优先；<br>当权值相等时，后出现的样式表设置要优于先出现的样式表设置；<br>网页编写者设置的CSS 样式的优先权高于浏览器所设置的样式；<br>继承的CSS 样式优先级低于后来指定的CSS 样式；<br>在同一组属性设置中标有<code>!important</code>规则的优先级最大。</p>
-<hr>
-<h2 id="iframe-用法"><a href="#iframe-用法" class="headerlink" title="iframe 用法"></a>iframe 用法</h2><ol>
-<li>典型系统结构，左侧是功能树，右侧就是一些常见的table或者表单之类的。为了每一个功能，单独分离出来，采用iframe。 </li>
-<li>ajax上传文件。 </li>
-<li>加载别的网站内容，例如google广告，网站流量分析。</li>
-<li>在上传图片时，不用flash实现无刷新。</li>
-<li>跨域访问的时候可以用到iframe，使用iframe请求不同域名下的资源。</li>
-</ol>
-<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
-<li>解决加载缓慢的第三方内容如图标和广告等的加载问题</li>
-<li>Security sandbox</li>
-<li>并行加载脚本</li>
-</ol>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ol>
-<li>iframe会阻塞主页面的Onload事件</li>
-<li>即时内容为空，加载也需要时间</li>
-<li>没有语意</li>
-</ol>
-<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ol>
-<li>display:inline不兼容IE6和IE7</li>
-<li>javascript中字符串连接时用Array.join()替换 string += “xx”，速度提升几十倍。</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/05/note-front-end-02/" itemprop="url">
-                  Web前端笔记02
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-05T10:41:59+08:00" content="2016-03-05">
-              2016-03-05
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="DOM加载顺序"><a href="#DOM加载顺序" class="headerlink" title="DOM加载顺序"></a>DOM加载顺序</h2><ol>
-<li>解析HTML结构。</li>
-<li>加载外部脚本和样式表文件。</li>
-<li>解析并执行脚本代码。</li>
-<li>构造HTML DOM模型。</li>
-<li>加载图片等外部文件。</li>
-<li>页面加载完毕。</li>
-</ol>
-<h2 id="DOMContentLoaded早于onload"><a href="#DOMContentLoaded早于onload" class="headerlink" title="DOMContentLoaded早于onload"></a><code>DOMContentLoaded</code>早于<code>onload</code></h2><p>当<code>onload</code>事件触发时，页面上所有的DOM，样式表，脚本，图片，flash都已经加载完成了。</p>
-<p>当<code>DOMContentLoaded</code>事件触发时，仅当DOM加载完成，不包括样式表，图片，flash。</p>
-<hr>
-<h2 id="false、0、空字符串、null和undefined"><a href="#false、0、空字符串、null和undefined" class="headerlink" title="false、0、空字符串、null和undefined"></a>false、0、空字符串、null和undefined</h2><h4 id="与false比较"><a href="#与false比较" class="headerlink" title="与false比较"></a>与false比较</h4><p>运行以下代码：</p>
-<pre><code>alert(typeof(false) === &apos;boolean&apos;);         //true
-alert(typeof(0) === &apos;number&apos;);              //true
-alert(typeof(&quot;&quot;) === &apos;string&apos;);             //true
-alert(typeof(null) === &apos;object&apos;);           //true
-alert(typeof undefined === &apos;undefined&apos;);    //true
-</code></pre><p>运行以下代码：</p>
-<pre><code>alert(false == undefined);              //false
-alert(false == null);                   //false
-alert(null || undefined || false);      //fasle
-alert(false == 0);                      //true
-alert(false == &quot;&quot;);                     //true
-alert(null == undefined);               //true
-alert(null === undefined);               //false
-</code></pre><p>“假值”：0、空字符串和false<br>“空值”：null和undefined</p>
-<h4 id="null和undefined区别"><a href="#null和undefined区别" class="headerlink" title="null和undefined区别"></a>null和undefined区别</h4><p>undefined：无效对象，转为数值时为0。变量显式或者隐式（由Javascript引擎进行赋值）地被赋予了undefined，那么代表了此变量未被定义。</p>
-<ol>
-<li>变量被声明了，但没有赋值时，就等于 undefined</li>
-<li>调用函数时，应该提供的参数没有提供，该参数等于 undefined</li>
-<li>对象没有赋值的属性，该属性的值为 undefined</li>
-<li>函数没有返回值时，默认返回 undefined</li>
-</ol>
-<p>null：空对象，变量被赋予null值，则代表此变量被初始化为空值，转为数值时为NaN。</p>
-<ol>
-<li>作为函数的参数，表示该函数的参数不是对象</li>
-<li>作为对象原型链的终点</li>
-</ol>
-<hr>
-<h2 id="JQuery-ajax-方法"><a href="#JQuery-ajax-方法" class="headerlink" title="JQuery ajax() 方法"></a>JQuery ajax() 方法</h2><p>dataType 期服务器返回的数据类型</p>
-<p>“xml”: 返回 XML 文档，可用 jQuery 处理。<br>“html”: 返回纯文本 HTML 信息；包含的 script 标签会在插入 dom 时执行。<br>“script”: 返回纯文本 JavaScript 代码。不会自动缓存结果。除非设置了 “cache” 参数。注意：在远程请求时(不在同一个域下)，所有 POST 请求都将转为 GET 请求。（因为将使用 DOM 的 script标签来加载）<br>“json”: 返回 JSON 数据 。<br>“jsonp”: JSONP 格式。使用 JSONP 形式调用函数时，如 “myurl?callback=?” jQuery 将自动替换 ? 为正确的函数名，以执行回调函数。<br>“text”: 返回纯文本字符串。</p>
-<hr>
-<h2 id="typeof与instanceof"><a href="#typeof与instanceof" class="headerlink" title="typeof与instanceof"></a>typeof与instanceof</h2><h4 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h4><p>用以获取一个变量或者表达式的类型。<br>可能返回值：<br>number，boolean，string，function（函数），object（null，数组，对象），undefined。</p>
-<p>判断一个变量是否存在：<code>if(typeof a != &quot;undefined&quot;){}</code><br><strong>使用<code>if(a)</code>判断，如果a不存在（未声明）则会出错</strong></p>
-<h4 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h4><p>用于判断一个变量是否某个对象的实例。</p>
-<p>判断一个变量是否数组：<code>if(a instanceof Array){}</code><br><strong>使用typeof a对null，数组，对象都会返回object类型，无法用于判断数组</strong></p>
-<hr>
-<h2 id="元素alt和title属性"><a href="#元素alt和title属性" class="headerlink" title="元素alt和title属性"></a>元素alt和title属性</h2><p>alt和title同时设置时，alt作为图片的替代文字出现，title是图片的解释文字（鼠标悬浮是出现）。</p>
-<h2 id="CSS-Sprites"><a href="#CSS-Sprites" class="headerlink" title="CSS Sprites"></a>CSS Sprites</h2><p>把网页中一些背景图片整合到一张图片文件中，再利用CSS的<code>background-image</code>，<code>background-repeat</code>，<code>background-position</code>的组合进行背景定位，<code>background-position</code>可以用数字能精确的定位出背景图片的位置。</p>
-<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
-<li>利用CSS Sprites能很好地减少了网页的http请求，从而大大的提高了页面的性能，这也是CSS Sprites最大的优点，也是其被广泛传播和应用的主要原因；</li>
-<li>CSS Sprites能减少图片的字节。</li>
-</ol>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ol>
-<li>在图片合并的时候，要把多张图片有序的合理的合并成一张图片，还要留好只够的空间，防止板块内不会出现不必要的背景；<br>在宽屏，高分辨率的屏幕下的自适应页面，如果图片不够宽，很容易出现背景断裂；</li>
-<li>CSS Sprites在开发的时候比较麻烦，要通过photoshop或其他工具测量计算每一个背景单元的精确位置；</li>
-<li>CSS Sprites在维护的时候比较麻烦，如果页面背景有少许改动，一般就要改这张合并的图片，无序改的地方最好不要动，这样避免改动更多的css，如果在原来的地方放不下，只能（最好）往下加图片，这样图片的字节就增加了，还要改css。</li>
-</ol>
-<h4 id="CSS-Sprite-generator-在线生成工具"><a href="#CSS-Sprite-generator-在线生成工具" class="headerlink" title="CSS Sprite generator 在线生成工具"></a>CSS Sprite generator 在线生成工具</h4><p><a href="http://spritegen.website-performance.org/" target="_blank" rel="external">官方网址</a><br><a href="http://cn.spritegen.website-performance.org/" target="_blank" rel="external">中文版</a></p>
-<hr>
-<h2 id="js跨域获取数据"><a href="#js跨域获取数据" class="headerlink" title="js跨域获取数据"></a>js跨域获取数据</h2><ol>
-<li>只要协议、域名、端口有任何一个不同,都被当作是不同的域。</li>
-<li>使用jsonp进行跨域。</li>
-<li>使用window.name来进行跨域。</li>
-<li>通过修改document.domain来跨子域。</li>
-</ol>
-<h2 id="call和apply方法"><a href="#call和apply方法" class="headerlink" title="call和apply方法"></a>call和apply方法</h2><h4 id="call方法"><a href="#call方法" class="headerlink" title="call方法:"></a>call方法:</h4><p>语法：call([thisObj[, arg1[, arg2[,   [, argN]]]]])<br>定义：调用一个对象的一个方法，以另一个对象替换当前对象。<br>说明：<br>call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。<br>如果没有提供 thisObj 参数，那么 Global 对象被用作 thisObj。 </p>
-<h4 id="apply方法："><a href="#apply方法：" class="headerlink" title="apply方法："></a>apply方法：</h4><p>语法：apply(thisObj，[argArray])<br>定义：应用某一对象的一个方法，用另一个对象替换当前对象。<br>说明：<br>如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。<br>如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。</p>
-<p>两者作用相同，只是参数传递方式不同。</p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/04/note-front-end-01/" itemprop="url">
-                  Web前端笔记01
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-04T22:19:23+08:00" content="2016-03-04">
-              2016-03-04
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="HTML5全局属性contextmenu"><a href="#HTML5全局属性contextmenu" class="headerlink" title="HTML5全局属性contextmenu"></a>HTML5全局属性contextmenu</h2><p>规定元素的上下文菜单：当用户右键点击元素时，会出现上下文菜单。</p>
-<p><code>&lt;element contextmenu=&#39;menu_id&#39;&gt;&lt;/element&gt;</code></p>
-<p>W3C示例：</p>
-<pre><code>&lt;div contextmenu=&quot;mymenu&quot;&gt;
-    &lt;menu type=&quot;context&quot; id=&quot;mymenu&quot;&gt;
-        &lt;menuitem label=&quot;Refresh&quot;&gt;&lt;/menuitem&gt;
-        &lt;menuitem label=&quot;Twitter&quot;&gt;&lt;/menuitem&gt;
-    &lt;/menu&gt;
-&lt;/div&gt;
-</code></pre><p><strong>目前只有Firefox支持</strong></p>
-<hr>
-<h2 id="常见数据存储方式"><a href="#常见数据存储方式" class="headerlink" title="常见数据存储方式"></a>常见数据存储方式</h2><h4 id="IndexdDB"><a href="#IndexdDB" class="headerlink" title="IndexdDB"></a>IndexdDB</h4><p>HTML5 的本地存储，把一些数据存储到浏览器（客户端）中，当与网络断开时，可以从浏览器中读取数据，用来做一些离线应用。</p>
-<h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><ol>
-<li>通过在客户端(浏览器)记录信息确定用户身份，最大为 4 kb ，IE6大约只能存储2K。</li>
-<li>需要指定作用域，不可以跨域调用。</li>
-<li>每个特定的域名下最多生成20个cookie。</li>
-<li>随着每次HTTP请求头信息一起发送，无形中增加了网络流量。</li>
-<li>安全性问题。如果cookie被人拦截了，就可以取得所有的session信息。</li>
-<li>有些状态不可能保存在客户端。例如，为了防止重复提交表单，我们需要在服务器端保存一个计数器。如果我们把这个计数器保存在客户端，那么它起不到任何作用。</li>
-</ol>
-<p>示例：</p>
-<pre><code>var cookieHandler = {
-    setCookie: function (key, val, exdays) {
-        var date = new Date(Date.now() + (exdays * 24 * 60 * 60 * 1000));
-        document.cookie = key + &quot;=&quot; + val + &quot;;expires=&quot; + date.toGMTString();
-    },
-    getCookie: function (key) {
-        var cookies = document.cookie.split(&apos;;&apos;),
-            i = cookies.indexOf(key);
-        if (i &gt; 0) {
-            return cookies[i].split(&quot;=&quot;)[-1];
-        }
-    },
-    removeCookie: function (key) {
-        setCookie(key, &quot;&quot;, -1);
-    }
-}
-</code></pre><h4 id="URL参数"><a href="#URL参数" class="headerlink" title="URL参数"></a>URL参数</h4><p>使用 get 方法，从服务器上获取数据，大小不能大于 2 kb 。</p>
-<h4 id="Session-Storage"><a href="#Session-Storage" class="headerlink" title="Session Storage"></a>Session Storage</h4><p>服务器端使用的一种记录客户端状态的机制。IE不支持。<br>同一个窗口（或者Tab）页面刷新或者跳转，都能获取到本地存储的数据。<br>当新开窗口或者页面时，原来的数据就失效了。<br>当用户关闭浏览器窗口后，数据会被删除。</p>
-<h4 id="post"><a href="#post" class="headerlink" title="post"></a>post</h4><p>向服务器传送数据，数据量较大。</p>
-<h4 id="Local-Storage"><a href="#Local-Storage" class="headerlink" title="Local Storage"></a>Local Storage</h4><p>HTML5 的本地存储，将数据保存在客户端中（一般是永久的）。在移动设备上，大部分浏览器都支持web storage特性。Firefox 3.5、Safari 4和IE8支持。</p>
-<h4 id="UserData"><a href="#UserData" class="headerlink" title="UserData"></a>UserData</h4><p>IE6+浏览器使用userData存储数据，容量可达到640K。这个持久化数据放在缓存中，如果缓存没有清理，那么会一直存在。</p>
-<h4 id="Flash-ShareObject"><a href="#Flash-ShareObject" class="headerlink" title="Flash ShareObject"></a>Flash ShareObject</h4><p>能解决cookie存储的两个弊端，能够跨浏览器，需要安装Flash插件，当浏览器没有安装Flash控件时就不能用了。</p>
-<h4 id="Google-Gear"><a href="#Google-Gear" class="headerlink" title="Google Gear"></a>Google Gear</h4><p>Google开发出的一种本地存储技术。<br>缺点：需要安装Gear组件。</p>
-<h4 id="Global-Storage"><a href="#Global-Storage" class="headerlink" title="Global Storage"></a>Global Storage</h4><p>类似于IE的userData，Firefox2+支持，IE不支持。<br>在HTML5中提供了localStorage来取代globalStorage。</p>
-<p>使用：</p>
-<pre><code>globalStorage[location.hostname][&apos;name&apos;] = &apos;tugai&apos;;
-globalStorage[location.hostname][&apos;name&apos;];
-globalStorage[location.hostname].removeItem(&apos;name&apos;);
-</code></pre><hr>
-<h2 id="CSS定位机制"><a href="#CSS定位机制" class="headerlink" title="CSS定位机制"></a>CSS定位机制</h2><h3 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h3><p>元素的位置在正常的流中，与<code>position:static</code>位置相同</p>
-<h3 id="浮动（float）"><a href="#浮动（float）" class="headerlink" title="浮动（float）"></a>浮动（float）</h3><p>元素浮动会脱离原来的文档流。</p>
-<h3 id="定位（position）"><a href="#定位（position）" class="headerlink" title="定位（position）"></a>定位（position）</h3><h4 id="Static-定位"><a href="#Static-定位" class="headerlink" title="Static 定位"></a>Static 定位</h4><p>HTML元素的默认值，即没有定位，元素出现在正常的流中。</p>
-<h4 id="Fixed-定位"><a href="#Fixed-定位" class="headerlink" title="Fixed 定位"></a>Fixed 定位</h4><p>元素的位置相对于浏览器窗口是固定位置，即使窗口是滚动的它也不会移动，会脱离原来的文档流。</p>
-<h4 id="Relative-定位"><a href="#Relative-定位" class="headerlink" title="Relative 定位"></a>Relative 定位</h4><p>相对定位元素的定位是相对其正常位置，仍在正常的流中。</p>
-<h4 id="Absolute-定位"><a href="#Absolute-定位" class="headerlink" title="Absolute 定位"></a>Absolute 定位</h4><p>绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于<code>&lt;html&gt;</code>，会脱离原来的文档流。</p>
-<hr>
-<h2 id="Object-keys-obj"><a href="#Object-keys-obj" class="headerlink" title="Object.keys(obj)"></a><code>Object.keys(obj)</code></h2><p>Object.keys 返回一个所有元素为字符串的数组，其元素来自于从给定的对象上面可直接枚举的属性。这些属性的顺序与手动遍历该对象属性时的一致。</p>
-<hr>
-<h2 id="JavaScript-Array-filter-方法"><a href="#JavaScript-Array-filter-方法" class="headerlink" title="JavaScript Array filter()方法"></a>JavaScript Array filter()方法</h2><p><code>array.filter(function(currentValue, index, arr), thisValue)</code></p>
-<p>currentValue  必须，当前元素的值<br>index         可选，当前元素的索引值<br>arr           可选，当前元素属于的数组对象<br>thisValue     可选，对象作为该执行回调时使用，传递给函数，用作 “this” 的值。如果省略了 thisValue ，”this” 的值为 “undefined”。</p>
-<h2 id="JavaScript-splice-方法"><a href="#JavaScript-splice-方法" class="headerlink" title="JavaScript splice()方法"></a>JavaScript splice()方法</h2><p><code>array.splice(index, howmany, item1, ....., itemX)</code></p>
-<p>index   必需，规定从何处添加/删除元素，该参数是开始插入和（或）删除的数组元素的下标，必须是数字。<br>howmany 必需，规定应该删除多少元素，必须是数字，但可以是 “0”，如果未规定此参数，则删除从 index 开始到原数组结尾的所有元素。<br>item1, …, itemX   可选，要添加到数组的新元素。</p>
-<hr>
-<h2 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h2><h4 id="position实现相对定位"><a href="#position实现相对定位" class="headerlink" title="position实现相对定位"></a>position实现相对定位</h4><p>父元素：<code>position:relative</code><br>子元素：<code>position:absolute</code></p>
-<p>此时子元素相对与父元素定位，而不是相对于<code>&lt;html&gt;</code></p>
-<h2 id="CSS奇偶选择器"><a href="#CSS奇偶选择器" class="headerlink" title="CSS奇偶选择器"></a>CSS奇偶选择器</h2><p>奇数选择器：<code>element:nth-child(2n)</code>或<code>element:nth-child(even)</code></p>
-<p>偶数选择器：<code>element:nth-child(2n-1)</code>或<code>element:nth-child(odd)</code></p>
-<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><pre><code>.clear:after {
-    content: &quot; &quot;;
-    clear: both;
-    display: block;
-    font-size: 0;
-    visibility: hidden;
-    height: 0;
-}
-</code></pre><h2 id="宽度自适应"><a href="#宽度自适应" class="headerlink" title="宽度自适应"></a>宽度自适应</h2><p>HTML文档中，宽度固定的浮动元素在前，宽度自适应元素在后。</p>
-<hr>
-<h2 id="DOM事件阻止取消"><a href="#DOM事件阻止取消" class="headerlink" title="DOM事件阻止取消"></a>DOM事件阻止取消</h2><h4 id="DOM中的事件对象：（符合-W3C-标准）"><a href="#DOM中的事件对象：（符合-W3C-标准）" class="headerlink" title="DOM中的事件对象：（符合 W3C 标准）"></a>DOM中的事件对象：（符合 W3C 标准）</h4><p>preventDefault()            取消事件默认行为。<br>stopImmediatePropagation()  取消事件冒泡，会影响当前节点中的事件侦听器。<br>stopPropagation()           取消事件冒泡，不会影响当前节点 (currentTarget) 中的任何事件侦听器。</p>
-<h4 id="IE中的事件对象："><a href="#IE中的事件对象：" class="headerlink" title="IE中的事件对象："></a>IE中的事件对象：</h4><p>cancelBubble()              取消事件冒泡<br>returnValue()               取消事件默认行为<br><strong>IE不支持捕获</strong></p>
-<hr>
-<h2 id="获取自定义属性"><a href="#获取自定义属性" class="headerlink" title="获取自定义属性"></a>获取自定义属性</h2><p>for in循环可以获取object的所有属性，包括自定义属性以及原型链属性，<code>hasOwnProperty()</code>只能获取自定义属性，无法获取原型链属性。</p>
-<hr>
-<h2 id="原生Javascript选择器"><a href="#原生Javascript选择器" class="headerlink" title="原生Javascript选择器"></a>原生Javascript选择器</h2><h4 id="HTML-DOM-querySelector-方法"><a href="#HTML-DOM-querySelector-方法" class="headerlink" title="HTML DOM querySelector()方法"></a>HTML DOM querySelector()方法</h4><p><code>document.querySelector(CSS selectors)</code></p>
-<h4 id="HTML-DOM-querySelectorAll-方法"><a href="#HTML-DOM-querySelectorAll-方法" class="headerlink" title="HTML DOM querySelectorAll()方法"></a>HTML DOM querySelectorAll()方法</h4><p><code>document.querySelectorAll(CSS selectors)</code> <strong>HTML5新方法</strong></p>
-<p>参数CSS selectors<br>必须，指定一个或多个匹配元素的 CSS 选择器，可以使用它们的 id, 类, 类型, 属性, 属性值等来选取元素。<br>对于多个选择器，使用逗号隔开，返回一个匹配的元素。</p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-
-  </section>
-
-  
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/sadaharu.png"
-               alt="Miaoxingren" />
-          <p class="site-author-name" itemprop="name">Miaoxingren</p>
-          <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">posts</span>
-            </a>
-          </div>
-          
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Miaoxingren's avatar">
             </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/Miaoxingren" target="_blank">
-                  
-                    <i class="fa fa-github"></i> GitHub
-                  
-                </a>
-              </span>
-            
-          
+            <div>
+                <strong>Miaoxingren</strong>
+                <span>May 30, 2017</span>
+            </div>
         </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
 
-        
-        
+            
 
-        <div class="links-of-author motion-element">
-          
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
         </div>
+    </div>
+</div>
 
-      </section>
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
 
-      
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/05/10/note-front-end-11/">Web前端笔记11</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            CS...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/05/10/note-front-end-11/" target="_self">Continue Reading</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Miaoxingren's avatar">
+            </div>
+            <div>
+                <strong>Miaoxingren</strong>
+                <span>May 10, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/04/05/note-front-end-10/">Web前端笔记10</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/04/05/note-front-end-10/" target="_self">Continue Reading</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Miaoxingren's avatar">
+            </div>
+            <div>
+                <strong>Miaoxingren</strong>
+                <span>Apr 05, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/03/21/note-front-end-09/">Web前端笔记09</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            整数判断
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/03/21/note-front-end-09/" target="_self">Continue Reading</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Miaoxingren's avatar">
+            </div>
+            <div>
+                <strong>Miaoxingren</strong>
+                <span>Mar 21, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/03/20/note-front-end-08/">Web前端笔记08</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            设计模式
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/03/20/note-front-end-08/" target="_self">Continue Reading</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Miaoxingren's avatar">
+            </div>
+            <div>
+                <strong>Miaoxingren</strong>
+                <span>Mar 20, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/03/20/note-front-end-07/">Web前端笔记07</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            代码复用模...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/03/20/note-front-end-07/" target="_self">Continue Reading</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Miaoxingren's avatar">
+            </div>
+            <div>
+                <strong>Miaoxingren</strong>
+                <span>Mar 20, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/03/16/note-front-end-06/">Web前端笔记06</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/03/16/note-front-end-06/" target="_self">Continue Reading</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Miaoxingren's avatar">
+            </div>
+            <div>
+                <strong>Miaoxingren</strong>
+                <span>Mar 16, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/03/08/note-front-end-05/">Web前端笔记05</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            内存泄漏
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/03/08/note-front-end-05/" target="_self">Continue Reading</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Miaoxingren's avatar">
+            </div>
+            <div>
+                <strong>Miaoxingren</strong>
+                <span>Mar 08, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/03/07/note-front-end-04/">Web前端笔记04</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/03/07/note-front-end-04/" target="_self">Continue Reading</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Miaoxingren's avatar">
+            </div>
+            <div>
+                <strong>Miaoxingren</strong>
+                <span>Mar 07, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/03/06/note-front-end-03/">Web前端笔记03</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/03/06/note-front-end-03/" target="_self">Continue Reading</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Miaoxingren's avatar">
+            </div>
+            <div>
+                <strong>Miaoxingren</strong>
+                <span>Mar 06, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/03/05/note-front-end-02/">Web前端笔记02</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            DO...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/03/05/note-front-end-02/" target="_self">Continue Reading</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Miaoxingren's avatar">
+            </div>
+            <div>
+                <strong>Miaoxingren</strong>
+                <span>Mar 05, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/03/04/note-front-end-01/">Web前端笔记01</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/03/04/note-front-end-01/" target="_self">Continue Reading</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Miaoxingren's avatar">
+            </div>
+            <div>
+                <strong>Miaoxingren</strong>
+                <span>Mar 04, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+
+    
+
+    
+        <script>
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 12; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
+</div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Miaoxingren's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">May 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">April 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">March 2016<span class="sidebar_archives-count">9</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
 
     </div>
-  </aside>
 
+    <!-- Sidebar Image -->
+    
 
-        
-      </div>
-    </main>
+</aside>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2015 - 
-  <span itemprop="copyrightYear">2016</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Miaoxingren</span>
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
 </div>
 
-<div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.svg);">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.svg);">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.svg);">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
 </div>
 
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;MiaoxingJournal
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
 
 
 
-      </div>
-    </footer>
-
-    <div class="back-to-top"></div>
-  </div>
-
-  
+    <script src="/js/nprogress.js"></script>
 
 
-  
-
-
-
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
 
 
 
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
 
 
 
-  
 
 
 
-  
 
 
 
-  
-  
-
-  
-  
 
 
-</body>
+    
+    <!-- Swiftye -->
+    
+
+    <!-- Local Search-->
+    
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+                </main>
+            </div>
+        </body>
+    
 </html>
