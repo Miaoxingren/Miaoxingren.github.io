@@ -244,19 +244,19 @@
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/05/30/pt-px-res/">移动设计101：像素，点和分辨率</a></p>
+        <p class="article-headline-p"><a href="/2017/05/30/mobile-1/">移动端适配：像素与视口</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            本文根据 Dave Kearney 的 Mobile design 101: pixels, points and resolutions 翻译，无法保证译文完全正确。
-像素，点和分辨率之间的差异，甚至对那些正在转向移动开发或不熟悉各类屏幕及其工作原理的经验丰富的设计师来说，都是令人困惑的。本文将介绍在设计移动应用程序时需要了解的与屏幕和密度相关的主要关键词，并回答一些常见的其他问题。
-
+            1 相关概念1.1 设备像素/硬件像素/物理像素没有实际物理长度，是显示屏上能够显示的最小的点/单位，通常由红、绿、蓝三个子像素构成。从这三个子像素中穿过的光线混合起来，形成一个像素的颜色。
+在同一个设备上，它的设备像素个数是固定的，这是厂商在出厂时就设置好了的——即一个设备的分辨率是固定的。比如iPhone5的分辨率为640x1136，则设备像素数为640x1136。
+与设备...
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2017/05/30/pt-px-res/" target="_self">阅读全文</a>
+            <a href="/2017/05/30/mobile-1/" target="_self">阅读全文</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -274,7 +274,7 @@
         <div id="post_entry-right-info">
             <!-- Category -->
             <span class="post_entry-category">
-                
+                <a class="post_category-link" href="/categories/移动开发/">移动开发</a>
             </span>
 
             
@@ -305,17 +305,19 @@
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/05/29/hello-world/">Hello World</a></p>
+        <p class="article-headline-p"><a href="/2017/05/30/pt-px-res/">移动设计101：像素，点和分辨率</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can a...
+            本文根据 Dave Kearney 的 Mobile design 101: pixels, points and resolutions 翻译，无法保证译文完全正确。
+像素，点和分辨率之间的差异，甚至对那些正在转向移动开发或不熟悉各类屏幕及其工作原理的经验丰富的设计师来说，都是令人困惑的。本文将介绍在设计移动应用程序时需要了解的与屏幕和密度相关的主要关键词，并回答一些常见的其他问题。
+
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2017/05/29/hello-world/" target="_self">阅读全文</a>
+            <a href="/2017/05/30/pt-px-res/" target="_self">阅读全文</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -327,13 +329,13 @@
             </div>
             <div>
                 <strong>Miaoxingren</strong>
-                <span>5月 29, 2017</span>
+                <span>5月 30, 2017</span>
             </div>
         </div>
         <div id="post_entry-right-info">
             <!-- Category -->
             <span class="post_entry-category">
-                
+                <a class="post_category-link" href="/categories/翻译/">翻译</a>
             </span>
 
             
@@ -402,7 +404,7 @@
 
     <!-- Sidebar Email -->
     <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        youremail@email.com
+        meowxingren@qq.com
         <b class="caret"></b>
     </a>
 </div>
@@ -415,7 +417,7 @@
         <ul id="settings-dropdown" class="dropdown-menu">
             
                 <li>
-                    <a href="#" target="_blank" title="Email Me">
+                    <a href="mailto: meowxingren@qq.com" target="_blank" title="Email Me">
                         
                             <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
                         
@@ -459,8 +461,33 @@
 
     <!-- Categories  -->
     
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/移动开发/">移动开发<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/翻译/">翻译<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
 
     <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">local_offer</i>
+                
+                标签
+            </a>
+        </li>
+        
     
 
     <!-- Article Number  -->
@@ -481,17 +508,8 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Sidebar Divider -->
 
-    <div class="sidebar-divider"></div>
-
 
 <!-- Theme Material -->
-
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            主题 - Material
-            <span class="sidebar-badge badge-circle">i</span>
-        </div>
-    </a>
 
 
 <!-- Help & Support -->
@@ -535,29 +553,11 @@ It will not impact the appearance and can give developers a lot of support :)
         <div class="mdl-mini-footer--left-section sns-list">
     <!-- Twitter -->
     
-        <a href="https://twitter.com/twitter" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.svg);">
-                <span class="visuallyhidden">Twitter</span>
-            </button><!--
-     --></a>
-    
 
     <!-- Facebook -->
     
-        <a href="https://www.facebook.com/facebook" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.svg);">
-                <span class="visuallyhidden">Facebook</span>
-            </button><!--
-     --></a>
-    
 
     <!-- Google + -->
-    
-        <a href="https://www.google.com/" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.svg);">
-                <span class="visuallyhidden">Google Plus</span>
-            </button><!--
-     --></a>
     
 
     <!-- Weibo -->

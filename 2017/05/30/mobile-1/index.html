@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.4 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            移动端适配：像素与视口 | 
+        
+        Meow Blog
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Miaoxingren">
+    <meta name="description" content="null">
+    <meta name="keywords" content="null,像素,viewport">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/pic/favicon.png">
+    <link rel="icon" sizes="192x192" href="/pic/favicon@3x.png">
+    <link rel="apple-touch-icon" href="/pic/favicon@3x.png">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Meow Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://Miaoxingren.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="移动端适配：像素与视口 | Meow Blog">
+    <meta property="og:description" content="null">
+    <meta property="og:article:tag" content="像素"> <meta property="og:article:tag" content="viewport"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 500ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-相关概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">1 相关概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-设备像素-硬件像素-物理像素"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.1 设备像素/硬件像素/物理像素</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-逻辑像素"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">1.2 逻辑像素</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-2-1-设备独立像素-密度独立像素"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">1.2.1 设备独立像素/密度独立像素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-2-2-CSS像素"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">1.2.2 CSS像素</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-渲染像素"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">1.3 渲染像素</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-4-设备像素比DPR"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">1.4 设备像素比DPR</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-5-像素密度PPI-DPI"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">1.5 像素密度PPI/DPI</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-6-viewport"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">1.6 viewport</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-6-1-visual-viewport"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">1.6.1 visual viewport</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-6-2-layout-viewport"><span class="post-toc-number">1.6.2.</span> <span class="post-toc-text">1.6.2 layout viewport</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-6-3-viewport-标签"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">1.6.3 viewport 标签</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-应用"><span class="post-toc-number">2.</span> <span class="post-toc-text">2 应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-像素"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">2.1 像素</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-viewport"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.2 viewport</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-媒体查询"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">2.4 媒体查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-4-1-webkit-device-pixel-ratio"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">2.4.1 -webkit-device-pixel-ratio</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-4-2-resolution"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">2.4.2 resolution</span></a></li></ol></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 17 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/pic/random/catdog-' + randomNum + '.jpg');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                移动端适配：像素与视口
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/pic/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Miaoxingren</strong>
+        <span>5月 30, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/viewport/">viewport</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/像素/">像素</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=移动端适配：像素与视口&url=http://Miaoxingren.github.io//2017/05/30/mobile-1/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=移动端适配：像素与视口&url=http://Miaoxingren.github.io//2017/05/30/mobile-1/index.html&via=Miaoxingren" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://Miaoxingren.github.io//2017/05/30/mobile-1/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://Miaoxingren.github.io//2017/05/30/mobile-1/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="1-相关概念"><a href="#1-相关概念" class="headerlink" title="1 相关概念"></a>1 相关概念</h2><h3 id="1-1-设备像素-硬件像素-物理像素"><a href="#1-1-设备像素-硬件像素-物理像素" class="headerlink" title="1.1 设备像素/硬件像素/物理像素"></a>1.1 设备像素/硬件像素/物理像素</h3><p>没有实际物理长度，是显示屏上能够显示的最小的点/单位，通常由红、绿、蓝三个子像素构成。从这三个子像素中穿过的光线混合起来，形成一个像素的颜色。</p>
+<p>在同一个设备上，它的设备像素个数是固定的，这是厂商在出厂时就设置好了的——即一个设备的分辨率是固定的。比如iPhone5的分辨率为640x1136，则设备像素数为640x1136。</p>
+<p>与设备像素相关的属性：</p>
+<ul>
+<li>屏幕宽度<code>screen.width</code></li>
+<li>媒体查询的<code>device-width</code></li>
+<li>meta标签的<code>width=&quot;device-width&quot;</code></li>
+<li>屏幕（物理）分辨率</li>
+</ul>
+<h3 id="1-2-逻辑像素"><a href="#1-2-逻辑像素" class="headerlink" title="1.2 逻辑像素"></a>1.2 逻辑像素</h3><p>它表示应用程序所使用的一个抽象像素，最终会被底层系统转换为物理像素，是与屏幕像素密度无关的抽象的点的概念。一个逻辑像素在不同设备中占据相同的大小。而设备中的物理像素与逻辑像素不一定相等。比如iPhone5使用的是Retina视网膜屏幕，用2x2的设备像素代表1x1的逻辑像素，所以设备像素数为640x1136，而逻辑像素数为320x568。</p>
+<p>与逻辑像素相关的属性：</p>
+<ul>
+<li>浏览器窗口（视觉视口）宽度<code>window.innerWidth</code></li>
+<li>媒体查询的<code>width</code>布局视图宽度</li>
+<li><code>document.documentElement.clientWidth</code></li>
+</ul>
+<h4 id="1-2-1-设备独立像素-密度独立像素"><a href="#1-2-1-设备独立像素-密度独立像素" class="headerlink" title="1.2.1 设备独立像素/密度独立像素"></a>1.2.1 设备独立像素/密度独立像素</h4><p>在IOS中，逻辑像素的单位是PT（Point，显示点）。在Android中，逻辑像素的单位是<code>device-independent pixels/density-independent pixel/DP/DIP</code>。</p>
+<p>在160dpi的显示器上，1dp=1px。因此在320dpi的设备中，1dp=2px，在480dpi的设备中，1dp=3px。此处px皆为物理像素。</p>
+<h4 id="1-2-2-CSS像素"><a href="#1-2-2-CSS像素" class="headerlink" title="1.2.2 CSS像素"></a>1.2.2 CSS像素</h4><p>CSS像素是Web编程的概念，指的是CSS样式代码中使用的逻辑像素单位。网页缩放比例为1时，CSS像素的大小与物理像素的大小相同。网页放大时，一个CSS像素比一个物理像素大。网页缩小时，一个CSS像素比一个物理像素小。</p>
+<h3 id="1-3-渲染像素"><a href="#1-3-渲染像素" class="headerlink" title="1.3 渲染像素"></a>1.3 渲染像素</h3><p>当操作系统渲染屏幕时，逻辑像素会被转换为渲染像素<code>Rendered Pixels</code>，这一过程也被称为rasterization光栅化。逻辑像素与渲染像素的转换使用设备像素比。在大多数设备中，在物理设备的屏幕上显示渲染像素不会涉及多余的转换。此时，渲染像素的大小和物理像素的大小相等。但在某些设备中，如iPhone 6 Plus中，物理像素分辨率比渲染像素分辨率小，渲染像素和物理像素大小不等，需要对渲染像素图进行下采样。</p>
+<h3 id="1-4-设备像素比DPR"><a href="#1-4-设备像素比DPR" class="headerlink" title="1.4 设备像素比DPR"></a>1.4 设备像素比DPR</h3><p><code>device pixel ratio</code>是指物理像素与逻辑像素之间的比例。当这个比率为1:1时，使用1个设备像素显示1个逻辑像素。当这个比率为<code>n:1</code>时，使用<code>n * n</code>个设备像素显示1个逻辑像素。（DPR准确来说应该是渲染像素与逻辑像素之比，如果不考虑iPhone 6及以上的设备，即默认渲染像素和物理像素大小一样，DPR就是物理像素与逻辑像素之间的比例）。</p>
+<ul>
+<li><p>window.devicePixelRatio/CSS pixel ratio</p>
+<p>  该属性返回当前显示设备的物理像素分辨率与CSS像素分辨率的比值即DPR。该值也可以被解释为像素大小的比例：即一个CSS像素的大小相对于一个物理像素的大小的比值。</p>
+</li>
+<li><p>网页缩放</p>
+<p>  当网页缩放率为100%时，window.devicePixelRatio=1；当缩小网页时，screen.width不变，Window.innerWidth变大，window.devicePixelRatio变小，即当前设备可以容纳的逻辑像素变多了；当放大网页时，screen.width不变，Window.innerWidth变小，window.devicePixelRatio变大，即当前设备可以容纳的逻辑像素变多了。网页的缩放不会改变元素的逻辑像素数，而是改变其所占的物理像素数。</p>
+</li>
+</ul>
+<p>移动设备中的Firefox浏览器与IE浏览器不支持window.devicePixelRatio。在同一设备中的不同浏览器中的window.devicePixelRatio值有可能不同。</p>
+<blockquote>
+<p>CSS草案中devicePixelRatio的算法</p>
+</blockquote>
+<ol>
+<li>如果不存在一个输出设备，直接返回1。</li>
+<li>令CSS像素大小为在当前页面缩放比例因子和触摸缩放比例因子为1.0的情况下，一个CSS像素的大小。</li>
+<li>令设备像素大小为当前输出设备的一个设备像素的垂直大小。</li>
+<li>返回设备像素大小除以CSS像素大小的结果。</li>
+</ol>
+<h3 id="1-5-像素密度PPI-DPI"><a href="#1-5-像素密度PPI-DPI" class="headerlink" title="1.5 像素密度PPI/DPI"></a>1.5 像素密度PPI/DPI</h3><p>每英寸中所显示的设备像素数=<code>ppi(pixels per inch)</code>。在移动开发领域中，使用ppi来作为像素密度的单位。</p>
+<p>虽然设备像素密度值越高，即每英寸中所显示像素数越多，设备屏幕上的图像越清晰，但是设备像素密度值与设备像素比之间并没有直接关系。</p>
+<p>某设备的屏幕分辨率为MxN，屏幕尺寸为L英寸，则<code>PPI=Math.sqrt(M*M+N*N)/L</code>。</p>
+<p>Android像素密度分布：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">ldpi</th>
+<th style="text-align:center">mdpi</th>
+<th style="text-align:center">hdpi</th>
+<th style="text-align:center">xhdpi</th>
+<th style="text-align:center">xxhdpi</th>
+<th style="text-align:center">xxxhdpi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">密度分界</td>
+<td style="text-align:center">120</td>
+<td style="text-align:center">160</td>
+<td style="text-align:center">240</td>
+<td style="text-align:center">320</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">常见屏幕尺寸</td>
+<td style="text-align:center">240*320</td>
+<td style="text-align:center">320*480</td>
+<td style="text-align:center">480*800</td>
+<td style="text-align:center">640*960</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">默认缩放比例</td>
+<td style="text-align:center">0.75</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">1.5</td>
+<td style="text-align:center">2.0</td>
+<td style="text-align:center">3.0</td>
+<td style="text-align:center">4.0</td>
+</tr>
+</tbody>
+</table>
+<p>ppi主要划分为4个密度区间。120-160被归为低密度手机，160-240为中密度，240-320是高密度，320以上就是超高密度（也就是苹果提出的Retina）。</p>
+<p>默认比例依赖于显示密度。在密度低于200 dpi的显示设备上，比例为1.0。在密度介于200及300 dpi之间的显示设备上，比例为1.5。对于具有300 dpi以上密度的显示设备，比例为密度/150 dpi向下取整的结果。注意只有在视口比例为1时才会应用默认比例。否则，CSS像素与设备像素之间的关系依赖于当前的缩放等级。</p>
+<p>Android系统允许在ROM中指定设备的屏幕像素密度，因此计算所得的DPR不一定是真实的DPR。</p>
+<h3 id="1-6-viewport"><a href="#1-6-viewport" class="headerlink" title="1.6 viewport"></a>1.6 viewport</h3><h4 id="1-6-1-visual-viewport"><a href="#1-6-1-visual-viewport" class="headerlink" title="1.6.1 visual viewport"></a>1.6.1 visual viewport</h4><p>视觉视口，表示浏览器可视区域。</p>
+<h4 id="1-6-2-layout-viewport"><a href="#1-6-2-layout-viewport" class="headerlink" title="1.6.2 layout viewport"></a>1.6.2 layout viewport</h4><p>布局视口，表示页面布局区域。移动端浏览器为了让所有网站显示正常，包括那些为桌面浏览器设计的网站，创建了一个比浏览器可视区域宽的视口来绘制页面，这个视口就是布局视口。如果使用浏览器可视区域作为视口绘制页面，则那些为桌面浏览器设计的网站在狭窄的移动设备中就无法正常显示（页面都压缩进小屏幕）。</p>
+<p><html>元素的宽度是受布局视口的宽度限制的，通常可以通过document.documentElement.clientWidth获得布局视口的宽度，以逻辑像素计。改变桌面浏览器的窗口的大小会改变布局视口的大小。用户可以通过平移和缩放来浏览页面的不同区域。</html></p>
+<p>移动设备中浏览器的视觉视口的宽度：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">移动端浏览器</th>
+<th style="text-align:center">视觉视口宽度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Safari iPhone</td>
+<td style="text-align:center">980px</td>
+</tr>
+<tr>
+<td style="text-align:left">Opera</td>
+<td style="text-align:center">850px</td>
+</tr>
+<tr>
+<td style="text-align:left">Android WebKit</td>
+<td style="text-align:center">800px</td>
+</tr>
+<tr>
+<td style="text-align:left">IE</td>
+<td style="text-align:center">974px</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-6-3-viewport-标签"><a href="#1-6-3-viewport-标签" class="headerlink" title="1.6.3 viewport 标签"></a>1.6.3 viewport <meta>标签</h3><p><code>&lt;meta name=&quot;viewport&quot; content=&quot;...&quot;&gt;</code>该标签可以修改布局视口。</p>
+<p>可以设置的属性：</p>
+<ul>
+<li><p>width</p>
+<p>  取值：正整数或device-width</p>
+<p>  该属性设置布局视口的宽度，以逻辑像素计。通常设置为device-width，该值表示缩放比例为100%时屏幕宽度的CSS像素数。</p>
+</li>
+<li><p>height</p>
+<p>  取值：正整数或device-height</p>
+<p>  该属性设置布局视口的高度。不不常用。</p>
+</li>
+<li><p>initial-scale</p>
+<p>  取值：[0.0-10.0]</p>
+<p>  该属性设置初始缩放比例。缩放比例是布局视口与视觉视口的比例。</p>
+</li>
+<li><p>minimum-scale</p>
+<p>  取值：[0.0-10.0]</p>
+<p>  该属性设置最小缩放比例。</p>
+</li>
+<li><p>maximum-scale</p>
+<p>  取值：[0.0-10.0]</p>
+<p>  该属性设置最大缩放比例。</p>
+</li>
+<li><p>user-scalable</p>
+<p>  取值：yes或no</p>
+<p>  该属性设置是否允许用户手动缩放网页，默认值为yes。</p>
+</li>
+<li><p>target-densitydpi</p>
+<p>  取值：正整数 | device-dpi | high-dpi | medium-dpi | low-dpi</p>
+<p>  该属性设置默认缩放比例。medium-dpi是target-densitydpi的默认值，如果我们显式定义target-densitydpi=device-dpi，那么设备就会按照真实的dpi来渲染页面。</p>
+</li>
+</ul>
+<h2 id="2-应用"><a href="#2-应用" class="headerlink" title="2 应用"></a>2 应用</h2><h3 id="2-1-像素"><a href="#2-1-像素" class="headerlink" title="2.1 像素"></a>2.1 像素</h3><p>设计师和开发人员都应该使用逻辑像素。设计师以基准倍率1.0来设计页面，对于不同的设备，开发人员只要按照逻辑像素尺寸来开发就能达到与基准倍率近似的效果。只是对于图片，需要准备相应的2倍图、3倍图。</p>
+<p>比如设计师以iPhone 4作为基准进行设计，iPhone 4的逻辑分辨率为320x480，假设设计图中有一个长160px（逻辑像素）的进度条，开发人员根据设计图将进度条的长设为160px（逻辑像素）。</p>
+<ul>
+<li>在iPhone 4中，屏幕分辨率为640x960，DPR为2，则进度条占320个物理像素，是屏幕宽度的一半。</li>
+<li>在iPhone 3中，屏幕分辨率为320x480，DPR为1，则进度条占160个物理像素，是屏幕宽度的一半。</li>
+<li>在iPhone 5中，屏幕分辨率为640x1136，DPR为2，则进度条占320个物理像素，是屏幕宽度的一半。</li>
+<li>在iPhone 6中，屏幕分辨率为750x1334，DPR为2，则进度条占320个物理像素，320/750=0.43，约为屏幕宽度的一半。<br>如果进度条是一张实际大小160px的图片，开发人员将其width设为160px（CSS像素）。在DPR为2的设备中，设备会放大图片使之占据320个物理像素，图片变得模糊。</li>
+</ul>
+<p>如果设计师根据物理分辨率来进行设计，开发人员需要将物理像素除以设备像素比来获得逻辑像素数。</p>
+<h3 id="2-2-viewport"><a href="#2-2-viewport" class="headerlink" title="2.2 viewport"></a>2.2 viewport</h3><p>由于布局视口的存在，为移动端设计的网站会以缩放的方式显示。比如布局视口为980px，而设计师按照视觉视口320px来设计网站，那么在移动设备中网站不会占满屏幕。为了让网站正常显示，需要改变布局视口，将宽度设为设备宽度，初始缩放比例为1，禁止用户缩放。</p>
+<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,user-scalable=no&quot; /&gt;</code></p>
+<h3 id="2-4-媒体查询"><a href="#2-4-媒体查询" class="headerlink" title="2.4 媒体查询"></a>2.4 媒体查询</h3><h4 id="2-4-1-webkit-device-pixel-ratio"><a href="#2-4-1-webkit-device-pixel-ratio" class="headerlink" title="2.4.1 -webkit-device-pixel-ratio"></a>2.4.1 -webkit-device-pixel-ratio</h4><p>-webkit-device-pixel-ratio原本是针对苹果的视网膜设备进行开发时为了将设备像素转换成CSS像素时使用的一个媒体查询表达式特性，后来该特性在Android设备中得到了支持。在Safari开发者说明中针对这一特性，有着如下所示的定义：</p>
+<blockquote>
+<p>-webkit-device-pixel-ratio：苹果设备中使用的特殊比例：2代表视网膜屏幕，1代表标准屏幕。在Safari 4.0以上浏览器中支持。</p>
+</blockquote>
+<p>在Andorid设备开发者专用Web网站中，针对-webkit-device-pixel-ratio有着如下所示的定义：</p>
+<blockquote>
+<p>在Android浏览器与WebView浏览器中，支持针对特定像素密度创建样式时所使用的-webkit-device-pixel-ratio。可指定值为0.75、1与1.5，分别代表低像素密度屏幕、中像素密度屏幕与高像素密度屏幕。</p>
+</blockquote>
+<p>在Firefox浏览器中使用-moz-device-pixel-ratio。</p>
+<h4 id="2-4-2-resolution"><a href="#2-4-2-resolution" class="headerlink" title="2.4.2 resolution"></a>2.4.2 resolution</h4><p>resolution特性是去年6月正式记载在W3C推荐的媒体查询表达式中的一个特性，在W3C网站中的定义如下所示：</p>
+<blockquote>
+<p>resolution媒体特性描述像素密度等输出设备的分辨率。在non-squaer pixel设备中，min-resolution关键字用于指定设备的最低像素密度，max-resolution关键字用于指定设备的最高密度，不使用min-或max-前缀的resolution关键字不与任何non-squaer pixel设备相匹配。</p>
+</blockquote>
+<p>关于resolution所使用的单位：</p>
+<p>虽然在媒体查询表达式标准中，resolution属性使用的单位为dpi与dpcm，但是后来在2012年8月在W3C的CSS 3的值标准中，追加了dppx单位，该单位是一种最容易理解及使用的单位。目前只有Firefox 16版以上的浏览器中支持该单位。</p>
+<ul>
+<li>dpi（dots per inch=每英寸中的点数）</li>
+<li>dpcm（dots per centimeter=每厘米中的点数）</li>
+<li>dppx（dots per ‘px’ unit=1px(像素）单位中的点数）</li>
+</ul>
+<p>由于在CSS标准中，定义1英寸=96像素，所以1dppx=96dpi。</p>
+<blockquote>
+<p>参考文章</p>
+</blockquote>
+<ol>
+<li><a href="http://www.ituring.com.cn/article/23607" target="_blank" rel="external">像素密度的危机</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Device-independent_pixel" target="_blank" rel="external">Device-independent pixel</a></li>
+<li><a href="http://www.w3cplus.com/css/A-pixel-is-not-a-pixel-is-not-a-pixel.html" target="_blank" rel="external">此像素非彼像素</a></li>
+<li><a href="https://drafts.csswg.org/cssom-view/#dom-window-devicepixelratio" target="_blank" rel="external">devicepixelratio</a></li>
+<li><a href="http://isux.tencent.com/mobile-development-essential-knowledge.html" target="_blank" rel="external">移动终端开发必备知识</a></li>
+<li><a href="https://developer.appway.com/screen/ShowSingleRecipe/selectedRecipeId/1429057950522" target="_blank" rel="external">What’s a Pixel?</a></li>
+<li><a href="https://www.paintcodeapp.com/news/ultimate-guide-to-iPhone-resolutions" target="_blank" rel="external">The Ultimate Guide To iPhone Resolutions</a></li>
+<li><a href="http://colachan.com/post/3435" target="_blank" rel="external">移动端尺寸基础知识</a></li>
+<li><a href="https://blog.kyleduo.com/2016/10/24/density-02-android-density/" target="_blank" rel="external">Android逻辑像素刨根问底</a></li>
+<li><a href="http://weizhifeng.net/viewports2.html" target="_blank" rel="external">两个viewport的故事</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag" target="_blank" rel="external">在移动浏览器中使用viewport元标签控制布局</a></li>
+</ol>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/05/30/pt-px-res/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(undefined);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/pic/avatar.jpg" alt="Miaoxingren's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        meowxingren@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: meowxingren@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/移动开发/">移动开发<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/翻译/">翻译<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">local_offer</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Meow Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 500);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
