@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.4 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            移动设计101：像素，点和分辨率 | 
+        
+        Meow Blog
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Miaoxingren">
+    <meta name="description" content="null">
+    <meta name="keywords" content="null">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/pic/favicon.png">
+    <link rel="icon" sizes="192x192" href="/pic/favicon@3x.png">
+    <link rel="apple-touch-icon" href="/pic/favicon@3x.png">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Meow Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://Miaoxingren.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="移动设计101：像素，点和分辨率 | Meow Blog">
+    <meta property="og:description" content="null">
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 500ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#需要知道什么"><span class="post-toc-number">1.</span> <span class="post-toc-text">需要知道什么?</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#像素pixel是什么？"><span class="post-toc-number">2.</span> <span class="post-toc-text">像素pixel是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#手机屏幕尺寸是什么？"><span class="post-toc-number">3.</span> <span class="post-toc-text">手机屏幕尺寸是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#手机分辨率是什么？"><span class="post-toc-number">4.</span> <span class="post-toc-text">手机分辨率是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DPI"><span class="post-toc-number">5.</span> <span class="post-toc-text">DPI</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#图像是如何绘制的？"><span class="post-toc-number">6.</span> <span class="post-toc-text">图像是如何绘制的？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#iOS-——-点是什么？"><span class="post-toc-number">7.</span> <span class="post-toc-text">iOS —— 点是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#像素pixels和点points的转换"><span class="post-toc-number">8.</span> <span class="post-toc-text">像素pixels和点points的转换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DPs"><span class="post-toc-number">9.</span> <span class="post-toc-text">DPs</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用它们的时机和理由？"><span class="post-toc-number">10.</span> <span class="post-toc-text">使用它们的时机和理由？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何转换像素pixels和点points？"><span class="post-toc-number">11.</span> <span class="post-toc-text">如何转换像素pixels和点points？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他常见的屏幕相关问题"><span class="post-toc-number">12.</span> <span class="post-toc-text">其他常见的屏幕相关问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有无简单的区分像素pixels和点points的方法？"><span class="post-toc-number">12.1.</span> <span class="post-toc-text">有无简单的区分像素pixels和点points的方法？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是视网膜显示屏-它和常规显示屏有什么不同"><span class="post-toc-number">12.2.</span> <span class="post-toc-text">什么是视网膜显示屏?它和常规显示屏有什么不同?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#只有苹果公司有视网膜显示屏吗"><span class="post-toc-number">12.3.</span> <span class="post-toc-text">只有苹果公司有视网膜显示屏吗?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何判断DPI的高低"><span class="post-toc-number">12.4.</span> <span class="post-toc-text">如何判断DPI的高低?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#存在可能的最高的DPI吗"><span class="post-toc-number">12.5.</span> <span class="post-toc-text">存在可能的最高的DPI吗?</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 17 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/pic/random/catdog-' + randomNum + '.jpg');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                移动设计101：像素，点和分辨率
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/pic/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Miaoxingren</strong>
+        <span>5月 30, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=移动设计101：像素，点和分辨率&url=http://Miaoxingren.github.io//2017/05/30/pt-px-res/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=移动设计101：像素，点和分辨率&url=http://Miaoxingren.github.io//2017/05/30/pt-px-res/index.html&via=Miaoxingren" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://Miaoxingren.github.io//2017/05/30/pt-px-res/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://Miaoxingren.github.io//2017/05/30/pt-px-res/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>本文根据 Dave Kearney 的 <a href="http://blog.fluidui.com/designing-for-mobile-101-pixels-points-and-resolutions/" target="_blank" rel="external">Mobile design 101: pixels, points and resolutions</a> 翻译，无法保证译文完全正确。</p>
+<p>像素，点和分辨率之间的差异，甚至对那些正在转向移动开发或不熟悉各类屏幕及其工作原理的经验丰富的设计师来说，都是令人困惑的。本文将介绍在设计移动应用程序时需要了解的与屏幕和密度相关的主要关键词，并回答一些常见的其他问题。</p>
+<h3 id="需要知道什么"><a href="#需要知道什么" class="headerlink" title="需要知道什么?"></a>需要知道什么?</h3><p>当谈到屏幕大小和图像时，有6个概念是需要了解的：</p>
+<ul>
+<li>Pixels像素（图像元素：屏幕上的单个颜色点）</li>
+<li>Screen sizes屏幕尺寸（以英寸为单位）</li>
+<li>Resolutions分辨率（宽和高，如320x480）</li>
+<li>DPI像素密度（每英寸点数或每英寸像素数）</li>
+<li>Points点（IOS的抽象度量单位）</li>
+<li>Density Independent Pixels设备独立像素（Android的抽象度量单位）</li>
+</ul>
+<p>其中，屏幕大小、像素pixels、分辨率和DPI都属于屏幕的物理属性，而点points则属于与正在运行的设备分离的一个坐标系统。这一区别的优势将随着本文其他部分的展开而更加清晰。让我们先从物理度量开始——像素、屏幕大小、分辨率和DPI。</p>
+<h3 id="像素pixel是什么？"><a href="#像素pixel是什么？" class="headerlink" title="像素pixel是什么？"></a>像素pixel是什么？</h3><p>像素pixel是屏幕上的一组彩色圆点(通常是红色、绿色和蓝色)。通过在不同灰度下打开或关闭它们，可以产生任意数量的颜色和亮度。当所有的点都关闭时，就会产生黑色，而当红色、绿色和蓝色同时打开时，就会产生白色。简而言之，它们就是屏幕上的物理灯，能让你看到正在显示什么，但是每一个又是如此之小，不以极近的距离观察就无法单独识别他们。</p>
+<p><img src="http://blog.fluidui.com/content/images/2015/09/pixels.png" alt="pixels green red blue" title="pixels green red blue"></p>
+<h3 id="手机屏幕尺寸是什么？"><a href="#手机屏幕尺寸是什么？" class="headerlink" title="手机屏幕尺寸是什么？"></a>手机屏幕尺寸是什么？</h3><blockquote>
+<p>屏幕尺寸是屏幕对角线的长度或从一个角到另一个角的长度。</p>
+</blockquote>
+<p><img src="http://blog.fluidui.com/content/images/2015/09/iphone-history.png" alt="iphone history" title="iphone history"></p>
+<h3 id="手机分辨率是什么？"><a href="#手机分辨率是什么？" class="headerlink" title="手机分辨率是什么？"></a>手机分辨率是什么？</h3><blockquote>
+<p>手机分辨率是横向穿过屏幕的像素个数乘以竖向沿着屏幕的像素个数。</p>
+</blockquote>
+<p>例如原来的iPhone横向有320个像素，竖向有480个像素，分别率写作320x480。一些现代手机具有与高清电视相同的分辨率，1920x1280个像素（每个都是一组红色，绿色和蓝色的灯）都包含在5英寸的屏幕中。</p>
+<p><img src="http://blog.fluidui.com/content/images/2015/09/mobile-north-america-may-june-july-1.png" alt="mobile resolutions in use north america" title="mobile resolutions in use north america"></p>
+<p>分辨率比以前多了很多！</p>
+<h3 id="DPI"><a href="#DPI" class="headerlink" title="DPI"></a>DPI</h3><blockquote>
+<p>DPI（每英寸点数）是一个数字，用来测量在一英寸的屏幕空间中横向或竖向有多少个像素。</p>
+</blockquote>
+<p>DPI也常被称为PPI(每英寸像素数)，它是通过将屏幕的横向或竖向像素数除以以英寸为单位的宽度或高度来计算的。更高的DPI意味着每个像素必须更小，以便能够被可用空间容纳，这意味着屏幕会更清晰，屏幕可以绘制的细节级别更高。</p>
+<p><img src="http://blog.fluidui.com/content/images/2015/09/resolution.png" alt="mobile resolutions pixel per inch" title="mobile resolutions pixel per inch"></p>
+<h3 id="图像是如何绘制的？"><a href="#图像是如何绘制的？" class="headerlink" title="图像是如何绘制的？"></a>图像是如何绘制的？</h3><p>我们已经讨论过像素、密度、屏幕尺寸和分辨率，现在来讨论点points和DPs(密度独立像素)。幸运的是，它们几乎是相同的，所以一旦理解了其中一个，就会理解另一个。让我们先从点开始。</p>
+<h3 id="iOS-——-点是什么？"><a href="#iOS-——-点是什么？" class="headerlink" title="iOS —— 点是什么？"></a>iOS —— 点是什么？</h3><p>为了解释点是什么，有必要了解一下iPhone的历史。</p>
+<p>最初的iPhone屏幕分辨率为320x480。随后iPhone4出现，视网膜屏幕Retina screen也随之出现。视网膜屏幕在保持相同屏幕尺寸的情况下把DPI增加了一倍 —— 这意味着相同空间下可容纳的像素数是原来的4倍（横向像素两倍，竖向像素两倍）。因此第一个视网膜屏幕的iPhone分辨率为640x960像素。</p>
+<p>但是所有旧图形都必须以相同的尺寸在高密度的手机上绘制。如果手机像之前那样以1:1的比例绘制出所有图形，那么所有图形都将以原来尺寸的四分之一显示在新屏幕中 —— 这会让每一个旧应用不可用。为了防止这些应用程序不可用，苹果开始使用点points作为一种将图形绘制与屏幕密度分离的方法。</p>
+<p><img src="http://blog.fluidui.com/content/images/2015/09/iPhone6-resolution.png" alt="iphone resolutions points" title="iphone resolutions points"></p>
+<p>点point被创建为距离单位，这允许图形按比例单独缩放，而不依赖手机分辨率。现在，每一个iOS图形都可以根据它的点值points values绘制，转换后在新屏幕上正确显示。</p>
+<blockquote>
+<p>一个iOS点point相当于一英寸的 1/163。</p>
+</blockquote>
+<p>无论手机分辨率如何，点point的尺寸始终是一样的，它来自于163DPI的最初的iPhone。</p>
+<h3 id="像素pixels和点points的转换"><a href="#像素pixels和点points的转换" class="headerlink" title="像素pixels和点points的转换"></a>像素pixels和点points的转换</h3><p>像素pixels和点points是静态度量单位 —— 它们不会随其他因素变化：</p>
+<ul>
+<li>1像素pixel总是1像素pixel，是屏幕上可以显示颜色的最小的一块。</li>
+<li>1点point总是1点point，是一个抽象单位，只有在与其他点point相关时才有意义。</li>
+</ul>
+<p>点points不同于像素pixels是因为点points会随DPI而改变尺寸：</p>
+<ul>
+<li>对于iPhone，当分辨率为163DPI时，1个点point等于1像素pixel。在视网膜时代之前，所有的iPhone都是这样。</li>
+<li>326DPI的，如iPhone4，5和6，1个点point等于2个横向像素和2个竖向像素，或者总共4个像素。在视网膜设备上，如果只计算像素pixels数，则100x100的图像会被渲染为原来尺寸的四分之一。</li>
+<li>401DPI的，如iPhone 6+，1个点point等于3个横向像素pixel和3个竖向像素，或总共9个像素。</li>
+</ul>
+<p><img src="http://blog.fluidui.com/content/images/2015/09/pixel-comparison.png" alt="1x 2x 3x iphone comparison of pixels" title="1x 2x 3x iphone comparison of pixels"></p>
+<h3 id="DPs"><a href="#DPs" class="headerlink" title="DPs"></a>DPs</h3><p>Android使用几与点points相同的度量。这个单位称为“密度独立像素”。iOS的点point相当于1英寸的 1/163，与之相比，Android的密度独立像素DP相当于1英寸的 1/160（即1英寸的屏幕空间含有约160个像素pixel）。除此之外，没有其他有意义的区别。官方的定义是:</p>
+<blockquote>
+<p>一个设备独立像素(密度独立的像素，DIP，DP)是一个物理度量单位，它基于计算机控制的一个坐标系统，它代表抽象的像素 —— 应用程序使用的像素，底层系统会将其转换成物理像素。</p>
+</blockquote>
+<h3 id="使用它们的时机和理由？"><a href="#使用它们的时机和理由？" class="headerlink" title="使用它们的时机和理由？"></a>使用它们的时机和理由？</h3><p>在设计Android布局时使用DP，在设计iOS布局时使用点point。密度独立像素和iOS点points都是虚拟像素单位，为了以密度独立(因此与设备独立/无关)的方式表达布局维度或位置，在定义UI布局时，应该使用虚拟像素单位。</p>
+<h3 id="如何转换像素pixels和点points？"><a href="#如何转换像素pixels和点points？" class="headerlink" title="如何转换像素pixels和点points？"></a>如何转换像素pixels和点points？</h3><p><img src="http://blog.fluidui.com/content/images/2015/09/calculatingAndroidiOSPixels.png" alt="android comparison iOS pixels" title="android comparison iOS pixels"></p>
+<h3 id="其他常见的屏幕相关问题"><a href="#其他常见的屏幕相关问题" class="headerlink" title="其他常见的屏幕相关问题"></a>其他常见的屏幕相关问题</h3><h4 id="有无简单的区分像素pixels和点points的方法？"><a href="#有无简单的区分像素pixels和点points的方法？" class="headerlink" title="有无简单的区分像素pixels和点points的方法？"></a>有无简单的区分像素pixels和点points的方法？</h4><p>一个简单的解释是，像素pixels是计数得出的，而点是度量得出的。</p>
+<h4 id="什么是视网膜显示屏-它和常规显示屏有什么不同"><a href="#什么是视网膜显示屏-它和常规显示屏有什么不同" class="headerlink" title="什么是视网膜显示屏?它和常规显示屏有什么不同?"></a>什么是视网膜显示屏?它和常规显示屏有什么不同?</h4><p>视网膜显示屏仅仅是一个像素密度(每英寸像素数或点书)是非视网膜屏幕的两倍的显示屏。苹果公司最新的创新也定义了“视网膜高清retina HD”，其像素密度是最初的iPhone的3倍。</p>
+<h4 id="只有苹果公司有视网膜显示屏吗"><a href="#只有苹果公司有视网膜显示屏吗" class="headerlink" title="只有苹果公司有视网膜显示屏吗?"></a>只有苹果公司有视网膜显示屏吗?</h4><p>苹果是唯一一家有Retina商标的屏幕的公司，但他们不是唯一一家拥有高分辨率屏幕的公司。三星公司最新推出的高端机型，如Galaxy S6 edge，其密度甚至更高，达到了577DPI。</p>
+<h4 id="如何判断DPI的高低"><a href="#如何判断DPI的高低" class="headerlink" title="如何判断DPI的高低?"></a>如何判断DPI的高低?</h4><p>一个好的DPI很大程度上取决于你离屏幕有多远。这就是为什么最新的手机有着和高清电视相同或更高的像素的原因，尽管它们的屏幕尺寸差别很大。具有较高DPI的移动设备通常更好，因为移动设备通常更靠近你的眼睛（4 - 6英寸/ 10 - 15厘米），因此当你在看远处的事物例如电视(一般4 - 6米/码)时，你可以更容易的看清较低的密度。</p>
+<h4 id="存在可能的最高的DPI吗"><a href="#存在可能的最高的DPI吗" class="headerlink" title="存在可能的最高的DPI吗?"></a>存在可能的最高的DPI吗?</h4><p>实际上并没有最高的DPI(当我们在原子层面上的时候可能会有一些限制，但是我们还没有真正做到)，但是人类的眼睛能感知到的东西是有限度的。对于大多数成年人，这一限度出现在距离4英寸的大约2190 dpi的屏幕上。在此限度之后，人类无法察觉到这种差异，因此，超过限度提高分辨率并没有什么好处。</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/05/29/hello-world/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(undefined);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/pic/avatar.jpg" alt="Miaoxingren's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.svg);">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.svg);">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.svg);">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Meow Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 500);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
