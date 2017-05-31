@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=2.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @media all and (device-width: 360px) {
+            body #text {
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button type="button" name="button" onclick="miao()">check</button>
+    <div id="text"></div>
+    <script type="text/javascript">
+        function miao() {
+            var t = document.getElementById('text');
+            t.innerHTML = window.innerWidth;
+        }
+    </script>
+</body>
+</html>

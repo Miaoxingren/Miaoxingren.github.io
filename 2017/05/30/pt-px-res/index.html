@@ -406,26 +406,26 @@
 <li>Density Independent Pixels设备独立像素（Android的抽象度量单位）</li>
 </ul>
 <p>其中，屏幕大小、像素pixels、分辨率和DPI都属于屏幕的物理属性，而点points则属于与正在运行的设备分离的一个坐标系统。这一区别的优势将随着本文其他部分的展开而更加清晰。让我们先从物理度量开始——像素、屏幕大小、分辨率和DPI。</p>
-<h3 id="像素pixel是什么？"><a href="#像素pixel是什么？" class="headerlink" title="像素pixel是什么？"></a>像素pixel是什么？</h3><p>像素pixel是屏幕上的一组彩色圆点(通常是红色、绿色和蓝色)。通过在不同灰度下打开或关闭它们，可以产生任意数量的颜色和亮度。当所有的点都关闭时，就会产生黑色，而当红色、绿色和蓝色同时打开时，就会产生白色。简而言之，它们就是屏幕上的物理灯，能让你看到正在显示什么，但是每一个又是如此之小，不以极近的距离观察就无法单独识别他们。</p>
+<h3 id="像素pixel是什么？"><a href="#像素pixel是什么？" class="headerlink" title="像素pixel是什么？"></a>像素pixel是什么？</h3><p>像素pixel是屏幕上的一组彩色圆点(通常是红色、绿色和蓝色)。通过在不同光强下打开或关闭它们，可以产生任意数量的颜色和亮度。当所有的点都关闭时，就会产生黑色，而当红色、绿色和蓝色同时打开时，就会产生白色。简而言之，它们就是屏幕上的物理灯，能让你看到正在显示什么，但是每一个又是如此之小，不以极近的距离观察就无法单独识别他们。</p>
 <p><img src="http://blog.fluidui.com/content/images/2015/09/pixels.png" alt="pixels green red blue" title="pixels green red blue"></p>
 <h3 id="手机屏幕尺寸是什么？"><a href="#手机屏幕尺寸是什么？" class="headerlink" title="手机屏幕尺寸是什么？"></a>手机屏幕尺寸是什么？</h3><blockquote>
 <p>屏幕尺寸是屏幕对角线的长度或从一个角到另一个角的长度。</p>
 </blockquote>
 <p><img src="http://blog.fluidui.com/content/images/2015/09/iphone-history.png" alt="iphone history" title="iphone history"></p>
 <h3 id="手机分辨率是什么？"><a href="#手机分辨率是什么？" class="headerlink" title="手机分辨率是什么？"></a>手机分辨率是什么？</h3><blockquote>
-<p>手机分辨率是横向穿过屏幕的像素个数乘以竖向沿着屏幕的像素个数。</p>
+<p>手机分辨率是横向穿过屏幕的像素个数乘以纵向沿着屏幕的像素个数。</p>
 </blockquote>
-<p>例如原来的iPhone横向有320个像素，竖向有480个像素，分别率写作320x480。一些现代手机具有与高清电视相同的分辨率，1920x1280个像素（每个都是一组红色，绿色和蓝色的灯）都包含在5英寸的屏幕中。</p>
+<p>例如原来的iPhone横向有320个像素，纵向有480个像素，分别率写作320x480。一些现代手机具有与高清电视相同的分辨率，1920x1280个像素（每个都是一组红色，绿色和蓝色的灯）都包含在5英寸的屏幕中。</p>
 <p><img src="http://blog.fluidui.com/content/images/2015/09/mobile-north-america-may-june-july-1.png" alt="mobile resolutions in use north america" title="mobile resolutions in use north america"></p>
 <p>分辨率比以前多了很多！</p>
 <h3 id="DPI"><a href="#DPI" class="headerlink" title="DPI"></a>DPI</h3><blockquote>
-<p>DPI（每英寸点数）是一个数字，用来测量在一英寸的屏幕空间中横向或竖向有多少个像素。</p>
+<p>DPI（每英寸点数）是一个数字，用来测量在一英寸的屏幕空间中横向或纵向有多少个像素。</p>
 </blockquote>
-<p>DPI也常被称为PPI(每英寸像素数)，它是通过将屏幕的横向或竖向像素数除以以英寸为单位的宽度或高度来计算的。更高的DPI意味着每个像素必须更小，以便能够被可用空间容纳，这意味着屏幕会更清晰，屏幕可以绘制的细节级别更高。</p>
+<p>DPI也常被称为PPI(每英寸像素数)，它是通过将屏幕的横向或纵向像素数除以以英寸为单位的宽度或高度来计算的。更高的DPI意味着每个像素必须更小，以便能够被可用空间容纳，这意味着屏幕会更清晰，屏幕可以绘制的细节级别更高。</p>
 <p><img src="http://blog.fluidui.com/content/images/2015/09/resolution.png" alt="mobile resolutions pixel per inch" title="mobile resolutions pixel per inch"></p>
 <h3 id="图像是如何绘制的？"><a href="#图像是如何绘制的？" class="headerlink" title="图像是如何绘制的？"></a>图像是如何绘制的？</h3><p>我们已经讨论过像素、密度、屏幕尺寸和分辨率，现在来讨论点points和DPs(密度独立像素)。幸运的是，它们几乎是相同的，所以一旦理解了其中一个，就会理解另一个。让我们先从点开始。</p>
 <h3 id="iOS-——-点是什么？"><a href="#iOS-——-点是什么？" class="headerlink" title="iOS —— 点是什么？"></a>iOS —— 点是什么？</h3><p>为了解释点是什么，有必要了解一下iPhone的历史。</p>
-<p>最初的iPhone屏幕分辨率为320x480。随后iPhone4出现，视网膜屏幕Retina screen也随之出现。视网膜屏幕在保持相同屏幕尺寸的情况下把DPI增加了一倍 —— 这意味着相同空间下可容纳的像素数是原来的4倍（横向像素两倍，竖向像素两倍）。因此第一个视网膜屏幕的iPhone分辨率为640x960像素。</p>
+<p>最初的iPhone屏幕分辨率为320x480。随后iPhone4出现，视网膜屏幕Retina screen也随之出现。视网膜屏幕在保持相同屏幕尺寸的情况下把DPI增加了一倍 —— 这意味着相同空间下可容纳的像素数是原来的4倍（横向像素两倍，纵向像素两倍）。因此第一个视网膜屏幕的iPhone分辨率为640x960像素。</p>
 <p>但是所有旧图形都必须以相同的尺寸在高密度的手机上绘制。如果手机像之前那样以1:1的比例绘制出所有图形，那么所有图形都将以原来尺寸的四分之一显示在新屏幕中 —— 这会让每一个旧应用不可用。为了防止这些应用程序不可用，苹果开始使用点points作为一种将图形绘制与屏幕密度分离的方法。</p>
 <p><img src="http://blog.fluidui.com/content/images/2015/09/iPhone6-resolution.png" alt="iphone resolutions points" title="iphone resolutions points"></p>
 <p>点point被创建为距离单位，这允许图形按比例单独缩放，而不依赖手机分辨率。现在，每一个iOS图形都可以根据它的点值points values绘制，转换后在新屏幕上正确显示。</p>
@@ -441,8 +441,8 @@
 <p>点points不同于像素pixels是因为点points会随DPI而改变尺寸：</p>
 <ul>
 <li>对于iPhone，当分辨率为163DPI时，1个点point等于1像素pixel。在视网膜时代之前，所有的iPhone都是这样。</li>
-<li>326DPI的，如iPhone4，5和6，1个点point等于2个横向像素和2个竖向像素，或者总共4个像素。在视网膜设备上，如果只计算像素pixels数，则100x100的图像会被渲染为原来尺寸的四分之一。</li>
-<li>401DPI的，如iPhone 6+，1个点point等于3个横向像素pixel和3个竖向像素，或总共9个像素。</li>
+<li>326DPI的，如iPhone4，5和6，1个点point等于2个横向像素和2个纵向像素，或者总共4个像素。在视网膜设备上，如果只计算像素pixels数，则100x100的图像会被渲染为原来尺寸的四分之一。</li>
+<li>401DPI的，如iPhone 6+，1个点point等于3个横向像素pixel和3个纵向像素，或总共9个像素。</li>
 </ul>
 <p><img src="http://blog.fluidui.com/content/images/2015/09/pixel-comparison.png" alt="1x 2x 3x iphone comparison of pixels" title="1x 2x 3x iphone comparison of pixels"></p>
 <h3 id="DPs"><a href="#DPs" class="headerlink" title="DPs"></a>DPs</h3><p>Android使用几与点points相同的度量。这个单位称为“密度独立像素”。iOS的点point相当于1英寸的 1/163，与之相比，Android的密度独立像素DP相当于1英寸的 1/160（即1英寸的屏幕空间含有约160个像素pixel）。除此之外，没有其他有意义的区别。官方的定义是:</p>
@@ -580,7 +580,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
