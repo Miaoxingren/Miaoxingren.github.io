@@ -10,7 +10,7 @@
     
     <title>
         
-            分类: 翻译 | 
+            虚拟视口 | 
         
         Meow Blog
     </title>
@@ -32,7 +32,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Miaoxingren">
     <meta name="description" content="null">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,viewport">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/pic/favicon.png">
@@ -58,9 +58,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://Miaoxingren.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: 翻译 | Meow Blog">
+    <meta property="og:title" content="虚拟视口 | Meow Blog">
     <meta property="og:description" content="null">
-    
+    <meta property="og:article:tag" content="viewport"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -221,159 +221,242 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
-    
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script>
+    var randomNum = Math.floor(Math.random() * 17 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/06/01/virtual-viewport/">虚拟视口</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本文根据 Matt Gaunt 的 What the Virtual Viewport? 翻译，无法保证译文完全正确。
-Chrome M40对viewport做了一个非常微妙的更改，但对用户来说应该有很大的不同。
-移动浏览器启动时，缺少viewport元标签意味着浏览器会让网页认为它有大约980px的屏幕空间，并以这个大小呈现。如果使用viewport元标签，则开发人员可以定义宽度，通常定义为device-width设备宽度，这会将屏幕大小设置为设备大小。可以在
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/06/01/virtual-viewport/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/pic/avatar.jpg" width="44px" height="44px" alt="Miaoxingren's avatar">
-            </div>
-            <div>
-                <strong>Miaoxingren</strong>
-                <span>6月 01, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/翻译/">翻译</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/05/30/pt-px-res/">移动设计101：像素，点和分辨率</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本文根据 Dave Kearney 的 Mobile design 101: pixels, points and resolutions 翻译，无法保证译文完全正确。
-像素，点和分辨率之间的差异，甚至对那些正在转向移动开发或不熟悉各类屏幕及其工作原理的经验丰富的设计师来说，都是令人困惑的。本文将介绍在设计移动应用程序时需要了解的与屏幕和密度相关的主要关键词，并回答一些常见的其他问题。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/05/30/pt-px-res/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/pic/avatar.jpg" width="44px" height="44px" alt="Miaoxingren's avatar">
-            </div>
-            <div>
-                <strong>Miaoxingren</strong>
-                <span>5月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/翻译/">翻译</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 17 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/pic/random/catdog-' + randomNum + '.jpg');
+    $('.post_thumbnail-random').attr('data-original', '/pic/random/catdog-' + randomNum + '.jpg');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                虚拟视口
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/pic/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Miaoxingren</strong>
+        <span>6月 01, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/viewport/">viewport</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=虚拟视口&url=http://Miaoxingren.github.io//2017/06/01/virtual-viewport/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=虚拟视口&url=http://Miaoxingren.github.io//2017/06/01/virtual-viewport/index.html&via=Miaoxingren" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://Miaoxingren.github.io//2017/06/01/virtual-viewport/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://Miaoxingren.github.io//2017/06/01/virtual-viewport/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><strong>本文根据 Matt Gaunt 的 <a href="https://developers.google.com/web/updates/2015/01/What-the-Viewport" target="_blank" rel="external">What the Virtual Viewport?</a> 翻译，无法保证译文完全正确。</strong></p>
+<p>Chrome M40对viewport做了一个非常微妙的更改，但对用户来说应该有很大的不同。</p>
+<p>移动浏览器启动时，缺少viewport元标签意味着浏览器会让网页认为它有大约980px的屏幕空间，并以这个大小呈现。如果使用viewport元标签，则开发人员可以定义宽度，通常定义为device-width设备宽度，这会将屏幕大小设置为设备大小。可以在<a href="https://developers.google.com/web/fundamentals/design-and-ui/responsive/#set-the-viewport" target="_blank" rel="external">Web基础</a>上了解更多信息。</p>
+<p>Rick Byers是这样描述虚拟视窗的：虚拟视口的概念旨在将“视口”的概念分成两个，“布局视口”（position属性为fixed的元素将附着到该视口）和“视觉视口”（用户实际上看到的）。</p>
+<p>一个超级简单的例子</p>
+<p>videojs.com网站是一个很好的例子，因为它的应用程序栏appbar固定在顶部，并且在应用程序栏的左右两边都有链接。</p>
+<p>下面的图片展示了在一个网站上放大和尝试左右平移的结果。</p>
+<p>上面的设备是Chrome M39，它没有虚拟视口，下面的设备是来自于Chrome M40，它有虚拟视口。</p>
+<p><img src="https://developers.google.com/web/updates/images/2015-01-19-virtual-viewport/image00.png" alt="pixelated rendering" title="pixelated rendering"></p>
+<p><img src="https://developers.google.com/web/updates/images/2015-01-19-virtual-viewport/image01.png" alt="pixelated rendering" title="pixelated rendering"></p>
+<p>在Chrome M39中，放大后会看到应用程序栏，但是滚动到右边看不到应用程序栏右边的链接，只会看到logo。</p>
+<p>比较可以发现，Chrome M40（有“虚拟视口”）中，“视觉视口”可以滚动在“布局适口”里的所有东西，从而可以查看右边的链接。</p>
+<p>IE浏览器已经有了这种行为，这些变化使我们与他们更加一致。</p>
+<pre><code>html { overflow: hidden; }
+</code></pre><p>开发人员面临的唯一的主要变化是，在M39中，可以对html元素使用<code>overflow: hidden</code>，页面仍然会滚动；在M40中，则不再支持，使用该属性页面将不会滚动。</p>
+<p>更可靠的信息</p>
+<p>你想学更多吗?</p>
+<p>那么，你可以查看下面的幻灯片，或者看看Rick的<a href="https://plus.google.com/+RickByers/posts/bpxrWN4G3X5" target="_blank" rel="external">Google+ Post</a>，你真的应该这么做，因为他在这方面比我在行得多。</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/05/31/size-pos/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
