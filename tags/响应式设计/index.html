@@ -10,7 +10,7 @@
     
     <title>
         
-            理解视口 | 
+            标签: 响应式设计 | 
         
         Meow Blog
     </title>
@@ -32,7 +32,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Miaoxingren">
     <meta name="description" content="null">
-    <meta name="keywords" content="null,视口">
+    <meta name="keywords" content="null">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/pic/favicon.png">
@@ -58,9 +58,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://Miaoxingren.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="理解视口 | Meow Blog">
+    <meta property="og:title" content="标签: 响应式设计 | Meow Blog">
     <meta property="og:description" content="null">
-    <meta property="og:article:tag" content="视口"> 
+    
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -221,276 +221,98 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
-
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
+    <div class="locate-thumbnail-symbol"></div>
 
-    <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
+    <!-- Pin on top -->
+    
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+    <!-- Normal Post -->
+    
         
-
-        <!--
-        <li class="mdl-menu__item">
-            Some Action
-        </li>
-        -->
-    </ul>
-
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script>
-    var randomNum = Math.floor(Math.random() * 17 + 1);
-
-    $('.post_thumbnail-random').attr('data-original', '/pic/random/catdog-' + randomNum + '.jpg');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
         
     
-            <p class="article-headline-p">
-                理解视口
-            </p>
-        </div>
 
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/pic/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>Miaoxingren</strong>
-        <span>6月 02, 2017</span>
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/06/02/wh-mk-rs-design-wk/">响应设计工作原理</a></p>
     </div>
 
-    <div class="section-spacer"></div>
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            本文根据 Gustav Jorlöv 的 What makes responsive design work 翻译，无法保证译文完全正确。
+在这篇简短的介绍中，我想让你了解一下使响应式web设计成为可能的机制。我不是要深究一些不必要的细节，而是在web开发人员能受益的程度下解释概念。我还想提一下，不同浏览器行为不同，特别是在Android的自由领域里，但是这篇短文不会涉及如何处理浏览器兼容性问题，因为那本身是一个完整的故事。
 
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/视口/">视口</a>
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=理解视口&url=http://Miaoxingren.github.io//2017/06/02/understanding-viewport/index.html&pic=&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=理解视口&url=http://Miaoxingren.github.io//2017/06/02/understanding-viewport/index.html&via=Miaoxingren" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://Miaoxingren.github.io//2017/06/02/understanding-viewport/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://Miaoxingren.github.io//2017/06/02/understanding-viewport/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <p><strong>本文根据 Earle Castledine, Myles Eftos, and Max Wheeler 的 <a href="https://www.sitepoint.com/premium/books/build-mobile-websites-and-apps-for-smart-devices/preview/understanding-the-viewport-b8fed79" target="_blank" rel="external">Understanding the Viewport</a> 翻译，无法保证译文完全正确。</strong></p>
-<p>移动开发时，必须了解视口。在桌面端，视口是一个清晰的概念：它是浏览器窗口中的可视区域。在移动设备上则比较复杂，因为屏幕通常比浏览器窗口小。</p>
-<p>在 <a href="https://www.quirksmode.org/mobile/viewports.html" target="_blank" rel="external">A tale of two viewports—part two</a> 中，Peter-Paul Koch将视口分解为两个独立的概念：视觉视口和布局视口。视觉视口是当前可见的页面的一部分，当用户滚动或缩放到页面的不同部分时，视觉视口的大小可以改变。布局视口是指实际页面的大小。</p>
-<p>在桌面端，视觉视口和布局视口是相同的，但是在移动设备上，浏览器需要为布局视口设置一个比视觉视口大的默认值。不同设备的默认值不同：移动Safari使用980px；Opera Mini是850px；Android WebKit是800px；以及IE是974px。为什么是这些较大的值呢?如果不设置为一个较大的值，当在移动设备上浏览一个为桌面浏览器设计的网站时，布局可能会打乱，因为内容将被压缩进一个320px的窗口。通过定义一个更大的布局视口，移动浏览器会让这些站点以为屏幕有着比实际大得多的宽度。不论喜欢与否，我们生活在一个宽度固定的视口和960px的网格的时代中，所以移动浏览器需要适应桌面端。</p>
-<p>这为移动站点带来了一个问题，因为移动站点是专门为移动设备的视口设计的：如果在一个960px或更宽的桌面浏览器中查看该站点，站点看起来就是一个被拉伸得不成比例的列。</p>
-<p>值得庆幸的是，我们可以不被移动浏览器的这种行为所限制。使用一个<code>meta</code>标签，可以重写默认宽度。如果想要创建一个500px宽的站点，可以使用以下设置来使布局视口符合设计：</p>
-<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=500&quot;&gt;
-</code></pre><p>这很好，但这是一个勉强的例子。如果想让视觉视口和布局视口匹配呢?我们无法指定宽度，因为无法确切地知道用户设备的视觉视口有多宽。如果将viewport设置为<code>width=320</code>，在iPhone上我们可以得到想要的结果，但不是所有的设备都是这个宽度。幸运的是，浏览器制造商已经考虑过这个问题，并提供了一个<code>device-width</code>变量，我们可以使用该变量来为每个设备设置动态宽度：</p>
-<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
-</code></pre><p>这会把视觉视口的宽度和布局视口的宽度设置为相同的值，这样看起来就像站点针对设备进行了完美的优化。viewport元标签还允许我们控制viewport的其他方面，例如：</p>
-<ul>
-<li><code>height</code></li>
-</ul>
-<p>该属性设置viewport的高度，单位px。与width属性一样，可以使用device-height将其设置为屏幕高度。</p>
-<ul>
-<li><code>initial-scale</code></li>
-</ul>
-<p>该属性表示viewport的初始比例 —— 换句话说，屏幕的缩放级别。默认值通常为将页面的整个宽度容纳在屏幕上的值。</p>
-<ul>
-<li><code>minimum-scale</code></li>
-</ul>
-<p>该属性表示用户可以将viewport调整到的最小比例。在iOS中，默认为0.25，但是值可以为0到10之间的任意数。</p>
-<ul>
-<li><code>maximum-scale</code></li>
-</ul>
-<p>该属性表示用户可以将viewport调整到的最大缩放级别。在iOS中，默认值是1.6，但是值可以为0到10之间的任意数。</p>
-<ul>
-<li><code>user-scalable</code></li>
-</ul>
-<p>该属性指定是否可以让用户调整视图，即放大或缩小。默认值为yes，值为no就可以禁止缩放。</p>
-<ul>
-<li><code>target-densitydpi</code></li>
-</ul>
-<p>目前只有Android支持该属性，该属性可以控制目标设备的渲染分辨率。将它设置为<code>device-dpi</code>，可以匹配设备的屏幕密度，但这会放大或缩小CSS像素。如果正在进行独立于分辨率的样式开发，使用默认值160dpi是明智的，就像我们目前所做的那样，因此不需要指定这个值。</p>
-<p>要更改这些属性的部分或全部，使用一个以逗号分隔值的<code>meta</code>标签。例如，如果想要将width设置为device-width、minimum-scale设置为0.5、maximum-scale设置为2，可以使用以下设置:</p>
-<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, minimum-scale=0.5, maximum-scale=2&quot;&gt;
-</code></pre><p>不是所有属性都受各移动浏览器支持，但是仍可以放心的使用。浏览器会忽略它所不能理解的属性。这是应用程序最终的viewport元标签:</p>
-<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no&quot;&gt;
-</code></pre><p>我们将<code>width</code>设置为设备宽度，并通过设置<code>user-scalable=no</code>来确保用户不能缩放界面。我们使用<code>minimum-scale=1</code>和<code>maximum-scale=1</code>来代替<code>initial-scale=1</code>，前者受浏览器支持更好。禁用像缩放这样的功能的决定不应该被轻视，缩放是一个重要的可访问性特征，并且被很多人，甚至是大多数人使用。我们之所以这么做，是因为我们的应用程序是专门为小屏幕设计的，而且缩放比例为1时站点可用性最好。如果无法保证这点，就不要破坏用户的标准行为。</p>
-<p>下面是关于配置viewport的进阶资料：</p>
-<ul>
-<li><a href="https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html" target="_blank" rel="external">Safari Web Content Guide: Configuring the Viewport</a></li>
-<li><a href="https://dev.opera.com/articles/an-introduction-to-meta-viewport-and-viewport/" target="_blank" rel="external">An introduction to meta viewport and @viewport</a></li>
-</ul>
-
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-
-
-
-
-
-
-
-                
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/06/02/wh-mk-rs-design-wk/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/pic/avatar.jpg" width="44px" height="44px" alt="Miaoxingren's avatar">
             </div>
+            <div>
+                <strong>Miaoxingren</strong>
+                <span>6月 02, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/翻译/">翻译</a>
+            </span>
 
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2017/06/02/wh-mk-rs-design-wk/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
+            
 
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
+            
 
-    <!-- Next Nav -->
-    
-        <a href="/2017/06/01/virtual-viewport/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
         </div>
     </div>
+</div>
 
+            
+            
+        
+    
+
+    
+
+    
+        <script>
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 17 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/pic/random/catdog-' + randomNum + '.jpg');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
+</div>
 
 
                     
@@ -652,14 +474,6 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
-
-                    
-                        <!-- Footer Top Button -->
-                        <div class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
 
                     
 
