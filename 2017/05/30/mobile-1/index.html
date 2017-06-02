@@ -32,7 +32,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Miaoxingren">
     <meta name="description" content="null">
-    <meta name="keywords" content="null,像素,viewport">
+    <meta name="keywords" content="null,像素,视口">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/pic/favicon.png">
@@ -60,7 +60,7 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="移动端适配：像素与视口 | Meow Blog">
     <meta property="og:description" content="null">
-    <meta property="og:article:tag" content="像素"> <meta property="og:article:tag" content="viewport"> 
+    <meta property="og:article:tag" content="像素"> <meta property="og:article:tag" content="视口"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -327,7 +327,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/viewport/">viewport</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/像素/">像素</a>
+        <a class="post_tag-link" href="/tags/像素/">像素</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/视口/">视口</a>
     </ul>
     
 
@@ -570,6 +570,7 @@
 <p>视觉视口仅仅是页面的可视区域，也以CSS像素计。如果放大一个页面，就会增加CSS像素的大小，这自然会减少设备上可容纳的CSS像素的数量。这就是为什么当放大时，视觉视口的尺寸会缩小。</p>
 <p>视觉视口不能比页面上的内容大。<br>内容的尺寸主要由布局视图决定。<br>布局视口的尺寸由viewport元标签设置。<br>因此，视觉视口的尺寸会随viewport元标签而改变。</p>
 <p>当内容区域明显比布局视口宽时，视觉视口会被拉伸以容纳所有的内容，而不是出现一个滚动条。<br>因为使用viewport元标签只是向浏览器表明布局视图的初始尺寸应该是多少，而不是视觉视口的尺寸。<br>如果希望页面加载时视觉视口的尺寸不会调整为内容的全部宽度，则需要在viewport元标签中设置initial-scale=1。</p>
+<p>在桌面端，viewport是指浏览器的宽度。然而，移动端viewport有点复杂。由于移动浏览器必须尽力正确地渲染网站，即使它们的屏幕太窄，厂商也将viewport概念分成两部分。布局viewport，相当于一个页面的&lt; html &gt;元素，通常在800px和1000px之间，这取决于设备。iPhone的默认布局视口是960px——当你在你的iPhone上访问一个桌面站点时，它会呈现出你正在用一个960px宽的浏览器窗口观看的样子。然而，你的手机比这更窄，所以有些东西可能会被显示不全。视觉视口就是用户在屏幕上看到的东西。视觉视口会受到缩放的影响，缩放会将更多的布局视口的内容显示在屏幕上，还会受滚动影响，滚动会改变布局视口的感知位置。对于那些好奇的人来说，布局viewport是由document.documentelement.clientWidth和document.documentElement.clientHeight指定的。 而视觉视口是由window.innerWidth和window.innerHeight指定的。默认情况下，手机通常会显示出与布局视图相同的视觉视口，以尽可能的显示页面。</p>
 <h4 id="visual-viewport"><a href="#visual-viewport" class="headerlink" title="visual viewport"></a>visual viewport</h4><p>视觉视口，表示浏览器可视区域。</p>
 <h4 id="layout-viewport"><a href="#layout-viewport" class="headerlink" title="layout viewport"></a>layout viewport</h4><p>布局视口，表示页面布局区域。移动端浏览器为了让所有网站显示正常，包括那些为桌面浏览器设计的网站，创建了一个比浏览器可视区域宽的视口来绘制页面，这个视口就是布局视口。如果使用浏览器可视区域作为视口绘制页面，则那些为桌面浏览器设计的网站在狭窄的移动设备中就无法正常显示（页面都压缩进小屏幕）。</p>
 <p><html>元素的宽度是受布局视口的宽度限制的，通常可以通过document.documentElement.clientWidth获得布局视口的宽度，以逻辑像素计。改变桌面浏览器的窗口的大小会改变布局视口的大小。用户可以通过平移和缩放来浏览页面的不同区域。</html></p>
@@ -820,7 +821,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -838,7 +839,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/移动开发/">移动开发<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/翻译/">翻译<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/移动开发/">移动开发<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/翻译/">翻译<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计与UI/">设计与UI<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
