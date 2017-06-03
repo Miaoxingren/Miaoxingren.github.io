@@ -395,7 +395,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><h3 id="设备像素-硬件像素-物理像素"><a href="#设备像素-硬件像素-物理像素" class="headerlink" title="设备像素/硬件像素/物理像素"></a>设备像素/硬件像素/物理像素</h3><p>设备像素，也称为硬件像素、物理像素，是显示屏上能够显示颜色的最小的单位，由一组物理灯（每组包括红、绿、蓝三种颜色的灯）构成，通过在不同光强下打开或关闭这些灯，可以产生任意数量的颜色和亮度。</p>
-<p>设备的物理像素数是固定的，是厂商在出厂时就设置好了的 —— 即一个设备的（物理）分辨率是固定的。比如iPhone5的（物理）分辨率为640x1136，则横向设备像素数为640，纵向设备像素数为1136。</p>
+<p>设备的物理像素数是固定的，是厂商在出厂时就设置好了的 —— 即一个设备的（物理）分辨率是固定的。比如iPhone5的（物理）分辨率为640x1136，则设备像素数为640x1136。</p>
 <h3 id="逻辑像素"><a href="#逻辑像素" class="headerlink" title="逻辑像素"></a>逻辑像素</h3><p>它表示应用程序所使用的一个抽象像素，最终会被底层系统转换为物理像素，是与屏幕像素密度无关的抽象的点的概念。一个逻辑像素在不同设备中占据相同的大小。而设备中的物理像素与逻辑像素不一定相等。逻辑像素与设备像素的关系可以根据设备像素比得出。当设备像素比为1时，1个逻辑像素等于1个设备像素。当设备像素比为n时，一个逻辑像素等于n*n个设备像素。比如iPhone5使用的是Retina视网膜屏幕，用2x2的设备像素代表1x1的逻辑像素，所以设备像素数为640x1136，而逻辑像素数为320x568。</p>
 <ul>
 <li>点</li>
@@ -564,22 +564,18 @@
 <li>令设备像素大小为当前输出设备的一个设备像素的垂直大小。</li>
 <li>返回设备像素大小除以CSS像素大小的结果。</li>
 </ol>
-<h3 id="viewport"><a href="#viewport" class="headerlink" title="viewport"></a>viewport</h3><p>布局视口和视觉视口都是以CSS像素度量的。</p>
-<p>布局视口的尺寸实际上是内容的初始尺寸，以CSS像素计。</p>
-<p>布局视口用于初始时决定如何定位和呈现内容。它与设备的缩放级别无关。“在最大放大模式下屏幕上显示的内容”，是在暗示布局视口的尺寸是不变的，无论当前的视觉视口如何，它的大小总是相同的。</p>
-<p>视觉视口仅仅是页面的可视区域，也以CSS像素计。如果放大一个页面，就会增加CSS像素的大小，这自然会减少设备上可容纳的CSS像素的数量。这就是为什么当放大时，视觉视口的尺寸会缩小。</p>
-<p>视觉视口不能比页面上的内容大。<br>内容的尺寸主要由布局视图决定。<br>布局视口的尺寸由viewport元标签设置。<br>因此，视觉视口的尺寸会随viewport元标签而改变。</p>
-<p>当内容区域明显比布局视口宽时，视觉视口会被拉伸以容纳所有的内容，而不是出现一个滚动条。<br>因为使用viewport元标签只是向浏览器表明布局视图的初始尺寸应该是多少，而不是视觉视口的尺寸。<br>如果希望页面加载时视觉视口的尺寸不会调整为内容的全部宽度，则需要在viewport元标签中设置initial-scale=1。</p>
-<p>在桌面端，viewport是指浏览器的宽度。然而，移动端viewport有点复杂。由于移动浏览器必须尽力正确地渲染网站，即使它们的屏幕太窄，厂商也将viewport概念分成两部分。布局viewport，相当于一个页面的&lt; html &gt;元素，通常在800px和1000px之间，这取决于设备。iPhone的默认布局视口是960px——当你在你的iPhone上访问一个桌面站点时，它会呈现出你正在用一个960px宽的浏览器窗口观看的样子。然而，你的手机比这更窄，所以有些东西可能会被显示不全。视觉视口就是用户在屏幕上看到的东西。视觉视口会受到缩放的影响，缩放会将更多的布局视口的内容显示在屏幕上，还会受滚动影响，滚动会改变布局视口的感知位置。对于那些好奇的人来说，布局viewport是由document.documentelement.clientWidth和document.documentElement.clientHeight指定的。 而视觉视口是由window.innerWidth和window.innerHeight指定的。默认情况下，手机通常会显示出与布局视图相同的视觉视口，以尽可能的显示页面。</p>
-<h4 id="visual-viewport"><a href="#visual-viewport" class="headerlink" title="visual viewport"></a>visual viewport</h4><p>视觉视口，表示浏览器可视区域。</p>
-<h4 id="layout-viewport"><a href="#layout-viewport" class="headerlink" title="layout viewport"></a>layout viewport</h4><p>布局视口，表示页面布局区域。移动端浏览器为了让所有网站显示正常，包括那些为桌面浏览器设计的网站，创建了一个比浏览器可视区域宽的视口来绘制页面，这个视口就是布局视口。如果使用浏览器可视区域作为视口绘制页面，则那些为桌面浏览器设计的网站在狭窄的移动设备中就无法正常显示（页面都压缩进小屏幕）。</p>
-<p><html>元素的宽度是受布局视口的宽度限制的，通常可以通过document.documentElement.clientWidth获得布局视口的宽度，以逻辑像素计。改变桌面浏览器的窗口的大小会改变布局视口的大小。用户可以通过平移和缩放来浏览页面的不同区域。</html></p>
-<p>移动设备中浏览器的视觉视口的宽度：</p>
+<h3 id="viewport"><a href="#viewport" class="headerlink" title="viewport"></a>viewport</h3><p><img src="https://kits.se/images/blogg/layout.png" alt="Layout viewport" title="Layout viewport"></p>
+<h4 id="visual-viewport"><a href="#visual-viewport" class="headerlink" title="visual viewport"></a>visual viewport</h4><p>视觉视口，表示浏览器可视区域。视觉视口显示的是当前页面的可见的一部分，当用户滚动或缩放到页面的不同部分时，视觉视口的内容会发生改变。</p>
+<p>视觉视口的大小可以通过<code>window.innerWidth/innerHeight</code> <strong>（以CSS像素为单位）</strong> 获得。通常浏览器窗口是和屏幕一样宽的，此时视觉视口和屏幕一样宽。用户可以通过改变浏览器窗口的大小来改变视觉视口的大小，这改变的是视觉视口所占物理像素数。</p>
+<p>用户可以通过缩放页面来改变视觉视口。缩放页面不会改变视觉视口的大小，而是改变视觉视口所占的CSS像素数。比如，页面缩放比例为100%时，1x1个CSS像素等于1x1个物理像素。放大页面至200%，则CSS像素会增大，1x1个CSS像素等于2x2个物理像素。假设，视觉视口的宽度为320个物理像素。页面缩放比例为100%时，视觉视口的宽度为320个CSS像素，页面缩放比例为200%时，视觉视口的宽度为160个CSS像素。</p>
+<p>用户可以通过滚动操作来调整视觉视口的位置，从而查看页面的各个部分。</p>
+<h4 id="layout-viewport"><a href="#layout-viewport" class="headerlink" title="layout viewport"></a>layout viewport</h4><p>布局视口，是页面布局区域，渲染引擎工作在布局视口上。</p>
+<p>在桌面浏览器中，布局视口和视觉视口的宽度是一样的。移动浏览器为了让所有网站显示正常，包括那些为桌面浏览器设计的网站，会将布局视口的宽度设置为比视觉视口大。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">移动端浏览器</th>
-<th style="text-align:center">视觉视口宽度</th>
+<th style="text-align:left">移动浏览器</th>
+<th style="text-align:center">布局视口宽度（CSS像素）</th>
 </tr>
 </thead>
 <tbody>
@@ -601,7 +597,13 @@
 </tr>
 </tbody>
 </table>
-<h4 id="viewport元标签"><a href="#viewport元标签" class="headerlink" title="viewport元标签"></a>viewport元标签</h4><p><code>&lt;meta name=&quot;viewport&quot; content=&quot;...&quot;&gt;</code>该标签可以修改布局视口。</p>
+<p><html>元素的宽度是受布局视口的宽度限制的，通常可以通过document.documentElement.clientWidth获得布局视口的宽度，以逻辑像素计。改变桌面浏览器的窗口的大小会改变布局视口的大小。用户可以通过平移和缩放来浏览页面的不同区域。布局视口是指实际页面的大小。</html></p>
+<p>布局视口的尺寸实际上是内容的初始尺寸，以CSS像素计。</p>
+<p>布局视口用于初始时决定如何定位和呈现内容。它与设备的缩放级别无关。“在最大放大模式下屏幕上显示的内容”，是在暗示布局视口的尺寸是不变的，无论当前的视觉视口如何，它的大小总是相同的。</p>
+<p>视觉视口不能比页面上的内容大。<br>内容的尺寸主要由布局视图决定。<br>布局视口的尺寸由viewport元标签设置。<br>因此，视觉视口的尺寸会随viewport元标签而改变。</p>
+<p>当内容区域明显比布局视口宽时，视觉视口会被拉伸以容纳所有的内容，而不是出现一个滚动条。<br>因为使用viewport元标签只是向浏览器表明布局视图的初始尺寸应该是多少，而不是视觉视口的尺寸。<br>如果希望页面加载时视觉视口的尺寸不会调整为内容的全部宽度，则需要在viewport元标签中设置initial-scale=1。</p>
+<p>在桌面端，viewport是指浏览器的宽度。然而，移动端viewport有点复杂。由于移动浏览器必须尽力正确地渲染网站，即使它们的屏幕太窄，厂商也将viewport概念分成两部分。布局viewport，相当于一个页面的&lt; html &gt;元素，通常在800px和1000px之间，这取决于设备。iPhone的默认布局视口是960px——当你在你的iPhone上访问一个桌面站点时，它会呈现出你正在用一个960px宽的浏览器窗口观看的样子。然而，你的手机比这更窄，所以有些东西可能会被显示不全。视觉视口就是用户在屏幕上看到的东西。视觉视口会受到缩放的影响，缩放会将更多的布局视口的内容显示在屏幕上，还会受滚动影响，滚动会改变布局视口的感知位置。对于那些好奇的人来说，布局viewport是由document.documentelement.clientWidth和document.documentElement.clientHeight指定的。 而视觉视口是由window.innerWidth和window.innerHeight指定的。默认情况下，手机通常会显示出与布局视图相同的视觉视口，以尽可能的显示页面。</p>
+<h4 id="viewport元标签"><a href="#viewport元标签" class="headerlink" title="viewport元标签"></a>viewport元标签</h4><p><code>&lt;meta name=&quot;viewport&quot; content=&quot;...&quot;&gt;</code>标签可以修改布局视口。</p>
 <p>可以设置的属性：</p>
 <ul>
 <li>width</li>
@@ -687,7 +689,7 @@
 <li><a href="http://weizhifeng.net/viewports2.html" target="_blank" rel="external">两个viewport的故事</a></li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag" target="_blank" rel="external">在移动浏览器中使用viewport元标签控制布局</a></li>
 <li><a href="https://developer.android.com/guide/practices/screens_support.html" target="_blank" rel="external">支持多种屏幕</a></li>
-<li><a href="https://stackoverflow.com/questions/7344886/visual-viewport-vs-layout-viewport-on-mobile-devices" target="_blank" rel="external"></a></li>
+<li><a href="https://stackoverflow.com/questions/7344886/visual-viewport-vs-layout-viewport-on-mobile-devices" target="_blank" rel="external">visual viewport vs layout viewport</a></li>
 </ol>
 
     
