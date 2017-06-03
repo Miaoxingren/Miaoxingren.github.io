@@ -10,7 +10,7 @@
     
     <title>
         
-            响应设计工作原理 | 
+            响应式设计工作原理 | 
         
         Meow Blog
     </title>
@@ -58,7 +58,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://Miaoxingren.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="响应设计工作原理 | Meow Blog">
+    <meta property="og:title" content="响应式设计工作原理 | Meow Blog">
     <meta property="og:description" content="null">
     <meta property="og:article:tag" content="视口"> <meta property="og:article:tag" content="响应式设计"> 
 
@@ -284,7 +284,7 @@
         
     
             <p class="article-headline-p">
-                响应设计工作原理
+                响应式设计工作原理
             </p>
         </div>
 
@@ -343,7 +343,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=响应设计工作原理&url=http://Miaoxingren.github.io//2017/06/02/wh-mk-rs-design-wk/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=响应式设计工作原理&url=http://Miaoxingren.github.io//2017/06/02/wh-mk-rs-design-wk/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -352,7 +352,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=响应设计工作原理&url=http://Miaoxingren.github.io//2017/06/02/wh-mk-rs-design-wk/index.html&via=Miaoxingren" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=响应式设计工作原理&url=http://Miaoxingren.github.io//2017/06/02/wh-mk-rs-design-wk/index.html&via=Miaoxingren" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -396,9 +396,9 @@
     
         <p><strong>本文根据 Gustav Jorlöv 的 <a href="https://kits.se/blogg/2016/01/12/what-makes-responsive-design-work/" target="_blank" rel="external">What makes responsive design work</a> 翻译，无法保证译文完全正确。</strong></p>
 <p>在这篇简短的介绍中，我想让你了解一下使响应式web设计成为可能的机制。我不是要深究一些不必要的细节，而是在web开发人员能受益的程度下解释概念。我还想提一下，不同浏览器行为不同，特别是在Android的自由领域里，但是这篇短文不会涉及如何处理浏览器兼容性问题，因为那本身是一个完整的故事。</p>
-<h3 id="首先，web浏览器是什么"><a href="#首先，web浏览器是什么" class="headerlink" title="首先，web浏览器是什么?"></a>首先，web浏览器是什么?</h3><p>web浏览器是一个计算机程序，用户可以查看并与web页面交互。从技术上讲，浏览器（如Google Chrome或Firefox）是一个在当前操作系统上运行的计算机程序。这个程序可以处理窗口管理、标签、书签之类的事情。它还使用一个“渲染引擎”来计算在界面的大部分中应该显示的内容。浏览器会收到一个url(通常是用户在地址栏中输入或单击一个链接)，然后将url传递给呈现引擎，连同用于绘制界面的表面。</p>
-<p>从历史上看，浏览器做的渲染任务通常稍有不同。这是一个独立的话题，但让我们继续讨论我们话题并前进。</p>
-<h3 id="响应网页设计"><a href="#响应网页设计" class="headerlink" title="响应网页设计"></a>响应网页设计</h3><p>根据<a href="https://en.wikipedia.org/wiki/Responsive_web_design" target="_blank" rel="external">维基百科</a>的说法，响应式web设计是一种网站设计的方法，旨在为用户提供最优的浏览和交互体验 —— 跨越多种设备（从桌面电脑显示器到移动电话）的缩放、平移和滚动操作最少的轻松阅读和导航体验。对web开发人员来说，就是我们需要完全控制屏幕区域，以及我们置于屏幕区域上的界面必须有合适的大小来进行交互和查看。</p>
+<h3 id="首先，web浏览器是什么"><a href="#首先，web浏览器是什么" class="headerlink" title="首先，web浏览器是什么?"></a>首先，web浏览器是什么?</h3><p>web浏览器是一个计算机程序，用户可以查看并与网页交互。从技术上讲，浏览器（如Google Chrome或Firefox）是一个在当前操作系统上运行的计算机程序。这个程序可以处理窗口管理、标签、书签之类的事情。它还使用一个“渲染引擎”来计算界面中应该显示的内容。浏览器会收到一个url(通常是用户在地址栏中输入或单击一个链接)，然后将url传递给渲染引擎，连同用于绘制界面的surface窗口表面。</p>
+<p>从历史上看，浏览器做的渲染任务通常稍有不同。这是一个独立的话题，但让我们继续讨论我们的话题并前进。</p>
+<h3 id="响应网页设计"><a href="#响应网页设计" class="headerlink" title="响应网页设计"></a>响应网页设计</h3><p>根据<a href="https://en.wikipedia.org/wiki/Responsive_web_design" target="_blank" rel="external">维基百科</a>的说法，响应式web设计是一种网站设计的方法，旨在为用户提供最优的浏览和交互体验 —— 跨越多种设备（从桌面电脑显示器到移动设备）的缩放、平移和滚动操作最少的轻松阅读和导航体验。对web开发人员来说，就是我们需要完全控制屏幕区域，以及我们置于屏幕区域上的界面必须有合适的大小来进行交互和查看。</p>
 <p>但是移动屏幕和桌面屏幕的大小和比例不同，而且它们有不同类型的输入设备。这意味着需要为目标屏幕和输入设备定制界面。</p>
 <h3 id="从代码入手"><a href="#从代码入手" class="headerlink" title="从代码入手"></a>从代码入手</h3><p>让我们深入了解一些代码。假设网页标签和样式如下：</p>
 <pre><code>&lt;html&gt;
@@ -422,12 +422,12 @@
 <p>在移动设备上，渲染引擎需要相信目标区域比物理上要宽。因此界面可以被绘制成比手机更多像素。然后画布被放大，以完整的在屏幕上显示界面。</p>
 <p><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/85439/images/1392025/iphone_safari.jpg" alt="iPhone" title="iPhone"></p>
 <p>你可能已经猜到了，我们需要修改viewport。在逻辑上，viewport会得到移动浏览器的宽度，也就是移动设备的物理宽度。但它不是，它得到了另一个由浏览器生产者决定的宽度。这一宽度在浏览器和设备供应商之间有所不同，但跨度为 768-1024px。如果一个移动浏览器告诉渲染引擎它的宽度是980px，那么例子中的<code>div #something</code>将被渲染为980px的35% = 343px宽。然后，以980px绘制的界面会被放大以适应移动设备。这样，现有网页就能正确地呈现在移动浏览器上，但是我们还没有涉及任何响应式行为。</p>
-<h4 id="关于更高分辨率的说明"><a href="#关于更高分辨率的说明" class="headerlink" title="关于更高分辨率的说明"></a>关于更高分辨率的说明</h4><p>最近的计算机屏幕和移动设备的模型通常有着比以前的模型更高的分辨率。逻辑上，更密集的像素会使界面以比以前小的尺寸被绘制出来。但是我们知道不是这样，当Mac用视网膜显示屏时，网页并没有缩小到一半大小。我们寻找的抽象概念叫做devicePixelRatio。</p>
-<p>尝试在浏览器开发控制台中输入devicePixelRatio，结果是什么?最近的Macbooks显示结果为2，之前的Mac为1。但它可以是任何小数。这个数字会影响到传递给渲染引擎的宽度。对于一个具有devicePixelRatio = 2的屏幕，在进入呈现引擎之前，物理像素数会除以2。这样，一个1400物理像素的浏览器只会将1400 / 2 = 700px传递给渲染引擎。这就是为什么不需要手动处理屏幕分辨率就能以同样的方式来解释针对700px设计的CSS的原因。</p>
+<h4 id="关于更高分辨率的说明"><a href="#关于更高分辨率的说明" class="headerlink" title="关于更高分辨率的说明"></a>关于更高分辨率的说明</h4><p>最近的计算机屏幕和移动设备的模型通常有着比以前的模型更高的分辨率。逻辑上，更密集的像素会使界面以比以前小的尺寸被绘制出来。但我们知道不是这样，当Mac用视网膜显示屏时，网页并没有缩小到一半大小。我们寻找的抽象概念叫做devicePixelRatio。</p>
+<p>尝试在浏览器控制台中输入devicePixelRatio，结果是什么?最近的Macbooks显示结果为2，之前的Mac为1。但它可以是任何小数。这个数字会影响到传递给渲染引擎的宽度。对于一个具有devicePixelRatio = 2的屏幕，在进入渲染引擎之前，物理像素数会除以2。这样，一个1400物理像素的浏览器只会将1400 / 2 = 700px传递给渲染引擎。这就是为什么不需要手动处理屏幕分辨率就能以同样的方式来解析针对700px设计的CSS的原因。</p>
 <p>想象一下，若干年后，不再有任何设备使用devicePixelRatio = 1。以没有任何设备会拥有的像素大小为目标编写CSS会显得很奇怪。</p>
-<h3 id="是什么使移动设备与桌面不同"><a href="#是什么使移动设备与桌面不同" class="headerlink" title="是什么使移动设备与桌面不同?"></a>是什么使移动设备与桌面不同?</h3><p>让我们为刚才讨论的内容介绍一些适当的名称。在桌面浏览器上，有viewport，它与浏览器窗口的宽度相同（尽管在更高分辨率的屏幕上是不同的）。在移动设备上则有点复杂。</p>
+<h3 id="是什么使移动设备与桌面不同"><a href="#是什么使移动设备与桌面不同" class="headerlink" title="是什么使移动设备与桌面不同?"></a>是什么使移动设备与桌面不同?</h3><p>让我们为刚才讨论的内容介绍一些适当的名称。viewport，在桌面浏览器上它与浏览器窗口的宽度相同（尽管在更高分辨率的屏幕上可能不同）。在移动设备上则有点复杂。</p>
 <p><img src="https://kits.se/images/blogg/desktop.png" alt="Desktop viewport" title="Desktop viewport"></p>
-<h4 id="Layout-visual-and-ideal-viewport布局、视觉和理想视口"><a href="#Layout-visual-and-ideal-viewport布局、视觉和理想视口" class="headerlink" title="Layout, visual and ideal viewport布局、视觉和理想视口"></a>Layout, visual and ideal viewport布局、视觉和理想视口</h4><p>渲染引擎在所谓的布局视口上工作，并且设备的物理像素构成了视觉视口，（我们在CSS中声明的媒体查询的目标是布局视口）。</p>
+<h4 id="Layout-visual-and-ideal-viewport布局、视觉和理想视口"><a href="#Layout-visual-and-ideal-viewport布局、视觉和理想视口" class="headerlink" title="Layout, visual and ideal viewport布局、视觉和理想视口"></a>Layout, visual and ideal viewport布局、视觉和理想视口</h4><p>渲染引擎在所谓的布局视口上工作，而设备的物理像素构成了视觉视口，（我们在CSS中声明的媒体查询的目标是布局视口）。</p>
 <p><img src="https://kits.se/images/blogg/layout.png" alt="Layout viewport" title="Layout viewport"></p>
 <p>第三个也是最后一个viewport，<code>ideal viewport</code>，是一个特定设备的最佳布局视口的抽象概念。理想视口可能是<code>物理像素physical pixels / devicePixelRatio</code>，但在许多情况下与此稍有不同。幸运的是，开发人员有一个简单的方法使用理想视口:</p>
 <pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
