@@ -565,12 +565,12 @@
 <li>返回设备像素大小除以CSS像素大小的结果。</li>
 </ol>
 <h3 id="viewport"><a href="#viewport" class="headerlink" title="viewport"></a>viewport</h3><p><img src="https://kits.se/images/blogg/layout.png" alt="Layout viewport" title="Layout viewport"></p>
-<h4 id="visual-viewport"><a href="#visual-viewport" class="headerlink" title="visual viewport"></a>visual viewport</h4><p>视觉视口，表示浏览器可视区域。视觉视口显示的是当前页面的可见的一部分，当用户滚动或缩放到页面的不同部分时，视觉视口的内容会发生改变。</p>
-<p>视觉视口的大小可以通过<code>window.innerWidth/innerHeight</code> <strong>（以CSS像素为单位）</strong> 获得。通常浏览器窗口是和屏幕一样宽的，此时视觉视口和屏幕一样宽。用户可以通过改变浏览器窗口的大小来改变视觉视口的大小，这改变的是视觉视口所占物理像素数。</p>
-<p>用户可以通过缩放页面来改变视觉视口。缩放页面不会改变视觉视口的大小，而是改变视觉视口所占的CSS像素数。比如，页面缩放比例为100%时，1x1个CSS像素等于1x1个物理像素。放大页面至200%，则CSS像素会增大，1x1个CSS像素等于2x2个物理像素。假设，视觉视口的宽度为320个物理像素。页面缩放比例为100%时，视觉视口的宽度为320个CSS像素，页面缩放比例为200%时，视觉视口的宽度为160个CSS像素。</p>
+<h4 id="visual-viewport"><a href="#visual-viewport" class="headerlink" title="visual viewport"></a>visual viewport</h4><p>视觉视口，表示页面可视区域。视觉视口显示的是当前页面的可见部分，当用户滚动或缩放到页面的不同部分时，视觉视口的内容会发生改变。</p>
+<p>视觉视口的大小可以通过<code>window.innerWidth/innerHeight</code> <strong>（以CSS像素为单位）</strong> 获得。在桌面浏览器中，视觉视口就是浏览器窗口中的可视区域。而在移动设备中，为了尽可能完整的显示页面，浏览器会将视觉视口的大小设置为和布局视口相同。</p>
+<p>用户可以通过改变浏览器窗口的大小来改变视觉视口的大小。用户也可以通过缩放页面来改变视觉视口的大小。比如，页面缩放比例为100%时，1x1个CSS像素等于1x1个物理像素。放大页面至200%，则CSS像素会增大，1x1个CSS像素等于2x2个物理像素。假设，页面缩放比例为100%时，视觉视口的宽度为320个CSS像素。放大页面至200%，视觉视口的宽度变为160个CSS像素。</p>
 <p>用户可以通过滚动操作来调整视觉视口的位置，从而查看页面的各个部分。</p>
-<h4 id="layout-viewport"><a href="#layout-viewport" class="headerlink" title="layout viewport"></a>layout viewport</h4><p>布局视口，是页面布局区域，渲染引擎工作在布局视口上。</p>
-<p>在桌面浏览器中，布局视口和视觉视口的宽度是一样的。移动浏览器为了让所有网站显示正常，包括那些为桌面浏览器设计的网站，会将布局视口的宽度设置为比视觉视口大。</p>
+<h4 id="layout-viewport"><a href="#layout-viewport" class="headerlink" title="layout viewport"></a>layout viewport</h4><p>布局视口，是页面布局区域，渲染引擎工作在布局视口上。布局视口用于初始时决定如何定位和呈现内容，它与设备的缩放级别无关，其大小是不变的。</p>
+<p>布局视口的大小可以通过<code>document.documentElement.clientWidth/clientHeight</code> <strong>（以CSS像素为单位）</strong> 获得。在桌面浏览器中，布局视口就是浏览器窗口中的可视区域。而在移动设备中，为了让所有网站显示正常，包括那些为桌面浏览器设计的网站，移动浏览器会将布局视口的宽度设置为比屏幕宽度大。</p>
 <table>
 <thead>
 <tr>
@@ -597,14 +597,7 @@
 </tr>
 </tbody>
 </table>
-<p><html>元素的宽度是受布局视口的宽度限制的，通常可以通过document.documentElement.clientWidth获得布局视口的宽度，以逻辑像素计。改变桌面浏览器的窗口的大小会改变布局视口的大小。用户可以通过平移和缩放来浏览页面的不同区域。布局视口是指实际页面的大小。</html></p>
-<p>布局视口的尺寸实际上是内容的初始尺寸，以CSS像素计。</p>
-<p>布局视口用于初始时决定如何定位和呈现内容。它与设备的缩放级别无关。“在最大放大模式下屏幕上显示的内容”，是在暗示布局视口的尺寸是不变的，无论当前的视觉视口如何，它的大小总是相同的。</p>
-<p>视觉视口不能比页面上的内容大。<br>内容的尺寸主要由布局视图决定。<br>布局视口的尺寸由viewport元标签设置。<br>因此，视觉视口的尺寸会随viewport元标签而改变。</p>
-<p>当内容区域明显比布局视口宽时，视觉视口会被拉伸以容纳所有的内容，而不是出现一个滚动条。<br>因为使用viewport元标签只是向浏览器表明布局视图的初始尺寸应该是多少，而不是视觉视口的尺寸。<br>如果希望页面加载时视觉视口的尺寸不会调整为内容的全部宽度，则需要在viewport元标签中设置initial-scale=1。</p>
-<p>在桌面端，viewport是指浏览器的宽度。然而，移动端viewport有点复杂。由于移动浏览器必须尽力正确地渲染网站，即使它们的屏幕太窄，厂商也将viewport概念分成两部分。布局viewport，相当于一个页面的&lt; html &gt;元素，通常在800px和1000px之间，这取决于设备。iPhone的默认布局视口是960px——当你在你的iPhone上访问一个桌面站点时，它会呈现出你正在用一个960px宽的浏览器窗口观看的样子。然而，你的手机比这更窄，所以有些东西可能会被显示不全。视觉视口就是用户在屏幕上看到的东西。视觉视口会受到缩放的影响，缩放会将更多的布局视口的内容显示在屏幕上，还会受滚动影响，滚动会改变布局视口的感知位置。对于那些好奇的人来说，布局viewport是由document.documentelement.clientWidth和document.documentElement.clientHeight指定的。 而视觉视口是由window.innerWidth和window.innerHeight指定的。默认情况下，手机通常会显示出与布局视图相同的视觉视口，以尽可能的显示页面。</p>
-<h4 id="viewport元标签"><a href="#viewport元标签" class="headerlink" title="viewport元标签"></a>viewport元标签</h4><p><code>&lt;meta name=&quot;viewport&quot; content=&quot;...&quot;&gt;</code>标签可以修改布局视口。</p>
-<p>可以设置的属性：</p>
+<h4 id="viewport元标签"><a href="#viewport元标签" class="headerlink" title="viewport元标签"></a>viewport元标签</h4><p><code>&lt;meta name=&quot;viewport&quot; content=&quot;...&quot;&gt;</code>标签可以修改布局视口。可以设置的属性：</p>
 <ul>
 <li>width</li>
 </ul>
@@ -614,7 +607,7 @@
 <li>height</li>
 </ul>
 <p>取值：正整数或device-height</p>
-<p>该属性设置布局视口的高度。不不常用。</p>
+<p>该属性设置布局视口的高度，不常用。</p>
 <ul>
 <li>initial-scale</li>
 </ul>
@@ -634,12 +627,12 @@
 <li>user-scalable</li>
 </ul>
 <p>取值：yes或no</p>
-<p>该属性设置是否允许用户手动缩放网页，默认值为yes。</p>
+<p>该属性设置是否允许用户手动缩放网页，默认值为yes。设置为no就可以禁止缩放。</p>
 <ul>
 <li>target-densitydpi</li>
 </ul>
 <p>取值：正整数 | device-dpi | high-dpi | medium-dpi | low-dpi</p>
-<p>该属性设置默认缩放比例。medium-dpi是target-densitydpi的默认值，如果我们显式定义target-densitydpi=device-dpi，那么设备就会按照真实的dpi来渲染页面。</p>
+<p>目前只有Android支持该属性，该属性可以控制目标设备的渲染分辨率。medium-dpi是target-densitydpi的默认值，如果我们显式定义target-densitydpi=device-dpi，那么设备就会按照设备的屏幕密度来渲染页面。将它设置为<code>device-dpi</code>，但这会放大或缩小CSS像素。如果正在进行独立于分辨率的样式开发，使用默认值是明智的，就像我们目前所做的那样，因此不需要指定这个值。</p>
 <h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="像素"><a href="#像素" class="headerlink" title="像素"></a>像素</h3><p>设计师和开发人员都应该使用逻辑像素。设计师以基准倍率1.0来设计页面，对于不同的设备，开发人员只要按照逻辑像素尺寸来开发就能达到与基准倍率近似的效果。只是对于图片，需要准备相应的2倍图、3倍图。</p>
 <p>比如设计师以iPhone 4作为基准进行设计，iPhone 4的逻辑分辨率为320x480，假设设计图中有一个长160px（逻辑像素）的进度条，开发人员根据设计图将进度条的长设为160px（逻辑像素）。</p>
 <ul>

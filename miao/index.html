@@ -5,10 +5,14 @@
     <!-- <meta name="viewport" content="initial-scale=1.0,user-scalable=no"> -->
     <title>Document</title>
     <style>
-        @media all and (device-width: 360px) {
+        @media all and (device-width: 1024px) {
             body #text {
-                background-color: red;
+                background-color: #eee;
+                width: 980px;
             }
+        }
+        html {
+            width: 1500px;
         }
     </style>
 </head>
@@ -18,7 +22,7 @@
     <script type="text/javascript">
         function miao() {
             var t = document.getElementById('text');
-            t.innerHTML = window.innerWidth;
+            t.innerHTML = document.documentElement.clientWidth;//window.innerWidth;
         }
         miao();
     </script>
