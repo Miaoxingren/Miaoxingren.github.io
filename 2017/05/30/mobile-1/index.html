@@ -646,7 +646,7 @@
 <li>在iPhone 6中，屏幕分辨率为750x1334，DPR为2，则进度条占320个物理像素，320/750=0.43，约为屏幕宽度的一半。</li>
 </ul>
 <p>如果设计师根据物理分辨率来进行设计，开发人员需要将物理像素除以设备像素比来获得逻辑像素数。</p>
-<h2 id="viewport-1"><a href="#viewport-1" class="headerlink" title="viewport"></a>viewport</h2><p>由于布局视口的存在，为移动端设计的网站会以缩放的方式显示。比如布局视口为980px，而设计师按照视觉视口320px来设计网站，那么在移动设备中网站不会占满屏幕。为了让网站正常显示，需要改变布局视口，将宽度设为设备宽度，初始缩放比例为1，禁止用户缩放。</p>
+<h2 id="viewport-1"><a href="#viewport-1" class="headerlink" title="viewport"></a>viewport</h2><p>针对移动设备进行开发时，需要将布局视口设备为理想视口。viewport元标签的设置如下：</p>
 <p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,user-scalable=no&quot; /&gt;</code></p>
 <h2 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h2><h3 id="webkit-device-pixel-ratio"><a href="#webkit-device-pixel-ratio" class="headerlink" title="-webkit-device-pixel-ratio"></a>-webkit-device-pixel-ratio</h3><p>-webkit-device-pixel-ratio原本是针对苹果的视网膜设备进行开发时为了将设备像素转换成CSS像素时使用的一个媒体查询表达式特性，后来该特性在Android设备中得到了支持。在Safari开发者说明中针对这一特性，有着如下所示的定义：</p>
 <blockquote>
