@@ -2,29 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="initial-scale=1.0,user-scalable=no"> -->
+    <!-- <meta name="viewport" content="initial-scale=1,user-scalable=no"> -->
     <title>Document</title>
     <style>
-        @media all and (device-width: 1024px) {
-            body #text {
-                background-color: #eee;
-                width: 980px;
-            }
+        body {
+            margin: 0;
+            padding: 0;
         }
-        html {
-            width: 1500px;
+        .txt {
+            width: 100px;
+            height: 500px;
+            background-color: red;
+        }
+        body #text {
+            width: 1610px;
+            height: 1000px;
         }
     </style>
 </head>
-<body>
+<body onload="keke()">
+    <div class="txt"></div>
     <button type="button" name="button" onclick="miao()">check</button>
     <div id="text"></div>
+    <div class="txt"></div>
     <script type="text/javascript">
-        function miao() {
+        function miao(event) {
             var t = document.getElementById('text');
-            t.innerHTML = document.documentElement.clientWidth;//window.innerWidth;
+            t.innerHTML +=
+                'ideal - screen.width:' + screen.width + '<br />' +
+                'visual - window.innerWidth:' + window.innerWidth + '<br />' +
+                'layout - document.documentElement.clientWidth:' + document.documentElement.clientWidth + '<br />' +
+                'html - document.documentElement.offsetWidth:' + document.documentElement.offsetWidth + '<br />' +
+                'scroll - window.pageXOffset:' + window.pageXOffset + '<br />' +
+                'scroll - window.pageYOffset:' + window.pageYOffset + '<br />' +
+                'event - event.pageX:' + event.pageX + '<br />' +
+                'event - event.pageY:' + event.pageY + '<br />' +
+                'event - event.screenX:' + event.screenX + '<br />' +
+                'event - event.screenY:' + event.screenY + '<br />' +
+                'event - event.clientX:' + event.clientX + '<br />' +
+                'event - event.clientY:' + event.clientY + '<br />' +
+                '---------';
         }
         miao();
+        function keke() {
+            window.onclick = function (e) {
+                miao(e);
+            };
+        }
     </script>
 </body>
 </html>
