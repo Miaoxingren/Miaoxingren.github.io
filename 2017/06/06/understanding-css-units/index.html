@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.4 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            理解像素和其他CSS单位 | 
+        
+        Meow Blog
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Miaoxingren">
+    <meta name="description" content="null">
+    <meta name="keywords" content="null,像素">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/pic/favicon.png">
+    <link rel="icon" sizes="192x192" href="/pic/favicon@3x.png">
+    <link rel="apple-touch-icon" href="/pic/favicon@3x.png">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Meow Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://Miaoxingren.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="理解像素和其他CSS单位 | Meow Blog">
+    <meta property="og:description" content="null">
+    <meta property="og:article:tag" content="像素"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 500ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#摘要"><span class="post-toc-number">1.</span> <span class="post-toc-text">摘要</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介绍"><span class="post-toc-number">2.</span> <span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#显示独立性：布局适配"><span class="post-toc-number">3.</span> <span class="post-toc-text">显示独立性：布局适配</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#媒体查询和viewport设置"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">媒体查询和viewport设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#百分比单位"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">百分比单位</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他有用的相对单位"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">其他有用的相对单位</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#canvas和“全面像素控制”用例"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">canvas和“全面像素控制”用例?</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分辨率无关的渲染"><span class="post-toc-number">4.</span> <span class="post-toc-text">分辨率无关的渲染</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分辨率独立性定义"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">分辨率独立性定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可缩放内容"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">可缩放内容</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在CSS像素、物理单位和可缩放性上"><span class="post-toc-number">5.</span> <span class="post-toc-text">在CSS像素、物理单位和可缩放性上</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简单示例"><span class="post-toc-number">6.</span> <span class="post-toc-text">简单示例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#所以…一个像素不是一个像素，一英寸不是一英寸"><span class="post-toc-number">7.</span> <span class="post-toc-text">所以…一个像素不是一个像素，一英寸不是一英寸?</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最终的想法"><span class="post-toc-number">8.</span> <span class="post-toc-text">最终的想法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#另请参阅"><span class="post-toc-number">9.</span> <span class="post-toc-text">另请参阅</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 17 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/pic/random/catdog-' + randomNum + '.jpg');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                理解像素和其他CSS单位
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/pic/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Miaoxingren</strong>
+        <span>6月 06, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/像素/">像素</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=理解像素和其他CSS单位&url=http://Miaoxingren.github.io//2017/06/06/understanding-css-units/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=理解像素和其他CSS单位&url=http://Miaoxingren.github.io//2017/06/06/understanding-css-units/index.html&via=Miaoxingren" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://Miaoxingren.github.io//2017/06/06/understanding-css-units/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://Miaoxingren.github.io//2017/06/06/understanding-css-units/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><strong>本文根据 Vincent Hardy, Sylvain Galineau 的 <a href="https://webplatform.github.io/docs/tutorials/understanding-css-units/" target="_blank" rel="external">Understanding pixels and other CSS units</a> 翻译，无法保证译文完全正确。</strong></p>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>本指南介绍CSS像素和其他单位之间的关系，以及CSS和设备像素之间的关系。</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>越来越多的CSS长度单位为web开发者提供了新的灵活性（参见<a href="http://www.w3.org/TR/css3-values/" target="_blank" rel="external">CSS值和单位规范</a>）。例如，<code>rem</code>（根<code>em</code>）单位允许在整个文档中以根元素的字体大小控制尺寸。</p>
+<p>它们可以帮助开发人员显示内容，不依赖于显示大小和分辨率。</p>
+<h2 id="显示独立性：布局适配"><a href="#显示独立性：布局适配" class="headerlink" title="显示独立性：布局适配"></a>显示独立性：布局适配</h2><p>现在的页面需要为各种各样的浏览环境做好准备：智能手机、平板电脑、大型显示器甚至电视屏幕，这覆盖了大量的尺寸、纵横比、像素密度和浏览距离。有一些工具可以帮助开发人员优化他们的布局以获得最好的体验，例如避免或减少笨拙的滚动。</p>
+<h3 id="媒体查询和viewport设置"><a href="#媒体查询和viewport设置" class="headerlink" title="媒体查询和viewport设置"></a>媒体查询和viewport设置</h3><p>现在大多数开发人员都熟悉媒体查询的使用。它们可以根据显示媒体因素（如尺寸或纵横比）来应用CSS规则。它们可以用于为每个目标环境指定单独的样式表，或者可以改进和调整主样式表。</p>
+<p>对于移动端来说，理解和设置显示视口尤其重要，因为它允许页面内容适配用户设备的屏幕。</p>
+<h3 id="百分比单位"><a href="#百分比单位" class="headerlink" title="百分比单位"></a>百分比单位</h3><p>百分比单位自CSS1引入，允许相对于包含块来设置元素的大小。例如，我们可以这样设置一个文档的body:</p>
+<pre><code>body {
+    width: 80%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+</code></pre><p>…这样可以确保body最多900px，否则占视口宽度的80%。（请注意，CSS像素不是设备像素，这将在后面详细讨论）</p>
+<h3 id="其他有用的相对单位"><a href="#其他有用的相对单位" class="headerlink" title="其他有用的相对单位"></a>其他有用的相对单位</h3><p>其他几个支持自适应布局的CSS单位。下表列举了其中的一些：</p>
+<table>
+<thead>
+<tr>
+<th>单位</th>
+<th>描述</th>
+<th>示例用例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>em</td>
+<td>1 em是使用该单位的元素的字体大小的计算值。</td>
+<td>例如，<code>&lt;h1&gt;</code>标题元素的字体大小可能被设为3em，body被设为1em，以确保在任何显示条件下，标题文本将是正文的3倍。必须注意的是，当用作字体大小<code>font-size</code>的属性值时，em单位是指父元素的字体大小。因此，在我们的示例中，在<code>&lt;h1&gt;</code>中的字体大小为2em的<span>元素的文本是正文的6倍。</span></td>
+</tr>
+<tr>
+<td>ex</td>
+<td>1 ex是当前字体的x-height。x-height通常（但不总是，例如字体中没有x）就等于小写x的高度。</td>
+<td>在实际中很少使用。可能用于调整内联图像的大小以适应当前字体的x-height，以实现视觉上的和谐。</td>
+</tr>
+<tr>
+<td>ch</td>
+<td>1 ch是当前字体中字符0的宽度。ch表示字符。</td>
+<td>可用于等宽字体或盲文。</td>
+</tr>
+<tr>
+<td>rem</td>
+<td>1 rem是文档根元素的字体大小属性的计算值。这个单位通常比<code>em</code>单位更容易使用，因为它不像<code>em</code>单位那样会受继承的影响。</td>
+<td>例如，根元素字体大小为20px，将<code>&lt;li&gt;</code>元素的字体大小设为0.5em，解析后，第一级<code>&lt;li&gt;</code>为10px，但第二级<code>&lt;li&gt;</code>为5px。将字体大小设置为0.5rem则不论嵌套级别如何，<code>&lt;li&gt;</code>元素字体大小都为10px。</td>
+</tr>
+<tr>
+<td>vw</td>
+<td>1 vw是视口宽度的1%。vw表示视口宽度。</td>
+<td>可用于控制适配不同视口宽度的盒子的尺寸。</td>
+</tr>
+<tr>
+<td>vh</td>
+<td>1 vh是视口高度的1%。vh表示视口高度。</td>
+<td>可用于控制适配不同视口高度的盒子的尺寸。例如，可以用来设置图像的最大高度，这样它就不会超过视口范围。</td>
+</tr>
+<tr>
+<td>vmin</td>
+<td>等于vw和vh中较小者</td>
+<td>参见vh/vw</td>
+</tr>
+<tr>
+<td>vmax</td>
+<td>等于vw和vh中较大者</td>
+<td>参见vh/vw</td>
+</tr>
+</tbody>
+</table>
+<h3 id="canvas和“全面像素控制”用例"><a href="#canvas和“全面像素控制”用例" class="headerlink" title="canvas和“全面像素控制”用例?"></a>canvas和“全面像素控制”用例?</h3><p>到目前为止，我们一直关注使用CSS设计文档元素的样式。然而，有些用例要求对每一个像素进行全面的应用控制，例如视频游戏。</p>
+<p><a href="http://www.w3.org/html/wg/drafts/2dcontext/html5_canvas/" target="_blank" rel="external">Canvas 2D上下文</a>和<a href="https://webplatform.github.io/docs/svg" target="_blank" rel="external">可缩放矢量图形</a>都可以用于处理这些需求，<a href="http://www.khronos.org/registry/webgl/specs/latest/" target="_blank" rel="external">WebGL</a>也可以。在非常具体的情况下（如游戏），也可以使用绝对定位的内容来获得<a href="http://www.tricedesigns.com/2013/03/22/phonegap-legends-a-sample-game-app/" target="_blank" rel="external">更快的性能</a>。</p>
+<p>虽然开发人员不应该随意地实现自己的布局，但是在某些用例下，相比迁移到原生应用程序开发，这仍然是一个更好的选择。</p>
+<h2 id="分辨率无关的渲染"><a href="#分辨率无关的渲染" class="headerlink" title="分辨率无关的渲染"></a>分辨率无关的渲染</h2><p>但是让我们回到最基本的问题：什么是分辨率的独立性，为什么它很重要?</p>
+<h3 id="分辨率独立性定义"><a href="#分辨率独立性定义" class="headerlink" title="分辨率独立性定义"></a>分辨率独立性定义</h3><p>当内容被绘制到输出媒体（如打印机或屏幕）时，软件会把需要绘制的内容的描述转换成实际的像素。例如，一行文本首先被转换为一组由字体数据定义的几何轮廓；然后这些轮廓被“栅格化”，或者变成像素。同样的过程也会发生在更简单的形状上，例如在特定位置（x/y坐标）绘制的特定大小（宽度和高度）的矩形。</p>
+<p>作为一种渲染方法，分辨率独立性要求以独立于输出媒体的确切特性的方式来描述对象。目的是能够指定需要绘制的内容，并让底层软件在运行时确定如何为特定的输出设备进行渲染。</p>
+<p>当输出设备的尺寸和像素密度随着现代浏览设备的不同而不同时，这一点显得尤为重要。例如，在96dppi屏幕（dppi = device pixel per inch每英寸设备像素数）分辨率下，一毫米大约为4个设备像素，这样一个位置为（x=10mm，y=20mm）的矩形将被定位于x=40设备像素和y=80设备像素。当显示屏为300dppi时，一毫米大约为12个设备像素，而矩形应该位于x=120设备像素和y=240设备像素。然而，这是很重要的部分，这个矩形将出现在显示屏的相同物理位置上，在x轴上大约10mm，在y轴上大约20mm。</p>
+<h3 id="可缩放内容"><a href="#可缩放内容" class="headerlink" title="可缩放内容"></a>可缩放内容</h3><p>为了分辨率独立性，系统必须能够根据渲染条件来缩放内容。Postscript和PDF是基于某种单位的概念的技术示例，这种单位可以按需缩放以适应可用的显示分辨率。两者都使用<code>点point</code>单位，1点被定义为1/72英寸。</p>
+<p>可缩放矢量图形（SVG）有着相同的行为，并且有一个<a href="http://www.w3.org/TR/SVG/coords.html#SVGInitialUserCoordinateSystem" target="_blank" rel="external">user unit</a>的概念，所有其他单位最终都来自于这个单位；CSS定义了CSS像素，所有其他单位最终都解析为CSS像素（一个SVG user unit与一个CSS px相同）。</p>
+<p>在所有这些情况下，对象的位置和尺寸最终都解析为一个单位，该单位会被映射为一些设备像素并根据需要缩放，例如当用户放大内容时。</p>
+<p>在我们深入研究CSS的<code>px</code>单位之前，我们将注意到，SVG等可缩放格式是实现图像资源的分辨率独立性、响应式的非常有效的方法。</p>
+<p><strong>注意：</strong> 图标字体 Icon fonts 是2013年的另一种流行的做法，例如：参见<a href="http://css-tricks.com/html-for-icon-font-usage/" target="_blank" rel="external">http://css-tricks.com/html-for-icon-font-usage/</a>，或者<a href="http://nimbupani.com/markup-free-icon-fonts-with-unicode-range.html" target="_blank" rel="external">http://nimbupani.com/markup-free-icon-fonts-with-unicode-range.html</a>。还有像<a href="https://www.scribbletone.com/typefaces/ff-chartwell" target="_blank" rel="external">Chartwell</a>或<a href="http://symbolset.com/" target="_blank" rel="external">Symbolset</a>这样的聪明的OpenType（一种字体格式）的技巧。这些都是当今可伸缩内容的工具库的一部分。</p>
+<h2 id="在CSS像素、物理单位和可缩放性上"><a href="#在CSS像素、物理单位和可缩放性上" class="headerlink" title="在CSS像素、物理单位和可缩放性上"></a>在CSS像素、物理单位和可缩放性上</h2><p>虽然<a href="http://www.w3.org/TR/css3-values/" target="_blank" rel="external">CSS值和单位规范</a>在一个文档中定义了所有CSS单位，但是要理解CSS是如何将其单位与实际度量<br>或物理单位联系起来还是稍微费力的。规范的全部内容可以表述为:</p>
+<p><strong> 96 px = 1 in </strong></p>
+<p>简单的数学指导规范中允许的两种行为：</p>
+<ul>
+<li>在高分辨率的设备（如今的激光打印机，未来的屏幕）上 —— CSS渲染应该将一英寸映射为相应的物理尺寸（这就是规范所说的“将物理单位与它们的物理度量联系起来”）。因此，CSS的“px”单位（因为它是一英寸的1/96）可能会解析为数量为分数的设备像素。例如，在300dppi（每英寸设备像素数）屏幕上，设备像素与CSS像素像素的比值是300/96=3.125。因此，如果你这样设置元素的样式：</li>
+</ul>
+<pre><code>border: 1px solid blue;
+</code></pre><p>…边框应该宽为3.125个设备像素。边框的蓝色会覆盖3个完整的像素，还会覆盖第四个像素的一部分，这部分覆盖使用抗锯齿来与背景混合 —— 这样的渲染取决于光栅器（将基本图形转换成像素的软件的一部分）。</p>
+<ul>
+<li>在一个低分辨率的设备上，该规范建议“将像素单位与<a href="http://www.w3.org/TR/css3-values/#reference-pixel" target="_blank" rel="external">参考像素</a>联系起来”，并进一步建议“像素单位是指最接近参考像素的设备像素的全部数量”。在前面的示例中，蓝色边框可能是一个完整的设备像素。</li>
+</ul>
+<p>直到几年前，一个CSS像素通常被映射为一个屏幕像素。因此，CSS的一英寸并不总是映射为实际的物理英寸；如果一台笔记本电脑的真正分辨率是120dppi，那么96px的英寸将会是96/120=0.8的物理英寸!</p>
+<p>随着高密度屏幕的出现，出现了一个CSS像素等于2个设备像素的设备（例如苹果的视网膜屏幕），以及像素比为分数的设备（参考这篇<a href="https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag?redirectlocale=en-US&amp;redirectslug=Mobile%2FViewport_meta_tag" target="_blank" rel="external">MDN</a>文章）。注意，分数像素比可能会在渲染中引入额外的抗锯齿，就像高分辨率渲染那样。</p>
+<h2 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
+        &lt;title&gt;CSS Units px/in test&lt;/title&gt;
+        &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
+    &lt;/head&gt;
+
+    &lt;style&gt;
+        body {
+            background: #404040;
+        }
+
+        .css-box &gt; span {
+            display: inline-block;
+            height: 1em;
+            border-right: 1px solid black;
+        }
+
+        .css-box.px &gt; span {
+            width: 96px;
+            background: #fefefe;
+        }
+
+        .css-box.in &gt; span {
+            width: 1in;
+            background: #4166B5;
+        }
+    &lt;/style&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;css-box px&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/div&gt;
+        &lt;div class=&quot;css-box in&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><img src="https://static.webplatform.org/1/18/css-units-px-and-inch.png" alt="Screenshot of a testcase showing that 96px wide blocks are the same visual size as one-inch wide blocks" title="Screenshot of a testcase showing that 96px wide blocks are the same visual size as one-inch wide blocks"></p>
+<p>图1：在OSX Safari中的渲染</p>
+<p>当我们尝试在不同的设备上渲染这个文档时，我们会看到：</p>
+<ul>
+<li>在所有情况下，浅色的盒子和蓝色的盒子大小完全相同。这是因为1个CSS英寸总是和96个CSS像素的长度一样，白色的盒子是96px宽，蓝色的盒子是1英寸宽。因此，不出所料，他们的宽度相同。</li>
+<li>在分辨率为<a href="http://en.wikipedia.org/wiki/List_of_displays_by_pixel_density#Apple" target="_blank" rel="external">110dpi</a>的MacBook Pro 15英寸显示屏上，盒子的物理宽度为：96*1/110=0.872英寸。这是因为CSS像素与设备像素的比例是1。在我的屏幕上使用尺子测量的结果是0.88英寸，差值源于尺子精度和视觉近似:-)。所以1个CSS英寸比1个物理英寸少了22.8%。</li>
+<li>在分辨率为<a href="http://en.wikipedia.org/wiki/List_of_displays_by_pixel_density#Apple" target="_blank" rel="external">326dpi</a>iphone5上，一个盒子的物理宽度是96*2/326=0.589英寸。这是因为在这个平台上，CSS像素与设备像素的比例是2。再次使用尺子，我得到了0.592英寸。再一次，测量误差。这里，1个CSS英寸比1个物理英寸少了41.1%。</li>
+<li>在一台打印机上（我用的是Canon Pixma MP600），盒子的物理英寸是…1.05英寸! !在这台打印机上误差为5%。</li>
+</ul>
+<h2 id="所以…一个像素不是一个像素，一英寸不是一英寸"><a href="#所以…一个像素不是一个像素，一英寸不是一英寸" class="headerlink" title="所以…一个像素不是一个像素，一英寸不是一英寸?"></a>所以…一个像素不是一个像素，一英寸不是一英寸?</h2><p>好吧，差不多就像这样，但并没有看上去那么糟。这里是具体原因：</p>
+<ul>
+<li><strong> CSS像素是一个“参考”像素，而不是一个设备像素。 </strong> 这是有误导性的，而且我个人更倾向于使用SVG使用的<code>user unit</code>概念，因为我认为这样更容易解释对物理单位和设备像素的映射。但一旦明白“px”实际上是一个参考，而不是一个设备像素，事情就更有意义了。要记住的是，CSS px是一个抽象的单位，有一个比例控制着如何将它 a) 映射为实际的设备像素 以及 b) 映射为物理单位（以固定的方式，比率总是96个CSS px到1英寸）。</li>
+<li><strong> 一个CSS英寸等于或接近一英寸。 </strong> 在高分辨率的设备上，如果没有其他参数干扰（比如用户缩放或CSS变换），那么一CSS英寸将是一物理英寸。在低分辨率设备上，会出现一定幅度的错误，如上所述。</li>
+<li><strong> 可缩放性和适应性才是最重要的。</strong> 对于大多数开发人员来说最重要的是，内容布局可以随着单位缩放以可预测和合理的方式回流和适应。虽然在所有设备上保持精确的纵横比的概念似乎很有吸引力，但它却在低分辨率的设备上（如不必要的反锯齿导致模糊的渲染）不受欢迎。</li>
+</ul>
+<h2 id="最终的想法"><a href="#最终的想法" class="headerlink" title="最终的想法"></a>最终的想法</h2><p>那么，作为web开发人员，为了在不同的显示尺寸、形式因素和像素密度下很好的渲染内容，我们应该牢记什么?这里有一些方法：</p>
+<ol>
+<li>使用<a href="http://alistapart.com/article/responsive-web-design" target="_blank" rel="external">媒体查询</a>，根据渲染条件（例如，小型设备屏幕，平板电脑，桌面，大型显示器）使用所需的布局。</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag" target="_blank" rel="external">在移动浏览器中使用viewport元标签控制布局</a>。</li>
+<li>使用CSS单位和CSS布局，使页面内容流畅和大小符合要求。使用rem、<a href="http://snook.ca/archives/html_and_css/vm-vh-units" target="_blank" rel="external">vh和vm</a>（检查他们的<a href="http://caniuse.com/viewport-units" target="_blank" rel="external">兼容性</a>）等最新单位，或者百分比、em或pt等有用的旧单位。</li>
+<li><a href="http://www.quirksmode.org/blog/archives/2010/04/a_pixel_is_not.html" target="_blank" rel="external">理解</a>CSS像素是一个抽象的<a href="http://www.w3.org/TR/css3-values/#reference-pixel" target="_blank" rel="external">参考像素</a>，并且要记住关键规则 —— 96个CSS像素总是与1个CSS英寸有着相同的长度。</li>
+<li>在任何可能的地方（取决于图像类型和/或目标浏览器）使用<a href="https://webplatform.github.io/docs/svg" target="_blank" rel="external">SVG</a>（或<a href="http://css-tricks.com/examples/IconFont/" target="_blank" rel="external">图标字体</a>，更有限但支持更广泛），这样内容可以自然地缩放到更高像素密度或更大的尺寸。</li>
+</ol>
+<h2 id="另请参阅"><a href="#另请参阅" class="headerlink" title="另请参阅"></a>另请参阅</h2><ul>
+<li><a href="http://learn.shayhowe.com/advanced-html-css/responsive-web-design" target="_blank" rel="external">An Advanced Guide to HTML &amp; CSS - Responsive Web Design</a></li>
+<li><a href="http://www.html5rocks.com/en/tutorials/canvas/hidpi/" target="_blank" rel="external">High DPI Canvas (html5rocks)</a></li>
+<li><a href="http://phoboslab.org/log/2012/09/drawing-pixels-is-hard" target="_blank" rel="external">Drawing pixels is hard</a></li>
+</ul>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/06/02/wh-mk-rs-design-wk/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(undefined);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/pic/avatar.jpg" alt="Miaoxingren's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        meowxingren@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: meowxingren@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/移动开发/">移动开发<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/翻译/">翻译<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计与UI/">设计与UI<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags/" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">local_offer</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Meow Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 500);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
