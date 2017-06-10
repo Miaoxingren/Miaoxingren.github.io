@@ -10,7 +10,7 @@
     
     <title>
         
-            标签: 像素 | 
+            Web开发工具和插件 | 
         
         Meow Blog
     </title>
@@ -32,7 +32,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Miaoxingren">
     <meta name="description" content="null">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,工具,插件">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/pic/favicon.png">
@@ -58,9 +58,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://Miaoxingren.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: 像素 | Meow Blog">
+    <meta property="og:title" content="Web开发工具和插件 | Meow Blog">
     <meta property="og:description" content="null">
-    
+    <meta property="og:article:tag" content="工具"> <meta property="og:article:tag" content="插件"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -221,281 +221,229 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTML"><span class="post-toc-number">1.</span> <span class="post-toc-text">HTML</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#html5shiv"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">html5shiv</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CSS"><span class="post-toc-number">2.</span> <span class="post-toc-text">CSS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JS"><span class="post-toc-number">3.</span> <span class="post-toc-text">JS</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script>
+    var randomNum = Math.floor(Math.random() * 17 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/06/09/mb-ad-px-vp/">移动端适配：像素与视口</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            相关概念设备像素/硬件像素/物理像素设备像素，也称为硬件像素、物理像素，是显示屏上能够显示颜色的最小的单位，由一组物理灯（每组包括红、绿、蓝三种颜色的灯）构成，通过在不同光强下打开或关闭这些灯，可以产生任意数量的颜色和亮度。
-设备的物理像素数是固定的，是厂商在出厂时就设置好了的 —— 即一个设备的（物理）分辨率是固定的。比如iPhone5的（物理）分辨率为640x1136，则设备像素数为640x1136。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/06/09/mb-ad-px-vp/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/pic/avatar.jpg" width="44px" height="44px" alt="Miaoxingren's avatar">
-            </div>
-            <div>
-                <strong>Miaoxingren</strong>
-                <span>6月 09, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/移动开发/">移动开发</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/06/07/whs-a-px/">像素是什么</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本文根据 Lukas 的 What’s a Pixel? 翻译，无法保证译文完全正确。
-问题Appway的很多屏幕组件都要求输入像素值。例如，自适应流布局具有这样的属性。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/06/07/whs-a-px/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/pic/avatar.jpg" width="44px" height="44px" alt="Miaoxingren's avatar">
-            </div>
-            <div>
-                <strong>Miaoxingren</strong>
-                <span>6月 07, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/翻译/">翻译</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/06/06/understanding-css-units/">理解像素和其他CSS单位</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本文根据 Vincent Hardy, Sylvain Galineau 的 Understanding pixels and other CSS units 翻译，无法保证译文完全正确。
-摘要本指南介绍CSS像素和其他单位之间的关系，以及CSS和设备像素之间的关系。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/06/06/understanding-css-units/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/pic/avatar.jpg" width="44px" height="44px" alt="Miaoxingren's avatar">
-            </div>
-            <div>
-                <strong>Miaoxingren</strong>
-                <span>6月 06, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/翻译/">翻译</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/05/30/pt-px-res/">移动设计101：像素，点和分辨率</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本文根据 Dave Kearney 的 Mobile design 101: pixels, points and resolutions 翻译，无法保证译文完全正确。
-像素，点和分辨率之间的差异，甚至对那些正在转向移动开发或不熟悉各类屏幕及其工作原理的经验丰富的设计师来说，都是令人困惑的。本文将介绍在设计移动应用程序时需要了解的与屏幕和密度相关的主要关键词，并回答一些常见的其他问题。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/05/30/pt-px-res/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/pic/avatar.jpg" width="44px" height="44px" alt="Miaoxingren's avatar">
-            </div>
-            <div>
-                <strong>Miaoxingren</strong>
-                <span>5月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/翻译/">翻译</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 17 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/pic/random/catdog-' + randomNum + '.jpg');
+    $('.post_thumbnail-random').attr('data-original', '/pic/random/catdog-' + randomNum + '.jpg');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Web开发工具和插件
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/pic/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Miaoxingren</strong>
+        <span>6月 10, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/工具/">工具</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/插件/">插件</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Web开发工具和插件&url=http://Miaoxingren.github.io//2017/06/10/web-tools-libs/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Web开发工具和插件&url=http://Miaoxingren.github.io//2017/06/10/web-tools-libs/index.html&via=Miaoxingren" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://Miaoxingren.github.io//2017/06/10/web-tools-libs/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://Miaoxingren.github.io//2017/06/10/web-tools-libs/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="html5shiv"><a href="#html5shiv" class="headerlink" title="html5shiv"></a>html5shiv</h3><p><a href="https://github.com/afarkas/html5shiv" target="_blank" rel="external">html5shiv</a>能够使不支持HTML5新元素的低版本的IE浏览器识别HTML5标签以及应用样式。</p>
+<p>IE9以上的版本是支持HTML5，对于IE9之前的版本，在head中加入如下代码：</p>
+<pre><code>&lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;js/html5shiv.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+</code></pre><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2>
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/06/10/media-query/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -657,6 +605,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
