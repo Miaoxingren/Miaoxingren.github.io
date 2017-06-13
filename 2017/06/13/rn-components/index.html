@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.4 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            React Native - 组件 | 
+        
+        Meow Blog
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Miaoxingren">
+    <meta name="description" content="null">
+    <meta name="keywords" content="null,React Native">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/pic/favicon.png">
+    <link rel="icon" sizes="192x192" href="/pic/favicon@3x.png">
+    <link rel="apple-touch-icon" href="/pic/favicon@3x.png">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Meow Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://Miaoxingren.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="React Native - 组件 | Meow Blog">
+    <meta property="og:description" content="null">
+    <meta property="og:article:tag" content="React Native"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 500ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">概述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组件样式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">组件样式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组件尺寸"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">组件尺寸</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#指定宽高"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">指定宽高</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#弹性（Flex）宽高"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">弹性（Flex）宽高</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flexbox布局"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">Flexbox布局</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#组件"><span class="post-toc-number">2.</span> <span class="post-toc-text">组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AppRegistry"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">AppRegistry</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Image"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Image</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#View"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">View</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TextInput"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">TextInput</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ScrollView"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">ScrollView</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ListView"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">ListView</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#FlatList"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">FlatList</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SectionList"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">SectionList</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#网络"><span class="post-toc-number">3.</span> <span class="post-toc-text">网络</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Fetch-API"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Fetch API</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AJAX"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">AJAX</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#WebSocket"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">WebSocket</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 17 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/pic/random/catdog-' + randomNum + '.jpg');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                React Native - 组件
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/pic/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Miaoxingren</strong>
+        <span>6月 13, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/React-Native/">React Native</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=React Native - 组件&url=http://Miaoxingren.github.io//2017/06/13/rn-components/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=React Native - 组件&url=http://Miaoxingren.github.io//2017/06/13/rn-components/index.html&via=Miaoxingren" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://Miaoxingren.github.io//2017/06/13/rn-components/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://Miaoxingren.github.io//2017/06/13/rn-components/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="组件样式"><a href="#组件样式" class="headerlink" title="组件样式"></a>组件样式</h3><p>在React Native中，仍然使用JavaScript来写样式。所有的核心组件都接受名为style的属性。这些样式名基本上是遵循了web上的CSS的命名，只是按照JS的语法要求使用了驼峰命名法。</p>
+<p>style属性可以是一个普通的JavaScript对象。还可以传入一个数组 —- 在数组中位置居后的样式对象比居前的优先级更高，这样可以间接实现样式的继承。</p>
+<p>实际开发中组件的样式会越来越复杂，建议使用StyleSheet.create来集中定义组件的样式。</p>
+<pre><code>const styles = StyleSheet.create({
+  bigblue: {
+    color: &apos;blue&apos;,
+    fontWeight: &apos;bold&apos;,
+    fontSize: 30,
+  },
+  red: {
+    color: &apos;red&apos;,
+  },
+});
+</code></pre><p>常见的做法是按顺序声明和使用style属性，以借鉴CSS中的”层叠”做法（即后声明的属性会覆盖先声明的同名属性）。</p>
+<h3 id="组件尺寸"><a href="#组件尺寸" class="headerlink" title="组件尺寸"></a>组件尺寸</h3><p>组件的高度和宽度决定了其在屏幕上显示的尺寸。</p>
+<h3 id="指定宽高"><a href="#指定宽高" class="headerlink" title="指定宽高"></a>指定宽高</h3><p>在样式中指定固定的width和height。React Native中的尺寸都是无单位的，表示的是与设备像素密度无关的逻辑像素点。</p>
+<pre><code>&lt;View style={{width: 50, height: 50}} /&gt;
+</code></pre><p>Android使用DP作为逻辑像素单位，iOS使用PT作为逻辑像素单位，逻辑像素与设备像素不一定相等。</p>
+<h3 id="弹性（Flex）宽高"><a href="#弹性（Flex）宽高" class="headerlink" title="弹性（Flex）宽高"></a>弹性（Flex）宽高</h3><p>在组件样式中使用flex可以使其在可利用的空间中动态地扩张或收缩。一般而言我们会使用flex:1来指定某个组件扩张以撑满所有剩余的空间。如果有多个并列的子组件使用了flex:1，则这些子组件会平分父容器中剩余的空间。如果这些并列的子组件的flex值不一样，则谁的值更大，谁占据剩余空间的比例就更大（即占据剩余空间的比等于并列组件间flex值的比）。</p>
+<blockquote>
+<p>组件能够撑满剩余空间的前提是其父容器的尺寸不为零。如果父容器既没有固定的width和height，也没有设定flex，则父容器的尺寸为零。其子组件如果使用了flex，也是无法显示的。</p>
+</blockquote>
+<pre><code>&lt;View style={{flex: 1}}&gt;
+    &lt;View style={{flex: 1, backgroundColor: 'powderblue'}} /&gt;
+    &lt;View style={{flex: 2, backgroundColor: 'skyblue'}} /&gt;
+    &lt;View style={{flex: 3, backgroundColor: 'steelblue'}} /&gt;
+&lt;/View&gt;
+</code></pre><p>以上代码的运行结果为：三个View的宽度相同，而高度按比例占据父容器的剩余空间（flexDirection的默认值是column）。</p>
+<h4 id="Flexbox布局"><a href="#Flexbox布局" class="headerlink" title="Flexbox布局"></a>Flexbox布局</h4><blockquote>
+<p>React Native中的Flexbox的工作原理和web上的CSS基本一致，当然也存在少许差异。首先是默认值不同：flexDirection的默认值是column而不是row，而flex也只能指定一个数字值。</p>
+</blockquote>
+<ul>
+<li>flexDirection<ul>
+<li>表示布局的主轴方向，默认值为column</li>
+<li>column竖直轴方向，从上至下排列</li>
+<li>column-reverse竖直轴方向，从下至上排列</li>
+<li>row水平轴方向，从左至右排列</li>
+<li>row-reverse水平轴方向，从右至左排列</li>
+</ul>
+</li>
+<li>justifyContent<ul>
+<li>表示子项的在主轴上的对齐方式，默认值为flex-start</li>
+<li>flex-start主轴的起点对齐</li>
+<li>flex-end主轴的终点对齐</li>
+<li>center主轴的中点对齐</li>
+<li>space-between两端对齐，子项之间的间隔都相等</li>
+<li>space-around子项两侧的间隔相等，因此子项之间的间隔等于子项与边框的间隔的2倍</li>
+</ul>
+</li>
+<li>alignItems<ul>
+<li>表示子项的在次轴（与主轴垂直的轴）上的对齐方式，默认值为stretch</li>
+<li>flex-start次轴的起点对齐</li>
+<li>flex-end次轴的终点对齐</li>
+<li>center次轴的中点对齐</li>
+<li>baseline项目的第一行文字的基线对齐</li>
+<li>stretch如果子项在次轴方向上未设置固定的尺寸或设为auto，将占满整个容器在次轴的尺寸</li>
+</ul>
+</li>
+</ul>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="AppRegistry"><a href="#AppRegistry" class="headerlink" title="AppRegistry"></a>AppRegistry</h3><p>AppRegistry模块是用来告知React Native哪一个组件被注册为整个应用的根容器。一般在整个应用里AppRegistry.registerComponent这个方法只会调用一次，注册应用(registerComponent)后才能正确渲染。</p>
+<pre><code>AppRegistry.registerComponent(appKey: string, getComponentFunc: ComponentProvider)
+</code></pre><p>注意，registerComponent的第一个参数是一个字符串，必须和react-native init命令创建的项目名一致，第二个参数是一个函数，该函数返回应用的根组件。</p>
+<h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><ul>
+<li>静态图片资源<code>source={require(&#39;./src/img/img.png&#39;)}</code></li>
+</ul>
+<h3 id="View"><a href="#View" class="headerlink" title="View"></a>View</h3><p>View 常用作其他组件的容器，来帮助控制布局和样式。</p>
+<h3 id="TextInput"><a href="#TextInput" class="headerlink" title="TextInput"></a>TextInput</h3><p>处理用户输入的组件。onChangeText属性接受一个函数，该函数在文本变化时调用。onSubmitEditing属性接受一个函数，该函数在文本提交后（用户按下软键盘上的提交键）调用。</p>
+<h3 id="ScrollView"><a href="#ScrollView" class="headerlink" title="ScrollView"></a>ScrollView</h3><p>可以容纳多个不同或相同类型组件和视图的可滚动容器，默认为垂直滚动，将horizontal属性设为true可改成水平滚动。ScrollView适合用来显示数量不多的滚动元素。放置在ScollView中的所有组件都会被渲染，哪怕有些组件因为内容太长被挤出了屏幕外。</p>
+<h3 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h3><p>ListView组件用于显示一个垂直的滚动列表，其中的元素之间结构近似而仅数据不同。ListView更适于长列表数据，且元素个数可以增删。和ScrollView不同的是，ListView并不立即渲染所有元素，而是优先渲染屏幕上可见的元素。</p>
+<p>ListView组件必须的两个属性是dataSource和renderRow。dataSource是列表的数据源，可以通过创建一个设置了rowHasChanged函数属性的ListView.DataSource的实例，然后给它传递一个普通的数据数组，作为数据源。而renderRow是一个函数，负责逐个解析数据源中的数据，然后返回一个设定好格式的组件来渲染。</p>
+<pre><code>class ListViewBasics extends Component {
+    // 初始化模拟数据
+    constructor(props) {
+        super(props);
+        const ds = new ListView.DataSource({
+            rowHasChanged: (r1, r2) =&gt; r1 !== r2
+        });
+        this.state = {
+            dataSource: ds.cloneWithRows([
+                &apos;John&apos;,
+                &apos;Joel&apos;,
+                &apos;James&apos;,
+                &apos;Jimmy&apos;,
+                &apos;Jackson&apos;,
+                &apos;Jillian&apos;,
+                &apos;Julie&apos;,
+                &apos;Devin&apos;
+            ])
+        };
+    }
+    render() {
+        return (
+            &lt;View style={{
+                    flex: 1,
+                    paddingTop: 22
+                }}&gt;
+                &lt;ListView dataSource={this.state.dataSource} renderRow={(rowData) =&gt; &lt;Text&gt;{rowData}&lt;/Text&gt;}/&gt;
+                &lt;FlatList data={[
+                    {
+                        key: &apos;Devin&apos;
+                    }, {
+                        key: &apos;Jackson&apos;
+                    }, {
+                        key: &apos;James&apos;
+                    }, {
+                        key: &apos;Joel&apos;
+                    }, {
+                        key: &apos;John&apos;
+                    }, {
+                        key: &apos;Jillian&apos;
+                    }, {
+                        key: &apos;Jimmy&apos;
+                    }, {
+                        key: &apos;Judlie&apos;
+                    }, {
+                        key: &apos;Jodel&apos;
+                    }, {
+                        key: &apos;Jdohn&apos;
+                    }, {
+                        key: &apos;ds&apos;
+                    }, {
+                        key: &apos;daffafd&apos;
+                    }, {
+                        key: &apos;Julsie&apos;
+                    }, {
+                        key: &apos;Jimm3y&apos;
+                    }, {
+                        key: &apos;Juddflie&apos;
+                    }, {
+                        key: &apos;Jodfadel&apos;
+                    }, {
+                        key: &apos;Jdgfgohn&apos;
+                    }, {
+                        key: &apos;dfgfgs&apos;
+                    }, {
+                        key: &apos;dafffgfafd&apos;
+                    }, {
+                        key: &apos;gfgfg&apos;
+                    }, {
+                        key: &apos;Julssdfsdfie&apos;
+                    }, {
+                        key: &apos;Jimsdfsdfm3y&apos;
+                    }, {
+                        key: &apos;Judsdfdfdflie&apos;
+                    }, {
+                        key: &apos;dfdddsfsdf&apos;
+                    }, {
+                        key: &apos;sdfdfddd&apos;
+                    }, {
+                        key: &apos;dfgdddfgs&apos;
+                    }, {
+                        key: &apos;dafdffgfafd&apos;
+                    }, {
+                        key: &apos;gfgddfg&apos;
+                    }
+                ]} renderItem={({item}) =&gt; &lt;Text style={styles.item}&gt;{item.key}&lt;/Text&gt;}/&gt;
+            &lt;/View&gt;
+        );
+    }
+}
+</code></pre><h3 id="FlatList"><a href="#FlatList" class="headerlink" title="FlatList"></a>FlatList</h3><p>FlatList组件是一种垂直滚动的列表，该组件必须的两个属性是data和renderItem。data是列表的数据源，而renderItem接受一个函数，从数据源中逐个解析数据，然后返回一个设定好格式的组件来渲染。</p>
+<pre><code>class FlatListBasics extends Component {
+    render() {
+        return (
+            &lt;View style={styles.container}&gt;
+                &lt;FlatList data={[
+                    {
+                        key: &apos;Devin&apos;
+                    }, {
+                        key: &apos;Jackson&apos;
+                    }, {
+                        key: &apos;James&apos;
+                    }, {
+                        key: &apos;Joel&apos;
+                    }, {
+                        key: &apos;John&apos;
+                    }, {
+                        key: &apos;Jillian&apos;
+                    }, {
+                        key: &apos;Jimmy&apos;
+                    }, {
+                        key: &apos;Julie&apos;
+                    }
+                ]} renderItem={({item}) =&gt; &lt;Text style={styles.item}&gt;{item.key}&lt;/Text&gt;}/&gt;
+            &lt;/View&gt;
+        );
+    }
+}
+</code></pre><h3 id="SectionList"><a href="#SectionList" class="headerlink" title="SectionList"></a>SectionList</h3><p>SectionList是高性能的分组(section)列表组件，支持下面这些常用的功能：</p>
+<ul>
+<li>完全跨平台。</li>
+<li>支持水平布局模式。</li>
+<li>行组件显示或隐藏时可配置回调事件。</li>
+<li>支持单独的头部组件。</li>
+<li>支持单独的尾部组件。</li>
+<li>支持自定义行间分隔线。</li>
+<li>支持下拉刷新。</li>
+<li>支持上拉加载。</li>
+<li>如果你的列表不需要分组(section)，那么可以使用结构更简单的<flatlist>。</flatlist></li>
+</ul>
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><h3 id="Fetch-API"><a href="#Fetch-API" class="headerlink" title="Fetch API"></a>Fetch API</h3><p>React Native提供了和web标准一致的Fetch API，用于满足开发者访问网络的需求。</p>
+<p><code>fetch(url, config)</code></p>
+<p>url参数表示资源地址，config参数可以用来定制HTTP请求一些参数，例如指定header参数，或是指定使用POST方法，又或是提交数据等等。</p>
+<p>示例：</p>
+<pre><code>// 获取JSON数据
+fetch(&apos;https://mywebsite.com/mydata.json&apos;)
+
+// 提交JSON数据
+fetch(&apos;https://mywebsite.com/endpoint/&apos;, {
+    method: &apos;POST&apos;,
+    headers: {
+        &apos;Accept&apos;: &apos;application/json&apos;,
+        &apos;Content-Type&apos;: &apos;application/json&apos;
+    },
+    body: JSON.stringify({firstParam: &apos;yourValue&apos;, secondParam: &apos;yourOtherValue&apos;})
+})
+
+// 提交表单数据
+fetch(&apos;https://mywebsite.com/endpoint/&apos;, {
+    method: &apos;POST&apos;,
+    headers: {
+        &apos;Content-Type&apos;: &apos;application/x-www-form-urlencoded&apos;
+    },
+    body: &apos;key1=value1&amp;key2=value2&apos;
+})
+</code></pre><p>Fetch方法会返回一个Promise，这种模式可以简化异步风格的代码。</p>
+<pre><code>getMoviesFromApiAsync() {
+    return fetch(&apos;https://facebook.github.io/react-native/movies.json&apos;)
+        .then((response) =&gt; response.json()).then((responseJson) =&gt; {
+            return responseJson.movies;
+        }).catch((error) =&gt; {
+            console.error(error);
+        });
+}
+</code></pre><p>也可以在React Native应用中使用ES7标准中的async/await语法。</p>
+<pre><code>// 注意这个方法前面有async关键字
+async getMoviesFromApi() {
+    try {
+        // 注意这里的await语句，其所在的函数必须有async关键字声明
+        let response = await fetch(&apos;https://facebook.github.io/react-native/movies.json&apos;);
+        let responseJson = await response.json();
+        return responseJson.movies;
+    } catch (error) {
+        console.error(error);
+    }
+}
+</code></pre><p>别忘了catch住fetch可能抛出的异常，否则出错时可能看不到任何提示。</p>
+<p>默认情况下，iOS会阻止所有非https的请求。如果请求的接口是http协议，那么首先需要添加一个App Transport Security的例外。</p>
+<h3 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h3><p>React Native中已经内置了XMLHttpRequest API(也就是俗称的ajax)。一些基于XMLHttpRequest封装的第三方库也可以使用，例如frisbee或是axios等。但注意不能使用jQuery，因为jQuery中还使用了很多浏览器中才有而RN中没有的东西（所以也不是所有web中的ajax库都可以直接使用）。</p>
+<pre><code>var request = new XMLHttpRequest();
+request.onreadystatechange = (e) =&gt; {
+    if (request.readyState !== 4) {
+        return;
+    }
+
+    if (request.status === 200) {
+        console.log(&apos;success&apos;, request.responseText);
+    } else {
+        console.warn(&apos;error&apos;);
+    }
+};
+
+request.open(&apos;GET&apos;, &apos;https://mywebsite.com/endpoint/&apos;);
+request.send();
+</code></pre><p>需要注意的是，安全机制与网页环境有所不同：在应用中可以访问任何网站，没有跨域的限制。</p>
+<h3 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h3><p>React Native还支持WebSocket，这种协议可以在单个TCP连接上提供全双工的通信信道。</p>
+<pre><code>var ws = new WebSocket(&apos;ws://host.com/path&apos;);
+
+ws.onopen = () =&gt; {
+    // 打开一个连接
+    ws.send(&apos;something&apos;); // 发送一个消息
+};
+
+ws.onmessage = (e) =&gt; {
+    // 接收到了一个消息
+    console.log(e.data);
+};
+
+ws.onerror = (e) =&gt; {
+    // 发生了一个错误
+    console.log(e.message);
+};
+
+ws.onclose = (e) =&gt; {
+    // 连接被关闭了
+    console.log(e.code, e.reason);
+};
+</code></pre><blockquote>
+<p>参考文章</p>
+</blockquote>
+<ol>
+<li><a href="http://reactnative.cn/docs/0.45/getting-started.html" target="_blank" rel="external">reactnative.cn</a></li>
+</ol>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/06/13/rn-environment/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(undefined);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/pic/avatar.jpg" alt="Miaoxingren's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        meowxingren@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: meowxingren@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/React-Native/">React Native<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/移动开发/">移动开发<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/翻译/">翻译<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计与UI/">设计与UI<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags/" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">local_offer</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Meow Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 500);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
