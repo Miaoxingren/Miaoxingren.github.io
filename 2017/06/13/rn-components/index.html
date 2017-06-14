@@ -662,23 +662,23 @@ request.send();
 <h3 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h3><p>React Native还支持WebSocket，这种协议可以在单个TCP连接上提供全双工的通信信道。</p>
 <pre><code>var ws = new WebSocket(&apos;ws://host.com/path&apos;);
 
+// 打开一个连接
 ws.onopen = () =&gt; {
-    // 打开一个连接
     ws.send(&apos;something&apos;); // 发送一个消息
 };
 
+// 接收到了一个消息
 ws.onmessage = (e) =&gt; {
-    // 接收到了一个消息
     console.log(e.data);
 };
 
+// 发生了一个错误
 ws.onerror = (e) =&gt; {
-    // 发生了一个错误
     console.log(e.message);
 };
 
+// 连接被关闭了
 ws.onclose = (e) =&gt; {
-    // 连接被关闭了
     console.log(e.code, e.reason);
 };
 </code></pre><blockquote>
